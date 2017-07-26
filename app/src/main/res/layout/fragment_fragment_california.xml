@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sistemas51.horarioslavalle.Fragment_california"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/textView2cali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Punto de Partida"
+        android:layout_marginLeft="17dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerorigencali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2cali"
+        android:clickable="true"
+        android:layout_marginLeft="17dp"
+        />
+    <TextView
+        android:id="@+id/textViewcali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Punto de Llegada"
+        android:layout_below="@id/spinnerorigencali"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="17dp"
+        />
+
+
+
+    <Spinner
+        android:id="@+id/spinnerllegadacali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewcali"
+        android:layout_marginLeft="17dp"
+        />
+
+
+
+
+    <Button
+        android:id="@+id/buttoncali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:text="Consultar Horarios" />
+
+</RelativeLayout>

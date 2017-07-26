@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Horarios Lavalle</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_busqueda_rapida">BusquedaRapida</string>
+    <string name="large_text">
+        "Bienvenido a Horarios Lavalle. \n\n"
+
+        "\t Gracias por descargar esta aplicacion y espero que te sea de utilidad tanto como a mi. \n \n"
+        "\t Con esta aplicacion podra obtener de manera sencilla los horarios de colectivos en el departamento de Lavalle. \n \n"
+        "\t Su utilizacion es muy sencilla, solo basta con indicar su punto de partida y llegada, y la aplicacion se encargara de proporcionarle los horarios correspondientes que usted ha solicitado \n \n"
+
+        "\t Tambien puede Elegir entre la pestaña de dia de semana, sabado o domingo. \n \n"
+
+        "\t Por cualquier error o duda se pueden contactar conmigo \n "
+        "\t Contacto: \n "
+        "\t \t Axel Fernandez. \n "
+        "\t \t e-mail: axel_fernandez18@hotmail.com \n "
+        "\t \t Fb: www.facebook.com/A3ron "
+
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_ayuda">Ayuda</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="configure">Configure</string>
+    <string name="title_activity_busqueda40">Busqueda40</string>
+</resources>
