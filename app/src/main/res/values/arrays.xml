@@ -4258,7 +4258,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"8:30"</item>
+        <item>"08:30"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -4408,11 +4408,11 @@
         <item>"n"</item>
     </string-array>
     <string-array name="ida_domingo_40_lavalle">
-        <item>"5:45"</item>
-        <item>"6:50"</item>
-        <item>"7:50"</item>
-        <item>"8:50"</item>
-        <item>"9:20"</item>
+        <item>"05:45"</item>
+        <item>"06:50"</item>
+        <item>"07:50"</item>
+        <item>"08:50"</item>
+        <item>"09:20"</item>
         <item>"10:30"</item>
         <item>"11:00"</item>
         <item>"12:05"</item>
