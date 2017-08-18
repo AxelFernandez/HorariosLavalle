@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.sistemas51.horarioslavalle.Especial.Asuncion.EspecialAsuncion;
 import com.sistemas51.horarioslavalle.R;
 
 
@@ -34,6 +35,7 @@ View v = inflater.inflate(R.layout.fragment_fragment24, container, false);
         final Spinner spinnerorigen = (Spinner) v.findViewById(R.id.spinnerorigen);
         final Spinner spinnerllegada = (Spinner) v.findViewById(R.id.spinnerllegada);
         final Button botonbuscar = (Button) v.findViewById(R.id.button);
+        final Button fiestasucnion = (Button) v.findViewById(R.id.fiestaasuncion);
 
 
         //Adaptadores de Spinner
@@ -46,7 +48,13 @@ View v = inflater.inflate(R.layout.fragment_fragment24, container, false);
         spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
-
+fiestasucnion.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intentas= new Intent(v.getContext(), EspecialAsuncion.class);
+        startActivity(intentas);
+    }
+});
 
         botonbuscar.setOnClickListener(new View.OnClickListener() {
             @Override

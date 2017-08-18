@@ -7,7 +7,7 @@ android {
         applicationId "com.sistemas51.horarioslavalle"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 4
+        versionCode 5
         versionName "1.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -34,5 +34,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.github.MdFarhanRaja:ColorFullTabLayout:1.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.bogdwellers:pinchtozoom:0.1'
     testCompile 'junit:junit:4.12'
 }

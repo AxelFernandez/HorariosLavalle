@@ -29,10 +29,11 @@
         <activity
             android:name=".Ruta24.Busqueda24"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Busquedacalifornia"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+        <activity
+            android:name=".Busquedacalifornia"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Especial.Asuncion.EspecialAsuncion" />
+        <activity android:name=".Especial.Asuncion.EspecialBusqueda"></activity>
     </application>
 
 </manifest>
