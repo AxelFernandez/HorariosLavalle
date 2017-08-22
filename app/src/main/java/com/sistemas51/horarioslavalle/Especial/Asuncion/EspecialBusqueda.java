@@ -2,7 +2,6 @@ package com.sistemas51.horarioslavalle.Especial.Asuncion;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.bogdwellers.pinchtozoom.ImageMatrixTouchHandler;
@@ -18,12 +17,11 @@ public class EspecialBusqueda extends AppCompatActivity {
         String dia = getIntent().getExtras().getString("dia");
         String idaovuelta=getIntent().getExtras().getString("idaovuelta");
         im.setOnTouchListener(new ImageMatrixTouchHandler(getApplicationContext()));
-        Log.e("dia", String.valueOf(dia));
-        Log.e("idaovuelta", idaovuelta);
+
 
         if (dia.equals("1")&& idaovuelta.equals("Ida")){
             im.setImageResource(R.drawable.espidasabado);
-            Log.e("esntr","entro aca");}
+           }
 
         if (dia.equals("2")&& idaovuelta.equals("Ida")){
             im.setImageResource(R.drawable.espidadomingo);}
