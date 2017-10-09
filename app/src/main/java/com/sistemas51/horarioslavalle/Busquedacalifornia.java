@@ -9,8 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.sistemas51.horarioslavalle.Ruta24.Busqueda24;
-
 import in.galaxyofandroid.awesometablayout.AwesomeTabBar;
 
 public class Busquedacalifornia extends AppCompatActivity {
@@ -19,7 +17,7 @@ public class Busquedacalifornia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busquedacalifornia);
-        FloatingActionButton fb = (FloatingActionButton)findViewById(R.id.floatingActionButtonr24);
+        FloatingActionButton fb = (FloatingActionButton)findViewById(R.id.floatingActionButtonrcali);
 
         final String origen = getIntent().getExtras().getString("origen");
         final String llegada = getIntent().getExtras().getString("llegada");
@@ -38,11 +36,12 @@ public class Busquedacalifornia extends AppCompatActivity {
                 finish();
             }
         });
+     //   fb.setVisibility(View.GONE);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-                Intent fb = new Intent(getApplicationContext(), Busqueda24.class);
+                Intent fb = new Intent(getApplicationContext(), Busquedacalifornia.class);
                 fb.putExtra("origen", llegada);
                 fb.putExtra("llegada", origen);
                 fb.putExtra("origennum", llegadanum);

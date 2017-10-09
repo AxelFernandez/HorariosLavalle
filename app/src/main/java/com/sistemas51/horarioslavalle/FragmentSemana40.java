@@ -30,8 +30,8 @@ public class FragmentSemana40 extends Fragment {
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
         RecyclerView forecastsRecyclerView;
         forecastsRecyclerView = (RecyclerView) v.findViewById(R.id.recicler);
-        final int origennum= getActivity().getIntent().getExtras().getInt("origennum");
-        final int llegadanum= getActivity().getIntent().getExtras().getInt("llegadanum");
+         int origennum= getActivity().getIntent().getExtras().getInt("origennum");
+         int llegadanum= getActivity().getIntent().getExtras().getInt("llegadanum");
         String[] arraydestino = new String[0];
         String[] arrayllegada= new String[0];
         Resources res = getResources();

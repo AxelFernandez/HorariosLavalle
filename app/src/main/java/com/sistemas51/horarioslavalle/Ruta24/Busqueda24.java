@@ -42,6 +42,8 @@ public class Busqueda24 extends AppCompatActivity {
                 finish();
             }
         });
+      //  fb.setVisibility(View.GONE);
+
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

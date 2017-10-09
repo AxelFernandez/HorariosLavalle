@@ -39,11 +39,13 @@ public class Busqueda40 extends AppCompatActivity {
                 finish();
             }
         });
+      //  fb.setVisibility(View.GONE);
+
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-                Intent fb = new Intent(getApplicationContext(), Busqueda24.class);
+                Intent fb = new Intent(getApplicationContext(), Busqueda40.class);
                 fb.putExtra("origen", llegada);
                 fb.putExtra("llegada", origen);
                 fb.putExtra("origennum", llegadanum);

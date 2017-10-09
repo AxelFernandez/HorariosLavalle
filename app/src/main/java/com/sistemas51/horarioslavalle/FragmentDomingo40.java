@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,8 +31,8 @@ public class FragmentDomingo40 extends Fragment {
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
         RecyclerView forecastsRecyclerView;
         forecastsRecyclerView = (RecyclerView) v.findViewById(R.id.recicler);
-        final int origennum= getActivity().getIntent().getExtras().getInt("origennum");
-        final int llegadanum= getActivity().getIntent().getExtras().getInt("llegadanum");
+         int origennum= getActivity().getIntent().getExtras().getInt("origennum");
+         int llegadanum= getActivity().getIntent().getExtras().getInt("llegadanum");
         String[] arraydestino = new String[0];
         String[] arrayllegada= new String[0];
         Resources res = getResources();
