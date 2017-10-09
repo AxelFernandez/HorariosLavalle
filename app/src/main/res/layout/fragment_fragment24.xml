@@ -56,7 +56,14 @@
         android:layout_marginLeft="17dp"
         />
 
-
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/especial"
+    android:text="Horarios Lagunas del Rosario"
+    android:layout_above="@+id/button"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="32dp" />
 
 
     <Button

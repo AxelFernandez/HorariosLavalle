@@ -27,11 +27,10 @@ public class EspecialAsuncion extends AppCompatActivity {
         final Intent intent = new Intent(getApplicationContext(),EspecialBusqueda.class);
         RadioButton rb1 = (RadioButton) findViewById(R.id.rb1);
         RadioButton rb2 = (RadioButton) findViewById(R.id.rb2);
-        RadioButton rb3 = (RadioButton) findViewById(R.id.rb3);
 
         rb1.setText("Sabado");
         rb2.setText("Domingo");
-        rb3.setText("Lunes");
+
         rb1.setChecked(true);
         intent.putExtra("dia","1");
         radiog.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -41,8 +40,6 @@ public class EspecialAsuncion extends AppCompatActivity {
                  intent.putExtra("dia","1");
                 }else if (checkedId == R.id.rb2){
                     intent.putExtra("dia","2");
-                }else if (checkedId == R.id.rb3){
-                    intent.putExtra("dia","3");
                 }
 
 
