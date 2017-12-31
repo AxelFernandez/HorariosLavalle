@@ -57,15 +57,15 @@
             <!-- Califonia -->
     <string-array name="ida_semana_california_william">
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"08:40"</item>
-        <item>"12:20"</item>
+        <item>"08:10"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
+        <item>"13:00"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+
     </string-array>
     <string-array name="ida_semana_california_3portena">
         <item>"05:40"</item>
@@ -73,87 +73,79 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"15:00"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"19:50"</item>
         <item>"n"</item>
+        <item>"n"</item>
+
 
     </string-array>
     <string-array name="ida_semana_california_central">
         <item>"05:55"</item>
-        <item>"07:00"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"15:15"</item>
-        <item>"17:30"</item>
         <item>"n"</item>
-        <item>"20:05"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+
 
     </string-array>
     <string-array name="ida_semana_california_california">
         <item>"06:00"</item>
-        <item>"07:10"</item>
-        <item>"09:20"</item>
-        <item>"12:30"</item>
-        <item>"13:30"</item>
-        <item>"15:20"</item>
-        <item>"17:40"</item>
-        <item>"18:30"</item>
-        <item>"20:15"</item>
-        <item>"22:00"</item>
+        <item>"08:30"</item>
+        <item>"10:00"</item>
+        <item>"11:40"</item>
+        <item>"13:20"</item>
+        <item>"18:00"</item>
+        <item>"20:00"</item>
+        <item>"21:20"</item>
+        <item>"22:20"</item>
     </string-array>
     <string-array name="ida_semana_california_costa">
         <item>"06:20"</item>
-        <item>"07:50"</item>
-        <item>"09:40"</item>
-        <item>"13:00"</item>
-        <item>"13:50"</item>
-        <item>"15:40"</item>
-        <item>"18:00"</item>
-        <item>"18:50"</item>
-        <item>"20:25"</item>
-        <item>"22:20"</item>
+        <item>"08:40"</item>
+        <item>"10:20"</item>
+        <item>"12:00"</item>
+        <item>"13:30"</item>
+        <item>"18:20"</item>
+        <item>"20:20"</item>
+        <item>"21:40"</item>
+        <item>"22:40"</item>
     </string-array>
 
     <string-array name="vuelta_semana_california_costa">
-    <item>"06:20"</item>
-    <item>"08:00"</item>
-    <item>"08:00"</item>
-    <item>"12:00"</item>
-    <item>"13:10"</item>
-    <item>"14:20"</item>
-    <item>"17:00"</item>
-    <item>"18:00"</item>
-    <item>"19:00"</item>
-    <item>"21:40"</item>
+    <item>"07:20"</item>
+    <item>"09:20"</item>
+    <item>"11:00"</item>
+    <item>"12:20"</item>
+    <item>"17:20"</item>
+    <item>"19:20"</item>
+    <item>"21:00"</item>
+    <item>"22:00"</item>
     <item>"23:30"</item>
 </string-array>
     <string-array name="vuelta_semana_california_california">
-    <item>"06:40"</item>
-    <item>"n"</item>
-    <item>"09:20"</item>
-    <item>"12:20"</item>
-    <item>"13:30"</item>
-    <item>"14:40"</item>
-    <item>"17:20"</item>
-    <item>"18:30"</item>
+    <item>"07:40"</item>
+    <item>"09:40"</item>
+    <item>"11:20"</item>
+    <item>"12:30"</item>
+    <item>"17:40"</item>
     <item>"19:20"</item>
-    <item>"22:00"</item>
+    <item>"21:20"</item>
+    <item>"22:20"</item>
     <item>"23:50"</item>
 </string-array>
     <string-array name="vuelta_semana_california_central">
-        <item>"06:45"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"14:45"</item>
-        <item>"17:30"</item>
         <item>"n"</item>
-        <item>"19:30"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"00:00"</item>
     </string-array>
@@ -163,25 +155,22 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"15:00"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"19:45"</item>
         <item>"n"</item>
         <item>"00:10"</item>
     </string-array>
     <string-array name="vuelta_semana_california_william">
-        <item>"n"</item>
-        <item>"08:40"</item>
-        <item>"n"</item>
-        <item>"12:30"</item>
+        <item>"08:10"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"13:00"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+
     </string-array>
 
     <string-array name="ida_sabado_california_william">
@@ -192,13 +181,11 @@
     <item>"14:50"</item>
     <item>"n"</item>
     <item>"n"</item>
-    <item>"n"</item>
     <item>"20:50"</item>
     <item>"n"</item>
 </string-array>
     <string-array name="ida_sabado_california_3portena">
         <item>"06:00"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -218,7 +205,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_california_california">
         <item>"06:20"</item>
@@ -226,7 +212,6 @@
         <item>"10:30"</item>
         <item>"13:10"</item>
         <item>"n"</item>
-        <item>"16:20"</item>
         <item>"18:20"</item>
         <item>"20:00"</item>
         <item>"n"</item>
@@ -239,7 +224,6 @@
         <item>"10:50"</item>
         <item>"13:30"</item>
         <item>"15:20"</item>
-        <item>"16:40"</item>
         <item>"18:40"</item>
         <item>"20:20"</item>
         <item>"21:20"</item>
@@ -250,8 +234,7 @@
         <item>"07:40"</item>
         <item>"09:20"</item>
         <item>"12:30"</item>
-        <item>"14:20"</item>
-        <item>"15:20"</item>
+        <item>"14:10"</item>
         <item>"17:20"</item>
         <item>"19:20"</item>
         <item>"20:20"</item>
@@ -263,7 +246,6 @@
         <item>"09:40"</item>
         <item>"12:50"</item>
         <item>"n"</item>
-        <item>"15:40"</item>
         <item>"17:40"</item>
         <item>"19:40"</item>
         <item>"n"</item>
@@ -271,7 +253,6 @@
         <item>"00:10"</item>
     </string-array>
     <string-array name="vuelta_sabado_california_central">
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -291,7 +272,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"00:30"</item>
     </string-array>
     <string-array name="vuelta_sabado_california_william">
@@ -299,7 +279,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"14:50"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"20:50"</item>
@@ -316,11 +295,9 @@
 <item>"n"</item>
 <item>"n"</item>
 <item>"n"</item>
-<item>"n"</item>
     </string-array>
     <string-array name="ida_domingo_california_3portena">
         <item>"06:00"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -336,14 +313,12 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
     </string-array>
     <string-array name="ida_domingo_california_california">
         <item>"06:20"</item>
         <item>"08:20"</item>
         <item>"10:30"</item>
         <item>"13:10"</item>
-        <item>"16:20"</item>
         <item>"18:20"</item>
         <item>"20:00"</item>
         <item>"22:40"</item>
@@ -353,7 +328,6 @@
         <item>"08:40"</item>
         <item>"10:50"</item>
         <item>"13:30"</item>
-        <item>"16:40"</item>
         <item>"18:40"</item>
         <item>"20:20"</item>
         <item>"23:00"</item>
@@ -363,7 +337,6 @@
         <item>"07:40"</item>
         <item>"09:20"</item>
         <item>"12:30"</item>
-        <item>"15:20"</item>
         <item>"17:20"</item>
         <item>"19:20"</item>
         <item>"22:20"</item>
@@ -373,7 +346,6 @@
         <item>"08:00"</item>
         <item>"09:40"</item>
         <item>"12:50"</item>
-        <item>"15:40"</item>
         <item>"17:40"</item>
         <item>"19:40"</item>
         <item>"22:40"</item>
@@ -386,11 +358,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"00:20"</item>
     </string-array>
     <string-array name="vuelta_domingo_california_3portena">
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -407,241 +377,176 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
     </string-array>
     <!-- Ruta 24 -->
 
 
     <string-array name="ida_Asuncion">
-        <item>"05:42"</item>
-        <item>"16:42"</item>
+        <item>"06:02"</item>
+        <item>"16:52"</item>
     </string-array>
     <string-array name="ida_el15">
-        <item>"05:15"</item>
-        <item>"05:52"</item>
-        <item>"06:22"</item>
-        <item>"06:57"</item>
-        <item>"08:32"</item>
-        <item>"10:02" </item>
-        <item>"13:32"</item>
-        <item>"14:52"</item>
-        <item>"15:42"</item>
+        <item>"05:12"</item>
+        <item>"06:12"</item>
+        <item>"06:32"</item>
+        <item>"07:42"</item>
+        <item>"11:42"</item>
         <item>"17:02"</item>
     </string-array>
     <string-array name="ida_gustavoAndre">
-        <item>"04:50</item>
-        <item>"05:20"</item>
-        <item>"05:57"</item>
-        <item>"06:27"</item>
-        <item>"06:42"</item>
-        <item>"07:02"</item>
-        <item>"08:07"</item>
+        <item>"04:50"</item>
+        <item>"05:17"</item>
+        <item>"06:17"</item>
+        <item>"06:37"</item>
+        <item>"06:57"</item>
+        <item>"07:47"</item>
         <item>"08:37"</item>
-        <item>"09:07"</item>
-        <item>"10:07"</item>
-        <item>"10:37"</item>
-        <item>"11:07"</item>
-        <item>"12:07"</item>
-        <item>"12:37"</item>
-        <item>"13:17"</item>
+        <item>"09:47"</item>
+        <item>"10:47"</item>
+        <item>"11:47"</item>
+        <item>"12:17"</item>
         <item>"13:37"</item>
-        <item>"13:57"</item>
-        <item>"14:57"</item>
-        <item>"15:47"</item>
-        <item>"16:17"</item>
+        <item>"14:37"</item>
+        <item>"15:37"</item>
+        <item>"16:07"</item>
         <item>"17:07"</item>
-        <item>"17:47"</item>
-        <item>"18:37"</item>
-        <item>"19:37"</item>
-        <item>"20:07"</item>
-        <item>"20:37"</item>
-        <item>"21:07"</item>
-        <item>"21:47"</item>
+        <item>"18:17"</item>
+        <item>"18:47"</item>
+        <item>"19:47"</item>
+        <item>"20:47"</item>
+        <item>"21,17"</item>
         <item>"22:27"</item>
     </string-array>
     <string-array name="ida_costa">
         <item>"05:07"</item>
         <item>"05:37"</item>
         <item>"06:07"</item>
-        <item>"06:17"</item>
-        <item>"06:32"</item>
-        <item>"06:47"</item>
-        <item>"07:02"</item>
-        <item>"07:22"</item>
+        <item>"06:37"</item>
+        <item>"06:37"</item>
+        <item>"06:57"</item>
+        <item>"07:17"</item>
+        <item>"07:37"</item>
         <item>"07:57"</item>
+        <item>"08:07"</item>
         <item>"08:27"</item>
         <item>"08:57"</item>
-        <item>"09:27"</item>
-        <item>"09:57"</item>
-        <item>"10:27"</item>
-        <item>"10:57"</item>
-        <item>"11:27"</item>
-        <item>"11:57"</item>
-        <item>"12:27"</item>
-        <item>"12:57"</item>
-        <item>"13:27"</item>
-        <item>"13:57"</item>
-        <item>"14:17"</item>
-        <item>"14:37"</item>
+        <item>"09:37"</item>
+        <item>"10:07"</item>
+        <item>"10:37"</item>
+        <item>"11:07"</item>
+        <item>"11:37"</item>
+        <item>"12:07"</item>
+        <item>"12:37"</item>
+        <item>"13,17"</item>
+        <item>"13,57"</item>
+        <item>"14:27"</item>
         <item>"14:57"</item>
-        <item>"15:17"</item>
-        <item>"15:37"</item>
-        <item>"16:07"</item>
-        <item>"16:37"</item>
-        <item>"17:07"</item>
+        <item>"15:27"</item>
+        <item>"15:57"</item>
+        <item>"16:27"</item>
+        <item>"16:57"</item>
         <item>"17:27"</item>
-        <item>"17:47"</item>
-        <item>"18:07"</item>
-        <item>"18:27"</item>
-        <item>"18:57"</item>
-        <item>"19:27"</item>
-        <item>"19:57"</item>
-        <item>"20:27"</item>
-        <item>"20:57"</item>
-        <item>"21:27"</item>
-        <item>"22:07"</item>
+        <item>"18:02"</item>
+        <item>"18:37"</item>
+        <item>"19:07"</item>
+        <item>"19:37"</item>
+        <item>"20:07"</item>
+        <item>"20:37"</item>
+        <item>"21:07"</item>
+        <item>"21:37"</item>
+        <item>"22:17"</item>
         <item>"22:47"</item>
     </string-array>
     <string-array name="ida_lavalle">
         <item>"05:10"</item>
-       <item>"05:30"</item>
-       <item>"06:00"</item>
-       <item>"06:30"</item>
-       <item>"06:40"</item>
-       <item>"06:55"</item>
-       <item>"07:10"</item>
-       <item>"07:25"</item>
-       <item>"07:45"</item>
-       <item>"08:20"</item>
-       <item>"08:50"</item>
-       <item>"09:20"</item>
-       <item>"09:50"</item>
-       <item>"10:20"</item>
-       <item>"10:50"</item>
-       <item>"11:20"</item>
-       <item>"11:50"</item>
-       <item>"12:20"</item>
-       <item>"12:50"</item>
-       <item>"13:20"</item>
-       <item>"13:50"</item>
-       <item>"14:20"</item>
-       <item>"14:40"</item>
-       <item>"15:00"</item>
-       <item>"15:20"</item>
-       <item>"15:40"</item>
-       <item>"16:00"</item>
-       <item>"16:30"</item>
-       <item>"17:00"</item>
-       <item>"17:30"</item>
-       <item>"17:50"</item>
-       <item>"18:10"</item>
-       <item>"18:30"</item>
-       <item>"18:50"</item>
-       <item>"19:20"</item>
-       <item>"19:50"</item>
-       <item>"20:20"</item>
-       <item>"20:50"</item>
-       <item>"21:20"</item>
-       <item>"21:50"</item>
-       <item>"22:30"</item>
-       <item>"23:10"</item>
+        <item>"05:30"</item>
+        <item>"06:00"</item>
+        <item>"06:30"</item>
+        <item>"07:00"</item>
+        <item>"07:00"</item>
+        <item>"07:20"</item>
+        <item>"07:40"</item>
+        <item>"08:00"</item>
+        <item>"08:20"</item>
+        <item>"08:30"</item>
+        <item>"08:50"</item>
+        <item>"09:20"</item>
+        <item>"10:00"</item>
+        <item>"10:30"</item>
+        <item>"11:00"</item>
+        <item>"11:30"</item>
+        <item>"12:00"</item>
+        <item>"12:30"</item>
+        <item>"13:00"</item>
+        <item>"13:40"</item>
+        <item>"14:20"</item>
+        <item>"14:50"</item>
+        <item>"15:20"</item>
+        <item>"15:50"</item>
+        <item>"16:20"</item>
+        <item>"16:50"</item>
+        <item>"17:20"</item>
+        <item>"17:50"</item>
+        <item>"18:25"</item>
+        <item>"19:00"</item>
+        <item>"19:30"</item>
+        <item>"20:00"</item>
+        <item>"20:30"</item>
+        <item>"21:00"</item>
+        <item>"21:30"</item>
+        <item>"22:00"</item>
+        <item>"22:40"</item>
+        <item>"23:10"</item>
     </string-array>
     <string-array name="ida_mendoza">
         <item>"06:00"</item>
         <item>"06:20"</item>
         <item>"06:50"</item>
-        <item>"07:20"</item>
-        <item>"07:40"</item>
-        <item>"07:55"</item>
-        <item>"08:10"</item>
-        <item>"08:25"</item>
-        <item>"08:45"</item>
+        <item>"07:30"</item>
+        <item>"08:00"</item>
+        <item>"07:50"</item>
+        <item>"08:20"</item>
+        <item>"08:40"</item>
+        <item>"09:00"</item>
         <item>"09:20"</item>
+        <item>"09:30"</item>
         <item>"09:50"</item>
         <item>"10:20"</item>
-        <item>"10:50"</item>
-        <item>"11:20"</item>
-        <item>"11:50"</item>
-        <item>"12:20"</item>
-        <item>"12:50"</item>
-        <item>"13:20"</item>
-        <item>"13:50"</item>
-        <item>"14:20"</item>
-        <item>"14:50"</item>
+        <item>"11:00"</item>
+        <item>"11:30"</item>
+        <item>"12:00"</item>
+        <item>"12:30"</item>
+        <item>"13:00"</item>
+        <item>"13:30"</item>
+        <item>"14:00"</item>
+        <item>"14:40"</item>
         <item>"15:20"</item>
-        <item>"15:40"</item>
-        <item>"16:00"</item>
+        <item>"15:50"</item>
         <item>"16:20"</item>
-        <item>"16:40"</item>
-        <item>"17:00"</item>
-        <item>"17:30"</item>
-        <item>"18:00"</item>
-        <item>"18:30"</item>
+        <item>"16:50"</item>
+        <item>"17:20"</item>
+        <item>"17:50"</item>
+        <item>"18:20"</item>
         <item>"18:50"</item>
-        <item>"19:10"</item>
-        <item>"19:30"</item>
-        <item>"19:50"</item>
-        <item>"20:20"</item>
-        <item>"20:50"</item>
-        <item>"21:20"</item>
-        <item>"21:50"</item>
-        <item>"22:20"</item>
-        <item>"22:50"</item>
-        <item>"23:30"</item>
+        <item>"19:25"</item>
+        <item>"20:00"</item>
+        <item>"20:30"</item>
+        <item>"21:00"</item>
+        <item>"21:30"</item>
+        <item>"22:00"</item>
+        <item>"22:30"</item>
+        <item>"23:00"</item>
+        <item>"23:40"</item>
         <item>"00:00"</item>
     </string-array>
 
     <string-array name="vuelta_mendoza">
-    <item>"05:25"</item>
-    <item>"06:20"</item>
-    <item>"07:00"</item>
-    <item>"07:30"</item>
-    <item>"07:50"</item>
-    <item>"08:20"</item>
-    <item>"08:50"</item>
-    <item>"09:20"</item>
-    <item>"09:50"</item>
-    <item>"10:20"</item>
-    <item>"10:40"</item>
-    <item>"11:00"</item>
-    <item>"11:20"</item>
-    <item>"11:40"</item>
-    <item>"12:00"</item>
-    <item>"12:20"</item>
-    <item>"12:40"</item>
-    <item>"13:00"</item>
-    <item>"13:30"</item>
-    <item>"14:00"</item>
-    <item>"14:30"</item>
-    <item>"14:50"</item>
-    <item>"15:30"</item>
-    <item>"16:00"</item>
-    <item>"16:20"</item>
-    <item>"16:40"</item>
-    <item>"17:00"</item>
-    <item>"17:20"</item>
-    <item>"17:40"</item>
-    <item>"18:00"</item>
-    <item>"18:20"</item>
-    <item>"18:40"</item>
-    <item>"19:00"</item>
-    <item>"19:20"</item>
-    <item>"19:40"</item>
-    <item>"20:00"</item>
-    <item>"20:30"</item>
-    <item>"21:00"</item>
-    <item>"21:30"</item>
-    <item>"22:00"</item>
-    <item>"22:30"</item>
-    <item>"23:00"</item>
-    <item>"23:30"</item>
-    <item>"00:30"</item>
-</string-array>
-    <string-array name="vuelta_lavalle">
-        <item>"06:15"</item>
-        <item>"07:20"</item>
-        <item>"08:00"</item>
-        <item>"08:30"</item>
+        <item>"05:30"</item>
+        <item>"06:10"</item>
+        <item>"06:40"</item>
+        <item>"07:10"</item>
+        <item>"07:40"</item>
+        <item>"08:20"</item>
         <item>"08:50"</item>
         <item>"09:20"</item>
         <item>"09:50"</item>
@@ -653,23 +558,18 @@
         <item>"12:20"</item>
         <item>"12:40"</item>
         <item>"13:00"</item>
-        <item>"13:20"</item>
-        <item>"13:40"</item>
+        <item>"13:30"</item>
         <item>"14:00"</item>
         <item>"14:30"</item>
         <item>"15:00"</item>
-        <item>"15:30"</item>
-        <item>"15:50"</item>
-        <item>"16:30"</item>
+        <item>"15:40"</item>
+        <item>"16:20"</item>
         <item>"17:00"</item>
-        <item>"17:20"</item>
-        <item>"17:40"</item>
+        <item>"17:30"</item>
         <item>"18:00"</item>
-        <item>"18:20"</item>
-        <item>"18:40"</item>
+        <item>"18:30"</item>
         <item>"19:00"</item>
-        <item>"19:20"</item>
-        <item>"19:40"</item>
+        <item>"19:30"</item>
         <item>"20:00"</item>
         <item>"20:20"</item>
         <item>"20:40"</item>
@@ -679,25 +579,61 @@
         <item>"22:30"</item>
         <item>"23:00"</item>
         <item>"23:30"</item>
-        <item>"23:50"</item>
+        <item>"00:30"</item>
+</string-array>
+    <string-array name="vuelta_lavalle">
+        <item>"06:20"</item>
+        <item>"07:10"</item>
+        <item>"07:40"</item>
+        <item>"08:10"</item>
+        <item>"08:40"</item>
+        <item>"09:20"</item>
+        <item>"09:50"</item>
+        <item>"10:20"</item>
+        <item>"10:50"</item>
+        <item>"11:20"</item>
+        <item>"11:50"</item>
+        <item>"12:20"</item>
+        <item>"12:40"</item>
+        <item>"13:00"</item>
+        <item>"13:20"</item>
+        <item>"13:40"</item>
+        <item>"14:00"</item>
+        <item>"14:30"</item>
+        <item>"15:00"</item>
+        <item>"15:30"</item>
+        <item>"16:00"</item>
+        <item>"16:40"</item>
+        <item>"17:20"</item>
+        <item>"18:00"</item>
+        <item>"18:30"</item>
+        <item>"19:00"</item>
+        <item>"19:30"</item>
+        <item>"20:00"</item>
+        <item>"20:30"</item>
+        <item>"21:00"</item>
+        <item>"21:20"</item>
+        <item>"21:40"</item>
+        <item>"22:00"</item>
+        <item>"22:30"</item>
+        <item>"23:00"</item>
+        <item>"23:30"</item>
+        <item>"00:00"</item>
         <item>"00:20"</item>
         <item>"01:20"</item>
-
     </string-array>
     <string-array name="vuelta_costa">
-        <item>"06:35"</item>
-        <item>"07:10"</item>
-        <item>"07:43"</item>
-        <item>"08:23"</item>
-        <item>"08:53"</item>
-        <item>"09:13"</item>
+        <item>"06:40"</item>
+        <item>"07:30"</item>
+        <item>"08:03"</item>
+        <item>"08:33"</item>
+        <item>"09:03"</item>
         <item>"09:43"</item>
         <item>"10:13"</item>
         <item>"10:43"</item>
         <item>"11:13"</item>
         <item>"11:43"</item>
-        <item>"12:03"</item>
-        <item>"12:23"</item>
+        <item>"12:13"</item>
         <item>"12:43"</item>
         <item>"13:03"</item>
         <item>"13:23"</item>
@@ -707,74 +643,59 @@
         <item>"14:53"</item>
         <item>"15:23"</item>
         <item>"15:53"</item>
-        <item>"16:13"</item>
-        <item>"16:53"</item>
-        <item>"17:23"</item>
+        <item>"16:23"</item>
+        <item>"17:03"</item>
         <item>"17:43"</item>
-        <item>"18:03"</item>
         <item>"18:23"</item>
-        <item>"18:43"</item>
-        <item>"19:03"</item>
+        <item>"18:53"</item>
         <item>"19:23"</item>
-        <item>"19:43"</item>
-        <item>"20:03"</item>
+        <item>"19:53"</item>
         <item>"20:23"</item>
-        <item>"20:43"</item>
-        <item>"21:03"</item>
+        <item>"20:53"</item>
         <item>"21:23"</item>
-        <item>"21:53"</item>
+        <item>"21:43"</item>
+        <item>"22:03"</item>
         <item>"22:23"</item>
         <item>"22:53"</item>
         <item>"23:23"</item>
         <item>"23:50"</item>
-        <item>"00:10"</item>
+        <item>"00:20"</item>
         <item>"01:35"</item>
     </string-array>
     <string-array name="vuelta_gvoAndre">
-        <item>"06:52"</item>
-        <item>"08:03"</item>
-        <item>"08:43"</item>
-        <item>"09:13"</item>
-        <item>"09:33"</item>
+        <item>"07:00"</item>
+        <item>"07:50"</item>
+        <item>"09:23"</item>
         <item>"10:33"</item>
-        <item>"11:03"</item>
+        <item>"11:33"</item>
         <item>"12:03"</item>
-        <item>"12:23"</item>
-        <item>"12:43"</item>
-        <item>"13:03"</item>
+        <item>"12:33"</item>
         <item>"13:23"</item>
-        <item>"13:43"</item>
         <item>"14:03"</item>
+        <item>"14:43"</item>
         <item>"15:13"</item>
         <item>"16:13"</item>
-        <item>"16:33"</item>
-        <item>"17:43"</item>
-        <item>"18:23"</item>
-        <item>"19:03"</item>
-        <item>"19:23"</item>
-        <item>"20:03"</item>
-        <item>"20:23"</item>
+        <item>"17:23"</item>
+        <item>"18:03"</item>
+        <item>"19:13"</item>
+        <item>"20:13"</item>
         <item>"20:43"</item>
-        <item>"21:03"</item>
-        <item>"21:23"</item>
+        <item>"21:13"</item>
         <item>"21:43"</item>
-        <item>"22:13"</item>
+        <item>"22:03"</item>
         <item>"22:43"</item>
-        <item>"23:10"</item>
+        <item>"23:13"</item>
+        <item>"23:43"</item>
     </string-array>
     <string-array name="vuelta_el15">
-        <item>"06:57"</item>
-        <item>"08:08"</item>
-        <item>"09:18"</item>
-        <item>"13:28"</item>
-        <item>"14:08"</item>
-        <item>"15:18"</item>
-        <item>"16:38"</item>
-        <item>"22:18"</item>
+        <item>"07:05"</item>
+        <item>"11:38"</item>
+        <item>"16:18"</item>
+        <item>"22:08"</item>
         </string-array>
     <string-array name="vuelta_asuncion">
-        <item>"16:48"</item>
-        <item>"22:28"</item>
+        <item>"16:28"</item>
+        <item>"22:18"</item>
     </string-array>
 
 
@@ -1264,9 +1185,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"05:50"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1279,7 +1198,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"11:40"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"13:45"</item>
@@ -1287,6 +1205,8 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"15:35"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1306,10 +1226,8 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"05:55"</item>
         <item>"06:40"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1321,7 +1239,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"11:45"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"13:50"</item>
@@ -1335,7 +1252,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"19:10"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"19:15"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1347,23 +1266,20 @@
         <item>"04:50"</item>
         <item>"n"</item>
         <item>"05:45"</item>
-        <item>"06:10"</item>
         <item>"06:00"</item>
         <item>"06:00"</item>
         <item>"06:45"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"08:00"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"08:15"</item>
         <item>"n"</item>
         <item>"09:15"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"10:55"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"11:50"</item>
+        <item>"12:25"</item>
         <item>"n"</item>
         <item>"12:55"</item>
         <item>"13:55"</item>
@@ -1371,16 +1287,18 @@
         <item>"14:55"</item>
         <item>"n"</item>
         <item>"15:45"</item>
+        <item>"16:20"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"17:15"</item>
         <item>"n"</item>
         <item>"18:15"</item>
         <item>"n"</item>
-        <item>"19:15"</item>
+        <item>"n"</item>
+        <item>"19:20"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
+        <item>"21:05"</item>
         <item>"21:55"</item>
         <item>"21:45"</item>
     </string-array>
@@ -1389,7 +1307,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"05:55"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1432,13 +1349,11 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"06:10"</item>
         <item>"07:00"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"n"</item>
+        <item>"08:10"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"09:30"</item>
@@ -1448,12 +1363,13 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"13:10"</item>
         <item>"n"</item>
         <item>"14:40"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"16:30"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1473,7 +1389,6 @@
         <item>"05:00"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"06:20"</item>
         <item>"06:10"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1481,15 +1396,13 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"08:25"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"12:00"</item>
+        <item>"12:35"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"14:05"</item>
@@ -1499,9 +1412,11 @@
         <item>"15:55"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"17:25"</item>
         <item>"n"</item>
         <item>"18:25"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1515,23 +1430,20 @@
         <item>"05:05"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"06:25"</item>
         <item>"06:15"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"07:30"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"08:30"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"10:30"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"12:05"</item>
+        <item>"12:40"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"14:10"</item>
@@ -1541,9 +1453,11 @@
         <item>"16:00"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"17:30"</item>
         <item>"n"</item>
         <item>"18:30"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"20:10"</item>
@@ -1557,23 +1471,20 @@
         <item>"05:15"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"06:35"</item>
         <item>"06:25"</item>
         <item>"n"</item>
         <item>"07:10"</item>
         <item>"n"</item>
-        <item>"07:40"</item>
+        <item>"08:10"</item>
+        <item>"08:20"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"08:40"</item>
         <item>"n"</item>
         <item>"09:40"</item>
         <item>"n"</item>
         <item>"10:40"</item>
         <item>"11:20"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"12:15"</item>
+        <item>"12:50"</item>
         <item>"n"</item>
         <item>"13:20"</item>
         <item>"14:20"</item>
@@ -1581,11 +1492,13 @@
         <item>"15:20"</item>
         <item>"n"</item>
         <item>"16:10"</item>
+        <item>"16:40"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"17:40"</item>
         <item>"n"</item>
         <item>"18:40"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"19:40"</item>
         <item>"20:20"</item>
@@ -1599,7 +1512,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"06:05"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1619,9 +1531,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"n"</item>
         <item>"15:40"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1644,7 +1556,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"07:30"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1665,8 +1576,8 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"17:20"</item>
         <item>"n"</item>
-        <item>"17:10"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1683,10 +1594,8 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"06:40"</item>
         <item>"n"</item>
         <item>"06:15"</item>
-        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1719,20 +1628,19 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_salvatierra">
         <item>"n"</item>
         <item>"05:25"</item>
         <item>"n"</item>
         <item>"06:40"</item>
-        <item>"n"</item>
         <item>"06:35"</item>
         <item>"n"</item>
         <item>"07:20"</item>
         <item>"07:40"</item>
-        <item>"07:50"</item>
-        <item>"n"</item>
-        <item>"08:40"</item>
+        <item>"08:00"</item>
+        <item>"08:30"</item>
         <item>"08:50"</item>
         <item>"n"</item>
         <item>"09:50"</item>
@@ -1740,20 +1648,21 @@
         <item>"10:50"</item>
         <item>"11:30"</item>
         <item>"n"</item>
+        <item>"13:00"</item>
         <item>"12:30"</item>
-        <item>"12:25"</item>
-        <item>"n"</item>
         <item>"13:30"</item>
         <item>"14:30"</item>
         <item>"15:00"</item>
         <item>"15:30"</item>
         <item>"15:50"</item>
         <item>"16:20"</item>
+        <item>"16:50"</item>
         <item>"n"</item>
-        <item>"17:20"</item>
+        <item>"17:30"</item>
         <item>"17:50"</item>
         <item>"n"</item>
         <item>"18:50"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"19:50"</item>
         <item>"20:30"</item>
@@ -1802,21 +1711,18 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_lavalle">
         <item>"05:00"</item>
         <item>"05:35"</item>
         <item>"06:00"</item>
         <item>"06:50"</item>
-        <item>"07:00"</item>
         <item>"06:50"</item>
         <item>"n"</item>
         <item>"07:30"</item>
         <item>"07:50"</item>
-        <item>"08:00"</item>
-        <item>"08:20"</item>
-        <item>"08:50"</item>
+        <item>"08:10"</item>
+        <item>"08:40"</item>
         <item>"09:00"</item>
         <item>"09:30"</item>
         <item>"10:00"</item>
@@ -1824,9 +1730,8 @@
         <item>"11:00"</item>
         <item>"11:40"</item>
         <item>"12:30"</item>
+        <item>"13:10"</item>
         <item>"12:40"</item>
-        <item>"12:35"</item>
-        <item>"13:20"</item>
         <item>"13:40"</item>
         <item>"14:40"</item>
         <item>"15:10"</item>
@@ -1834,12 +1739,14 @@
         <item>"16:00"</item>
         <item>"16:30"</item>
         <item>"17:00"</item>
-        <item>"17:30"</item>
+        <item>"17:20"</item>
+        <item>"17:40"</item>
         <item>"18:00"</item>
         <item>"18:30"</item>
         <item>"19:00"</item>
         <item>"19:30"</item>
-        <item>"20:00"</item>
+        <item>"19:55"</item>
+        <item>"20:10"</item>
         <item>"20:40"</item>
         <item>"21:30"</item>
         <item>"21:50"</item>
@@ -1851,7 +1758,6 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"07:20"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1867,7 +1773,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"12:45"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1893,14 +1799,12 @@
         <item>"06:45"</item>
         <item>"06:10"</item>
         <item>"07:03"</item>
-        <item>"n"</item>
         <item>"07:03"</item>
         <item>"06:23"</item>
         <item>"07:40"</item>
         <item>"08:03"</item>
-        <item>"08:10"</item>
-        <item>"08:30"</item>
-        <item>"09:03"</item>
+        <item>"08:20"</item>
+        <item>"08:53"</item>
         <item>"09:13"</item>
         <item>"09:43"</item>
         <item>"10:13"</item>
@@ -1908,22 +1812,23 @@
         <item>"11:13"</item>
         <item>"11:53"</item>
         <item>"12:40"</item>
+        <item>"13:23"</item>
         <item>"12:53"</item>
-        <item>"n"</item>
-        <item>"13:33"</item>
         <item>"13:53"</item>
         <item>"14:53"</item>
         <item>"15:23"</item>
         <item>"15:50"</item>
         <item>"16:13"</item>
         <item>"16:43"</item>
-        <item>"17:13"</item>
-        <item>"17:40"</item>
+        <item>"17:10"</item>
+        <item>"17:33"</item>
+        <item>"17:53"</item>
         <item>"18:13"</item>
-        <item>"18:43"</item>
+        <item>"18:40"</item>
         <item>"19:13"</item>
-        <item>"19:40"</item>
-        <item>"20:13"</item>
+        <item>"19:43"</item>
+        <item>"20:05"</item>
+        <item>"20:23"</item>
         <item>"20:53"</item>
         <item>"n"</item>
         <item>"22:03"</item>
@@ -1939,9 +1844,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"n"</item>
-        <item>"08:40"</item>
+        <item>"08:30"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1955,16 +1858,17 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"16:00"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
-        <item>"17:50"</item>
-        <item>"n"</item>
+        <item>"17:20"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"19:50"</item>
+        <item>"n"</item>
+        <item>"18:50"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"20:15"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -1977,37 +1881,36 @@
         <item>"06:00"</item>
         <item>"06:40"</item>
         <item>"07:20"</item>
-        <item>"n"</item>
         <item>"07:20"</item>
         <item>"06:40"</item>
         <item>"08:00"</item>
         <item>"08:20"</item>
-        <item>"08:30"</item>
-        <item>"09:00"</item>
-        <item>"09:20"</item>
-        <item>"09:30"</item>
+        <item>"08:50"</item>
+        <item>"09:10"</item>
+        <item>"14:00"</item>
         <item>"10:00"</item>
         <item>"10:30"</item>
         <item>"n"</item>
         <item>"11:30"</item>
         <item>"12:10"</item>
         <item>"13:10"</item>
+        <item>"13:40"</item>
         <item>"13:10"</item>
-        <item>"n"</item>
-        <item>"13:50"</item>
         <item>"14:10"</item>
         <item>"15:10"</item>
         <item>"15:40"</item>
         <item>"16:20"</item>
         <item>"16:30"</item>
         <item>"17:00"</item>
-        <item>"17:30"</item>
+        <item>"17:40"</item>
+        <item>"17:50"</item>
         <item>"18:10"</item>
         <item>"18:30"</item>
-        <item>"19:00"</item>
+        <item>"19:10"</item>
         <item>"19:30"</item>
-        <item>"20:10"</item>
-        <item>"20:30"</item>
+        <item>"20:00"</item>
+        <item>"20:35"</item>
+        <item>"20:40"</item>
         <item>"21:10"</item>
         <item>"n"</item>
         <item>"22:20"</item>
@@ -2019,14 +1922,12 @@
         <item>"06:25"</item>
         <item>"07:10"</item>
         <item>"07:50"</item>
-        <item>"n"</item>
         <item>"07:50"</item>
         <item>"07:10"</item>
         <item>"08:30"</item>
         <item>"08:50"</item>
-        <item>"09:00"</item>
-        <item>"09:30"</item>
-        <item>"09:50"</item>
+        <item>"09:20"</item>
+        <item>"09:40"</item>
         <item>"10:00"</item>
         <item>"10:30"</item>
         <item>"11:00"</item>
@@ -2034,22 +1935,23 @@
         <item>"12:00"</item>
         <item>"12:40"</item>
         <item>"13:40"</item>
+        <item>"14:10"</item>
         <item>"13:40"</item>
-        <item>"n"</item>
-        <item>"14:20"</item>
         <item>"14:40"</item>
         <item>"15:40"</item>
         <item>"16:10"</item>
         <item>"16:50"</item>
         <item>"17:00"</item>
         <item>"17:30"</item>
+        <item>"18:10"</item>
         <item>"18:00"</item>
         <item>"18:40"</item>
         <item>"19:00"</item>
-        <item>"19:30"</item>
+        <item>"19:40"</item>
         <item>"20:00"</item>
-        <item>"20:40"</item>
-        <item>"21:00"</item>
+        <item>"20:30"</item>
+        <item>"21:05"</item>
+        <item>"21:10"</item>
         <item>"21:40"</item>
         <item>"n"</item>
         <item>"22:50"</item>
@@ -2061,7 +1963,7 @@
     <string-array name="vuelta_semana_40_mendoza">
         <item>"05:50"</item>
         <item>"n"</item>
-        <item>"06:25"</item>
+        <item>"06:20"</item>
         <item>"06:40"</item>
         <item>"07:20"</item>
         <item>"08:00"</item>
@@ -2076,8 +1978,8 @@
         <item>"12:05"</item>
         <item>"n"</item>
         <item>"12:40"</item>
-        <item>"13:10"</item>
         <item>"13:45"</item>
+        <item>"13:10"</item>
         <item>"14:15"</item>
         <item>"14:30"</item>
         <item>"15:15"</item>
@@ -2087,12 +1989,14 @@
         <item>"17:15"</item>
         <item>"17:45"</item>
         <item>"18:15"</item>
+        <item>"18:30"</item>
         <item>"18:45"</item>
         <item>"19:15"</item>
         <item>"19:45"</item>
         <item>"20:15"</item>
         <item>"20:45"</item>
-        <item>"21:20"</item>
+        <item>"21:00"</item>
+        <item>"21:30"</item>
         <item>"21:55"</item>
         <item>"22:30"</item>
         <item>"00:15"</item>
@@ -2100,7 +2004,7 @@
     <string-array name="vuelta_semana_40_borbollon">
         <item>"06:20"</item>
         <item>"06:30"</item>
-        <item>"06:55"</item>
+        <item>"06:50"</item>
         <item>"07:10"</item>
         <item>"07:50"</item>
         <item>"08:30"</item>
@@ -2115,8 +2019,8 @@
         <item>"12:35"</item>
         <item>"n"</item>
         <item>"13:10"</item>
-        <item>"13:40"</item>
         <item>"14:15"</item>
+        <item>"13:40"</item>
         <item>"14:45"</item>
         <item>"15:00"</item>
         <item>"15:45"</item>
@@ -2124,14 +2028,16 @@
         <item>"16:45"</item>
         <item>"17:15"</item>
         <item>"17:45"</item>
-        <item>"18:25"</item>
+        <item>"18:15"</item>
         <item>"18:45"</item>
+        <item>"19:00"</item>
         <item>"19:15"</item>
         <item>"19:45"</item>
         <item>"20:05"</item>
         <item>"20:45"</item>
         <item>"21:15"</item>
-        <item>"21:50"</item>
+        <item>"21:30"</item>
+        <item>"22:00"</item>
         <item>"22:25"</item>
         <item>"23:00"</item>
         <item>"00:45"</item>
@@ -2159,18 +2065,20 @@
         <item>"15:05"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"16:20"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"18:45"</item>
+        <item>"18:05"</item>
         <item>"n"</item>
-        <item>"19:35"</item>
+        <item>"n"</item>
+        <item>"19:20"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"21:05"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"22:20"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2178,7 +2086,7 @@
     <string-array name="vuelta_semana_40_cruce">
         <item>"06:37"</item>
         <item>"07:00"</item>
-        <item>"07:12"</item>
+        <item>"07:10"</item>
         <item>"07:27"</item>
         <item>"08:20"</item>
         <item>"08:47"</item>
@@ -2193,23 +2101,25 @@
         <item>"13:05"</item>
         <item>"n"</item>
         <item>"13:27"</item>
-        <item>"13:57"</item>
         <item>"14:32"</item>
+        <item>"13:57"</item>
         <item>"15:15"</item>
         <item>"15:17"</item>
         <item>"16:02"</item>
         <item>"16:30"</item>
         <item>"17:02"</item>
         <item>"17:32"</item>
-        <item>"18:02"</item>
-        <item>"18:55"</item>
+        <item>"18:15"</item>
+        <item>"18:32"</item>
         <item>"19:02"</item>
-        <item>"19:45"</item>
+        <item>"21:00"</item>
+        <item>"19:32"</item>
         <item>"20:02"</item>
         <item>"20:23"</item>
         <item>"21:15"</item>
         <item>"21:35"</item>
-        <item>"22:07"</item>
+        <item>"21:47"</item>
+        <item>"22:30"</item>
         <item>"22:42"</item>
         <item>"23:17"</item>
         <item>"00:52"</item>
@@ -2217,7 +2127,7 @@
     <string-array name="vuelta_semana_40_lavalle">
         <item>"06:50"</item>
         <item>"07:10"</item>
-        <item>"07:25"</item>
+        <item>"n"</item>
         <item>"07:40"</item>
         <item>"08:30"</item>
         <item>"09:00"</item>
@@ -2232,23 +2142,25 @@
         <item>"13:15"</item>
         <item>"13:40"</item>
         <item>"13:40"</item>
-        <item>"14:10"</item>
         <item>"14:45"</item>
+        <item>"14:10"</item>
         <item>"15:25"</item>
         <item>"15:30"</item>
         <item>"16:15"</item>
         <item>"16:40"</item>
         <item>"17:15"</item>
         <item>"18:00"</item>
-        <item>"18:15"</item>
-        <item>"19:05"</item>
+        <item>"18:25"</item>
+        <item>"18:45"</item>
         <item>"19:15"</item>
-        <item>"20:00"</item>
+        <item>"19:40"</item>
+        <item>"19:45"</item>
         <item>"20:20"</item>
         <item>"20:40"</item>
         <item>"21:25"</item>
         <item>"n"</item>
-        <item>"22:20"</item>
+        <item>"22:00"</item>
+        <item>"22:40"</item>
         <item>"22:55"</item>
         <item>"23:30"</item>
         <item>"01:05"</item>
@@ -2291,10 +2203,14 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="vuelta_semana_40_verjel">
         <item>"n"</item>
-        <item>"07:30"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2333,12 +2249,12 @@
     </string-array>
     <string-array name="vuelta_semana_40_salvatierra">
         <item>"07:00"</item>
+        <item>"07:20"</item>
         <item>"n"</item>
-        <item>"07:35"</item>
         <item>"07:50"</item>
         <item>"08:40"</item>
         <item>"n"</item>
-        <item>"00:00"</item>
+        <item>"09:45"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"10:45"</item>
@@ -2349,8 +2265,8 @@
         <item>"n"</item>
         <item>"13:50"</item>
         <item>"13:50"</item>
-        <item>"14:20"</item>
         <item>"14:55"</item>
+        <item>"14:20"</item>
         <item>"15:35"</item>
         <item>"n"</item>
         <item>"16:25"</item>
@@ -2360,12 +2276,14 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"19:25"</item>
-        <item>"20:10"</item>
+        <item>"n"</item>
+        <item>"19:55"</item>
         <item>"20:30"</item>
         <item>"20:50"</item>
         <item>"21:35"</item>
         <item>"n"</item>
-        <item>"22:30"</item>
+        <item>"22:10"</item>
+        <item>"n"</item>
         <item>"23:05"</item>
         <item>"23:40"</item>
         <item>"n"</item>
@@ -2403,7 +2321,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"21:40"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2439,7 +2359,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"20:40"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2466,8 +2388,9 @@
         <item>"n"</item>
         <item>"14:20"</item>
         <item>"n"</item>
-        <item>"n"</item>
         <item>"15:05"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2486,11 +2409,12 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="vuelta_semana_40_3demayo">
         <item>"n"</item>
+        <item>"07:30"</item>
         <item>"n"</item>
-        <item>"07:45"</item>
         <item>"08:00"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2505,8 +2429,8 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"14:00"</item>
-        <item>"14:30"</item>
         <item>"n"</item>
+        <item>"14:30"</item>
         <item>"15:45"</item>
         <item>"n"</item>
         <item>"16:35"</item>
@@ -2516,12 +2440,14 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"19:35"</item>
-        <item>"20:20"</item>
+        <item>"n"</item>
+        <item>"20:05"</item>
         <item>"n"</item>
         <item>"21:00"</item>
         <item>"21:45"</item>
         <item>"n"</item>
-        <item>"22:40"</item>
+        <item>"22:20"</item>
+        <item>"n"</item>
         <item>"23:15"</item>
         <item>"23:50"</item>
         <item>"n"</item>
@@ -2529,7 +2455,7 @@
     <string-array name="vuelta_semana_40_sguazini">
         <item>"n"</item>
         <item>"n"</item>
-        <item>"07:55"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2544,9 +2470,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"14:40"</item>
         <item>"n"</item>
-        <item>"15:55"</item>
         <item>"n"</item>
         <item>"16:45"</item>
         <item>"n"</item>
@@ -2555,12 +2481,14 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"19:45"</item>
-        <item>"20:30"</item>
+        <item>"n"</item>
+        <item>"20:15"</item>
         <item>"n"</item>
         <item>"21:10"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"22:50"</item>
+        <item>"22:30"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"00:00"</item>
         <item>"n"</item>
@@ -2568,7 +2496,7 @@
     <string-array name="vuelta_semana_40_croco">
         <item>"n"</item>
         <item>"n"</item>
-        <item>"08:00"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2583,9 +2511,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"14:45"</item>
         <item>"n"</item>
-        <item>"16:00"</item>
         <item>"n"</item>
         <item>"16:50"</item>
         <item>"n"</item>
@@ -2594,12 +2522,14 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"20:35"</item>
+        <item>"n"</item>
+        <item>"20:20"</item>
         <item>"n"</item>
         <item>"21:15"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"22:55"</item>
+        <item>"22:35"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"00:05"</item>
         <item>"n"</item>
@@ -2634,7 +2564,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"21:10"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2646,7 +2578,7 @@
     <string-array name="vuelta_semana_40_andacollo">
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
+        <item>"07:20"</item>
         <item>"08:10"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2663,7 +2595,7 @@
         <item>"14:10"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"n"</item>
+        <item>"15:55"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2676,7 +2608,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"21:45"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"23:25"</item>
         <item>"n"</item>
@@ -2685,7 +2619,7 @@
     <string-array name="vuelta_semana_40_jocolikm43">
         <item>"n"</item>
         <item>"n"</item>
-        <item>"08:10"</item>
+        <item>"07:30"</item>
         <item>"08:25"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2700,8 +2634,8 @@
         <item>"n"</item>
         <item>"14:40"</item>
         <item>"14:25"</item>
-        <item>"14:55"</item>
         <item>"n"</item>
+        <item>"14:55"</item>
         <item>"16:10"</item>
         <item>"n"</item>
         <item>"17:00"</item>
@@ -2711,12 +2645,14 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"20:45"</item>
+        <item>"n"</item>
+        <item>"20:30"</item>
         <item>"n"</item>
         <item>"21:25"</item>
         <item>"n"</item>
         <item>"21:55"</item>
-        <item>"23:05"</item>
+        <item>"22:45"</item>
+        <item>"n"</item>
         <item>"23:35"</item>
         <item>"00:15"</item>
         <item>"n"</item>
@@ -2731,7 +2667,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"12:25"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2739,8 +2675,8 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"15:00"</item>
         <item>"n"</item>
+        <item>"15:00"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2752,7 +2688,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
         <item>"21:30"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2770,11 +2708,12 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"11:30"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
-        <item>"13:30"</item>
+        <item>"n"</item>
+        <item>"13:30:00"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2792,6 +2731,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"21:35"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2834,7 +2774,7 @@
         <item>"n"</item>
         <item>"21:45"</item>
         <item>"n"</item>
-
+        <item>"n"</item>
 
     </string-array>
     <string-array name="ida_sabado_40_km47esc">
@@ -2871,6 +2811,7 @@
         <item>"n"</item>
         <item>"21:50"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_jocolikm43">
         <item>"n"</item>
@@ -2906,6 +2847,7 @@
         <item>"n"</item>
         <item>"21:55"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_oscarmendoza">
         <item>"n"</item>
@@ -2927,6 +2869,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"15:20"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2976,6 +2919,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_croco">
         <item>"n"</item>
@@ -3010,6 +2954,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"22:05"</item>
+        <item>"n"</item>
         <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_sguazini">
@@ -3046,6 +2991,7 @@
         <item>"n"</item>
         <item>"22:10"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_3demayo">
         <item>"n"</item>
@@ -3081,6 +3027,7 @@
         <item>"n"</item>
         <item>"22:20"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_sanfrancisco">
         <item>"n"</item>
@@ -3113,6 +3060,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"21:00"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -3151,8 +3099,10 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_blacolm">
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -3221,8 +3171,10 @@
         <item>"n"</item>
         <item>"22:30"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_elverjel">
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -3291,6 +3243,7 @@
         <item>"21:50"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_sabado_40_lavalle">
         <item>"n"</item>
@@ -3326,6 +3279,7 @@
         <item>"22:10"</item>
         <item>"22:40"</item>
         <item>"n"</item>
+        <item>"22:50"</item>
     </string-array>
     <string-array name="ida_sabado_40_cruce">
         <item>"05:10"</item>
@@ -3361,6 +3315,7 @@
         <item>"22:20"</item>
         <item>"n"</item>
         <item>"23:03"</item>
+        <item>"23:03"</item>
     </string-array>
     <string-array name="ida_sabado_40_pastal">
         <item>"n"</item>
@@ -3394,6 +3349,7 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"22:30"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
     </string-array>
@@ -3431,6 +3387,7 @@
         <item>"22:50"</item>
         <item>"n"</item>
         <item>"23:20"</item>
+        <item>"23:20"</item>
     </string-array>
     <string-array name="ida_sabado_40_mendoza">
         <item>"05:50"</item>
@@ -3465,6 +3422,7 @@
         <item>"n"</item>
         <item>"23:20"</item>
         <item>"n"</item>
+        <item>"23:50"</item>
         <item>"23:50"</item>
     </string-array>
 
