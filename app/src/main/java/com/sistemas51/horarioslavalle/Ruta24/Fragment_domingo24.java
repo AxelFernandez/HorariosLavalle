@@ -28,6 +28,7 @@ public class Fragment_domingo24 extends Fragment {
     }
     RecyclerView forecastsRecyclerView;
     String[] arraydomingo;
+    String[] arraydomingollegada;
     Horario horario = new Horario();
     int horas; int minutos; //Usados solamente para sumar mas adelante
 
@@ -44,163 +45,107 @@ public class Fragment_domingo24 extends Fragment {
         Resources res = getResources();
 
 
-        int idaovuelta = 0;//ida es 0, vuelta es 1
-        if (origennum<llegadanum) {
-            idaovuelta=0;
+        if (origennum < llegadanum) {
 
             if (origennum == 0) {
-
                 arraydomingo = res.getStringArray(R.array.domingo_ida_asuncion);
-
-                horas= horario.getidahoras(origennum,llegadanum);
-                minutos= horario.getidaminutos(origennum,llegadanum);
             }
             if (origennum == 1) {
-
                 arraydomingo = res.getStringArray(R.array.domingo_ida_el15);
-                horas= horario.getidahoras(origennum,llegadanum);
-                minutos= horario.getidaminutos(origennum,llegadanum);
-
             }
             if (origennum == 2) {
-
                 arraydomingo = res.getStringArray(R.array.domingo_ida_gustavoAndre);
-                horas= horario.getidahoras(origennum,llegadanum);
-                minutos= horario.getidaminutos(origennum,llegadanum);
-
             }
             if (origennum == 3) {
-
                 arraydomingo = res.getStringArray(R.array.domingo_ida_costa);
-                horas= horario.getidahoras(origennum,llegadanum);
-                minutos= horario.getidaminutos(origennum,llegadanum);
-
             }
             if (origennum == 4) {
-
                 arraydomingo = res.getStringArray(R.array.domingo_ida_lavalle);
-                horas= horario.getidahoras(origennum,llegadanum);
-                minutos= horario.getidaminutos(origennum,llegadanum);
-
             }
             if (origennum == 5) {
-
                 arraydomingo = res.getStringArray(R.array.domingo_ida_mendoza);
-                horas= horario.getidahoras(origennum,llegadanum);
-                minutos= horario.getidaminutos(origennum,llegadanum);
 
             }
-        }
 
-        if (origennum>llegadanum) {
-
-            idaovuelta=1;
             if (llegadanum == 0) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_asuncion);
-                horas= horario.getvueltahoras(origennum,llegadanum);
-                minutos= horario.getvueltaminutos(origennum,llegadanum);
+                arraydomingollegada = res.getStringArray(R.array.domingo_ida_asuncion);
             }
             if (llegadanum == 1) {
-
-                arraydomingo = res.getStringArray(R.array.sabado_vuelta_el15);
-                horas= horario.getvueltahoras(origennum,llegadanum);
-                minutos= horario.getvueltaminutos(origennum,llegadanum);
+                arraydomingollegada = res.getStringArray(R.array.domingo_ida_el15);
             }
             if (llegadanum == 2) {
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_gustavoAndre);
-                horas= horario.getvueltahoras(origennum,llegadanum);
-                minutos= horario.getvueltaminutos(origennum,llegadanum);
+                arraydomingollegada = res.getStringArray(R.array.domingo_ida_gustavoAndre);
             }
             if (llegadanum == 3) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_costa);
-                horas= horario.getvueltahoras(origennum,llegadanum);
-                minutos= horario.getvueltaminutos(origennum,llegadanum);
+                arraydomingollegada = res.getStringArray(R.array.domingo_ida_costa);
             }
             if (llegadanum == 4) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_lavalle);
-                horas= horario.getvueltahoras(origennum,llegadanum);
-                minutos= horario.getvueltaminutos(origennum,llegadanum);
+                arraydomingollegada = res.getStringArray(R.array.domingo_ida_lavalle);
             }
             if (llegadanum == 5) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_mendoza);
-                horas= horario.getvueltahoras(origennum,llegadanum);
-                minutos= horario.getvueltaminutos(origennum,llegadanum);
+                arraydomingollegada = res.getStringArray(R.array.domingo_ida_mendoza);
 
             }
+
         }
 
-        if(llegadanum==origennum){
-            horas=0;minutos=0;
-            idaovuelta=3;
+        if (origennum > llegadanum) {
+
             if (llegadanum == 0) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_asuncion);
-
+                arraydomingollegada = res.getStringArray(R.array.domingo_vuelta_asuncion);
             }
             if (llegadanum == 1) {
-
-                arraydomingo = res.getStringArray(R.array.sabado_vuelta_el15);
-
+                arraydomingollegada = res.getStringArray(R.array.domingo_vuelta_el15);
             }
             if (llegadanum == 2) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_gustavoAndre);
+                arraydomingollegada = res.getStringArray(R.array.domingo_vuelta_gustavoAndre);
 
             }
             if (llegadanum == 3) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_costa);
+                arraydomingollegada = res.getStringArray(R.array.domingo_vuelta_costa);
 
             }
             if (llegadanum == 4) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_lavalle);
+                arraydomingollegada = res.getStringArray(R.array.domingo_vuelta_lavalle);
 
             }
             if (llegadanum == 5) {
-
-                arraydomingo = res.getStringArray(R.array.domingo_vuelta_mendoza);
+                arraydomingollegada = res.getStringArray(R.array.domingo_vuelta_mendoza);
 
 
             }
+
+            if (origennum == 0) {
+                arraydomingo = res.getStringArray(R.array.domingo_vuelta_asuncion);
+            }
+            if (origennum == 1) {
+                arraydomingo = res.getStringArray(R.array.domingo_vuelta_el15);
+            }
+            if (origennum == 2) {
+                arraydomingo = res.getStringArray(R.array.domingo_vuelta_gustavoAndre);
+            }
+            if (origennum == 3) {
+                arraydomingo = res.getStringArray(R.array.domingo_vuelta_costa);
+            }
+            if (origennum == 4) {
+                arraydomingo = res.getStringArray(R.array.domingo_vuelta_lavalle);
+            }
+            if (origennum == 5) {
+                arraydomingo = res.getStringArray(R.array.domingo_vuelta_mendoza);
+
+            }
         }
+
+
+
+
         forecastsRecyclerView = (RecyclerView) v.findViewById(R.id.recicler);
         forecastsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        ForecastAdapter forecastadaptersemana40;
 
-        //Solo IDA
-        if (idaovuelta==0) {
+        forecastadaptersemana40 = new ForecastAdapter(Forecast.get40(arraydomingo,arraydomingollegada), getContext());
 
-            ForecastAdapter forecastAdapterdomingo = null;
-            try {
-                forecastAdapterdomingo = new ForecastAdapter(Forecast.getidaList(horas, minutos, arraydomingo, llegadanum), getContext());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            forecastsRecyclerView.setAdapter(forecastAdapterdomingo);
-        }
-        if (idaovuelta==3) {
-
-            ForecastAdapter forecastAdapterdomingo = null;
-            forecastAdapterdomingo = new ForecastAdapter(Forecast.getigual(arraydomingo), getContext());
-            forecastsRecyclerView.setAdapter(forecastAdapterdomingo);
-        }
-        //SOLO VUELTA
-        if(idaovuelta==1) {
-
-
-            ForecastAdapter forecastAdapterdomingo = null;
-            try {
-                forecastAdapterdomingo = new ForecastAdapter(Forecast.getvueltalist(horas, minutos, arraydomingo, origennum), getContext());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            forecastsRecyclerView.setAdapter(forecastAdapterdomingo);
-        }
+        forecastsRecyclerView.setAdapter(forecastadaptersemana40);
             return v;
     }
 

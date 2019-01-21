@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Test.Runtest(getApplicationContext());//prueba de que los horarios son todos del mismo largo
+
+
         getSupportActionBar().setElevation(0);
 
         AwesomeTabBar tabBar = (AwesomeTabBar) findViewById(R.id.tabBar);
