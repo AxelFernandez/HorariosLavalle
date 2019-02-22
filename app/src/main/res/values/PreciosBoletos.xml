@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <!--
+    R40
+
+    -3 de Mayo - Lavalle
+
+
+     -->
+    <string name="B25">25</string>
+
+    <!--
+    R40
+
+    -Lavalle - Mendoza
+
+
+
+    R24
+
+    -Lavalle - Mendoza
+
+
+     -->
+    <string name="B55">55</string>
+
+
+
+    <!--
+     R24
+
+     -Gustavo Andre - Mendoza
+
+
+
+     -->
+    <string name="B75">75</string>
+</resources>

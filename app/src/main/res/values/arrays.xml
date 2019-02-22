@@ -45,7 +45,7 @@
         <item>"Mendoza"</item>
     </string-array>
 
-    <string-array name="nombrelugarescalifornica">
+    <string-array name="nombrelugarescalifornia">
         <item>"William"</item>
         <item>"Tres Porteña"</item>
         <item>"Central"</item>
@@ -784,7 +784,7 @@
         <item>"n"</item>
         <item>"01:35"</item>
     </string-array>
-    <string-array name="vuelta_gvoAndre">
+    <string-array name="vuelta_gustavoAndre">
         <item>"07:00"</item>
         <item>"07:50"</item>
         <item>"n"</item>
@@ -2245,7 +2245,7 @@
         <item>"22:40"</item>
         <item>"n"</item>
     </string-array>
-    <string-array name="ida_semana_40_verjel">
+    <string-array name="ida_semana_40_elvergel">
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2698,7 +2698,7 @@
         <item>"n"</item>
         <item>"n"</item>
     </string-array>
-    <string-array name="vuelta_semana_40_verjel">
+    <string-array name="vuelta_semana_40_elvergel">
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -3630,7 +3630,7 @@
         <item>"n"</item>
         <item>"22:30"</item>
     </string-array>
-    <string-array name="ida_sabado_40_elverjel">
+    <string-array name="ida_sabado_40_elvergel">
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -4064,7 +4064,7 @@
         <item>"n"</item>
 
     </string-array>
-    <string-array name="vuelta_sabado_40_elverjel">
+    <string-array name="vuelta_sabado_40_elvergel">
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -4428,7 +4428,7 @@
         <item>"n"</item>
 
     </string-array>
-    <string-array name="vuelta_sabado_40_km47">
+    <string-array name="vuelta_sabado_40_km47esc">
         <item>"n"</item>
         <item>"n"</item>
         <item>"8:30"</item>
@@ -4519,7 +4519,7 @@
         <item>"n"</item>
         <item>"21:30"</item>
     </string-array>
-    <string-array name="ida_domingo_40_km47">
+    <string-array name="ida_domingo_40_km47esc">
         <item>"n"</item>
         <item>"n"</item>
         <item>"07:00"</item>
@@ -4761,7 +4761,7 @@
         <item>"n"</item>
         <item>"22:15"</item>
     </string-array>
-    <string-array name="ida_domingo_40_elverjel">
+    <string-array name="ida_domingo_40_elvergel">
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -5043,7 +5043,7 @@
         <item>"n"</item>
         <item>"n"</item>
     </string-array>
-    <string-array name="vuelta_domingo_40_elverjel">
+    <string-array name="vuelta_domingo_40_elvergel">
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>

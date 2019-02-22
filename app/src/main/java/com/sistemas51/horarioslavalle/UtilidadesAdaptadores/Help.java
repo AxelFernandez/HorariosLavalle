@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.sistemas51.horarioslavalle.R;
 
-public class Ayuda extends AppCompatActivity {
+public class Help extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

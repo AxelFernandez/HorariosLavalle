@@ -38,7 +38,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.vuelta_el15).length;
     Log.e("R24vuelta", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.vuelta_gvoAndre).length;
+    largo = context.getResources().getStringArray(R.array.vuelta_gustavoAndre).length;
     Log.e("R24vuelta", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.vuelta_costa).length;
@@ -179,7 +179,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.ida_semana_40_lavalle).length;
     Log.e("R40ida", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.ida_semana_40_verjel).length;
+    largo = context.getResources().getStringArray(R.array.ida_semana_40_elvergel).length;
     Log.e("R40ida", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.ida_semana_40_cruce).length;
@@ -240,7 +240,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.vuelta_semana_40_lavalle).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.vuelta_semana_40_verjel).length;
+    largo = context.getResources().getStringArray(R.array.vuelta_semana_40_elvergel).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.vuelta_semana_40_cruce).length;
@@ -300,7 +300,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.ida_sabado_40_lavalle).length;
     Log.e("R40ida", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.ida_sabado_40_elverjel).length;
+    largo = context.getResources().getStringArray(R.array.ida_sabado_40_elvergel).length;
     Log.e("R40ida", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.ida_sabado_40_cruce).length;
@@ -322,7 +322,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_km56).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_km47).length;
+    largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_km47esc).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_jocolikm43).length;
@@ -361,7 +361,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_lavalle).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_elverjel).length;
+    largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_elvergel).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.vuelta_sabado_40_cruce).length;
@@ -382,7 +382,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.ida_domingo_40_km56).length;
     Log.e("R40ida", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.ida_domingo_40_km47).length;
+    largo = context.getResources().getStringArray(R.array.ida_domingo_40_km47esc).length;
     Log.e("R40ida", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.ida_domingo_40_jocolikm43).length;
@@ -421,7 +421,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.ida_domingo_40_lavalle).length;
     Log.e("R40ida", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.ida_domingo_40_elverjel).length;
+    largo = context.getResources().getStringArray(R.array.ida_domingo_40_elvergel).length;
     Log.e("R40ida", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.ida_domingo_40_cruce).length;
@@ -482,7 +482,7 @@ public static void Runtest(Context context) {
     largo = context.getResources().getStringArray(R.array.vuelta_domingo_40_lavalle).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
-    largo = context.getResources().getStringArray(R.array.vuelta_domingo_40_elverjel).length;
+    largo = context.getResources().getStringArray(R.array.vuelta_domingo_40_elvergel).length;
     Log.e("R40vuelta", String.valueOf(largo));
 
     largo = context.getResources().getStringArray(R.array.vuelta_domingo_40_cruce).length;

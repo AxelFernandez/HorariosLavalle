@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Ayuda;
+import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 
 import in.galaxyofandroid.awesometablayout.AwesomeTabBar;
 
@@ -20,13 +20,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Test.Runtest(getApplicationContext());//prueba de que los horarios son todos del mismo largo
-
-
         getSupportActionBar().setElevation(0);
 
         AwesomeTabBar tabBar = (AwesomeTabBar) findViewById(R.id.tabBar);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
-        pager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
+        pager.setAdapter(new PagerAdapter(getSupportFragmentManager(),getApplicationContext()));
         tabBar.setupWithViewPager(pager);
 
     }
@@ -42,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.help:
-                Intent AddPhrase = new Intent(getApplicationContext(), Ayuda.class); //layout que quieras abrir
-                startActivity(AddPhrase);
+                Intent help = new Intent(getApplicationContext(), Help.class);
+                startActivity(help);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

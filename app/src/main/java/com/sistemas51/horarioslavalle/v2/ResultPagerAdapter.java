@@ -1,36 +1,37 @@
-package com.sistemas51.horarioslavalle;
+package com.sistemas51.horarioslavalle.v2;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+
+import com.sistemas51.horarioslavalle.R;
 
 import java.util.ArrayList;
 
 import in.galaxyofandroid.awesometablayout.AwesomeTabBarAdapter;
 
-/**
- * Created by axelfernandez on 24/7/17.
- */
-
-public class PagerAdapter40 extends AwesomeTabBarAdapter
+public class ResultPagerAdapter extends AwesomeTabBarAdapter
 {
     ArrayList<Fragment> fragments=new ArrayList<>();
     ArrayList<String> titles=new ArrayList<>();
     int[] colors={R.color.colorPrimary,R.color.colorPrimary,R.color.colorPrimary};
     int[] textColors={R.color.black};
+    String TYPE = "type";
+    String ruta;
 
-    public PagerAdapter40(FragmentManager fragmentManager)
+    public ResultPagerAdapter(FragmentManager fragmentManager, Context context,String ruta)
     {
         super(fragmentManager);
-        fragments.add(new FragmentSemana40());
-        fragments.add(new FragmentSabado40());
-        fragments.add(new FragmentDomingo40());
-
+        this.ruta=ruta;
+        fragments.add(getFragment(context.getString(R.string.Semana)));
+        fragments.add(getFragment(context.getString(R.string.Sabado)));
+        fragments.add(getFragment(context.getString(R.string.Domingo)));
 
 
         titles.add("Semana");
         titles.add("Sabado");
         titles.add("Domingo");
-
 
     }
 
@@ -64,5 +65,14 @@ public class PagerAdapter40 extends AwesomeTabBarAdapter
         return 0;
     }
 
+
+    protected ResultFragment getFragment(String type){
+        Bundle bundle = new Bundle();
+        bundle.putString(TYPE,type);//dia de la semana
+        bundle.putString("Ruta",ruta);
+        ResultFragment resultFragment = new ResultFragment();
+        resultFragment.setArguments(bundle);
+        return resultFragment;
+    }
 
 }

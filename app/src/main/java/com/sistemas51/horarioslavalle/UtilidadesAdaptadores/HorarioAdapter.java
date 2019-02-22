@@ -18,17 +18,17 @@ import java.util.List;
  * Created by axelfernandez on 26/6/17.
  */
 
-public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder> {
+public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.ForecastViewHolder> {
 
 
 
     private final int TODAY = 0;
     private final int OTHER_DAY = 1;
-    private List<Forecast> forecasts;
+    private List<HorarioModel> horarioModels;
     private Context context;
 
-    public ForecastAdapter(List<Forecast> forecasts, Context context) {
-        this.forecasts = forecasts;
+    public HorarioAdapter(List<HorarioModel> horarioModels, Context context) {
+        this.horarioModels = horarioModels;
         this.context = context;
     }
 
@@ -47,7 +47,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     //Devolvemos la cantidad de items de nuestra lista
     @Override
     public int getItemCount() {
-        return forecasts.size();
+        return horarioModels.size();
     }
 
     //Metodo que se ejecuta para unir un objeto de la lista de items con el ViewHolder
@@ -55,46 +55,23 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     public void onBindViewHolder(final ForecastViewHolder holder, int position) {
 
         //Obtenemos el item de la lista con la posicion
-        final Forecast forecast = forecasts.get(position);
+        final HorarioModel horarioModel = horarioModels.get(position);
 
         //Bindeamos los datos del objeto con la vista
 
-        holder.locationView.setText(forecast.getLocation());
-        holder.descriptionView.setText(forecast.getDescription());
+        holder.locationView.setText(horarioModel.getLocation());
+        holder.descriptionView.setText(horarioModel.getDescription());
 
 
         //Cuando se hace click en el item, se muestra un toast
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String locationsins= forecast.getLocation();
+                String locationsins= horarioModel.getLocation();
                String horahorario= locationsins.substring(9,14);
               Date horahorariodate= new Date();
                 Date horaactualdate= new Date();
                 Date horariofinal= new Date();
-               Horario horario = new Horario();
-                try {
-                    horahorariodate= horario.parseoADate(horahorario);
-                    horaactualdate= horario.horaactual();
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
-
-               int hor=     horahorariodate.compareTo(horaactualdate);
-                if (hor>0){
-                  horariofinal= horario.sumarhoras(horahorariodate, -horaactualdate.getHours(),-horaactualdate.getMinutes());
-                        String finall= horario.parseoAString(horariofinal);
-                    Toast.makeText(context,"El Colectivo Pasa Dentro De "+ finall, Toast.LENGTH_SHORT).show();
-                }
-
-                if (hor<0){
-                    horariofinal= horario.sumarhoras(horaactualdate, -horahorariodate.getHours(),-horahorariodate.getMinutes());
-                    String finall= horario.parseoAString(horariofinal);
-
-                    Toast.makeText(context,"El Colectivo Pasó Hace "+ finall, Toast.LENGTH_SHORT).show();
-                }
-
 
             }
         });
@@ -113,8 +90,8 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     }
 
     private void removeItem(int position) {
-        //Removemos el item de la lista de forecasts
-        forecasts.remove(position);
+        //Removemos el item de la lista de horarioModels
+        horarioModels.remove(position);
 
         //Debemos notificar al adapter que un item fue removido.
         notifyItemRemoved(position);

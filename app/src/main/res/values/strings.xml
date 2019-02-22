@@ -30,4 +30,16 @@
     <string name="add_widget">Add widget</string>
     <string name="configure">Configure</string>
     <string name="title_activity_busqueda40">Busqueda40</string>
+
+
+
+
+    <string name="Ruta24">Ruta24</string>
+    <string name="Ruta40">Ruta40</string>
+    <string name="California">California</string>
+    <string name="Type">type</string>
+    <string name="Ruta">Ruta</string>
+    <string name="Semana">Semana</string>
+    <string name="Sabado">Sabado</string>
+    <string name="Domingo">Domingo</string>
 </resources>
