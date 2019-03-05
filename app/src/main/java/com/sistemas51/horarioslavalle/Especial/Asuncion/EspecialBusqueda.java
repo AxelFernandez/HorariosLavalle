@@ -20,21 +20,22 @@ public class EspecialBusqueda extends AppCompatActivity {
 
 
         if (dia.equals("1")&& idaovuelta.equals("Ida")){
-            im.setImageResource(R.drawable.idalagsab);
+            //im.setImageResource(R.drawable.idalagsab);
            }
 
-        if (dia.equals("2")&& idaovuelta.equals("Ida")){
-            im.setImageResource(R.drawable.lagidadom);}
+        if (dia.equals("2")&& idaovuelta.equals("Ida")) {
+            //im.setImageResource(R.drawable.lagidadom);}
 
 
+            if (dia.equals("1") && idaovuelta.equals("Vuelta")) {
+                // im.setImageResource(R.drawable.vueltalagsab);}
 
-        if (dia.equals("1")&& idaovuelta.equals("Vuelta")){
-            im.setImageResource(R.drawable.vueltalagsab);}
-
-        if (dia.equals("2")&& idaovuelta.equals("Vuelta")){
-            im.setImageResource(R.drawable.vueltlagdom);}
-
+                if (dia.equals("2") && idaovuelta.equals("Vuelta")) {
+                    //   im.setImageResource(R.drawable.vueltlagdom);}
 
 
+                }
+            }
+        }
     }
 }
