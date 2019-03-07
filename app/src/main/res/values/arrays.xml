@@ -45,7 +45,7 @@
         <item>"Mendoza"</item>
     </string-array>
 
-    <string-array name="nombrelugarescalifornica">
+    <string-array name="nombrelugarescalifornia">
         <item>"William"</item>
         <item>"Tres Porteña"</item>
         <item>"Central"</item>
@@ -114,7 +114,7 @@
     <string-array name="ida_semana_california_costa">
         <item>"06:20"</item>
         <item>"07:50"</item>
-        <item>"9:40"</item>
+        <item>"09:40"</item>
         <item>"12:50"</item>
         <item>"13:50"</item>
         <item>"15:40"</item>

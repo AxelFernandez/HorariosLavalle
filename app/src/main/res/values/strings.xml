@@ -42,4 +42,5 @@
     <string name="Semana">Semana</string>
     <string name="Sabado">Sabado</string>
     <string name="Domingo">Domingo</string>
+    <string name="youAreHere">Próximo Colectivo</string>
 </resources>

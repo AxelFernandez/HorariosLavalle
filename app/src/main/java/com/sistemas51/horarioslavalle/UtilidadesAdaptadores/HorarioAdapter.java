@@ -5,12 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sistemas51.horarioslavalle.R;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -22,11 +24,11 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
 
 
 
-    private final int TODAY = 0;
-    private final int OTHER_DAY = 1;
+    private final int NORMAL_VIEW = 0;
+    private final int YOU_ARE_HERE = 1;
     private List<HorarioModel> horarioModels;
     private Context context;
-
+    private boolean isfirst = false;
     public HorarioAdapter(List<HorarioModel> horarioModels, Context context) {
         this.horarioModels = horarioModels;
         this.context = context;
@@ -35,9 +37,11 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
     //Metodo que se ejecuta cada vez que tiene que crear el ViewHolder, debemos crear el ViewHolder y devolverlo
     @Override
     public ForecastViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        //Dependiendo del viewType, instanciamos distintas vistas
         switch (viewType) {
+            case NORMAL_VIEW:
+                return new ForecastViewHolder(LayoutInflater.from(context).inflate(R.layout.forecast_list_item, parent, false));
+            case YOU_ARE_HERE:
+                return new ForecastViewHolder(LayoutInflater.from(context).inflate(R.layout.itemyouarehere, parent, false));
 
             default:
                 return new ForecastViewHolder(LayoutInflater.from(context).inflate(R.layout.forecast_list_item, parent, false));
@@ -54,50 +58,38 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
     @Override
     public void onBindViewHolder(final ForecastViewHolder holder, int position) {
 
-        //Obtenemos el item de la lista con la posicion
-        final HorarioModel horarioModel = horarioModels.get(position);
+        switch (holder.getItemViewType()){
+            case NORMAL_VIEW:
+                final HorarioModel horarioModel = horarioModels.get(position);
+                holder.locationView.setText(horarioModel.getLocation());
+                holder.descriptionView.setText(horarioModel.getDescription());
+                holder.container.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String locationsins = horarioModel.getLocation();
+                        String horahorario = locationsins.substring(9, 14);
+                        Date horahorariodate = new Date();
+                        Date horaactualdate = new Date();
+                        Date horariofinal = new Date();
+                    }
+                });
+                break;
 
-        //Bindeamos los datos del objeto con la vista
-
-        holder.locationView.setText(horarioModel.getLocation());
-        holder.descriptionView.setText(horarioModel.getDescription());
-
-
-        //Cuando se hace click en el item, se muestra un toast
-        holder.container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String locationsins= horarioModel.getLocation();
-               String horahorario= locationsins.substring(9,14);
-              Date horahorariodate= new Date();
-                Date horaactualdate= new Date();
-                Date horariofinal= new Date();
-
-            }
-        });
-
-
+            case YOU_ARE_HERE:
+                break;
+        }
     }
 
     @Override
     public int getItemViewType(int position) {
-        //Si es la primer posicion, corresponde al pronostico de hoy
-        if (position == 0) {
-            return TODAY;
-        } else {
-            return OTHER_DAY;
+        int result = NORMAL_VIEW;
+        if (horarioModels.get(position).getLocation().equals("x")){
+            result = YOU_ARE_HERE;
         }
+        return result;
     }
 
-    private void removeItem(int position) {
-        //Removemos el item de la lista de horarioModels
-        horarioModels.remove(position);
-
-        //Debemos notificar al adapter que un item fue removido.
-        notifyItemRemoved(position);
-    }
-
-    //Clase que representa a nuestro elemento(vista) en el RecyclerView
+       //Clase que representa a nuestro elemento(vista) en el RecyclerView
     static class ForecastViewHolder extends RecyclerView.ViewHolder {
 
         View container;
@@ -115,5 +107,4 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
             temperatureView = (TextView) itemView.findViewById(R.id.forecast_temperature);
         }
     }
-
 }
