@@ -1799,6 +1799,10 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"21:35"</item>
+
     </string-array>
     <string-array name="ida_semana_40_km47esc">
         <item>"n"</item>
@@ -1840,6 +1844,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"21:40"</item>
     </string-array>
     <string-array name="ida_semana_40_jocolikm43">
         <item>"n"</item>
@@ -1881,6 +1888,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"21:05"</item>
+        <item>"21:55"</item>
+        <item>"21:45"</item>
     </string-array>
     <string-array name="ida_semana_40_oscarmendoza">
         <item>"n"</item>
@@ -1922,6 +1932,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"21:10"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_andacollo">
         <item>"n"</item>
@@ -1961,6 +1974,9 @@
         <item>"n"</item>
         <item>"19:30"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"21:15"</item>
         <item>"n"</item>
         <item>"n"</item>
 
@@ -2005,6 +2021,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"22:05"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_sguazini">
         <item>"n"</item>
@@ -2045,6 +2064,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"20:10"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"22:10"</item>
         <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_3demayo">
@@ -2087,6 +2109,9 @@
         <item>"n"</item>
         <item>"20:20"</item>
         <item>"n"</item>
+        <item>"21:25"</item>
+        <item>"22:20"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_sanfrancisco">
         <item>"n"</item>
@@ -2116,6 +2141,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"15:30"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2169,6 +2197,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_blacolm">
         <item>"n"</item>
@@ -2187,6 +2218,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"09:45"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2251,8 +2285,14 @@
         <item>"n"</item>
         <item>"20:30"</item>
         <item>"21:20"</item>
+        <item>"21:35"</item>
+        <item>"22:30"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_paramillo">
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2333,6 +2373,9 @@
         <item>"20:20"</item>
         <item>"20:40"</item>
         <item>"21:30"</item>
+        <item>"21:45"</item>
+        <item>"22:40"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_verjel">
         <item>"n"</item>
@@ -2356,6 +2399,9 @@
         <item>"n"</item>
         <item>"n"</item>
         <item>"12:45"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
         <item>"n"</item>
@@ -2415,6 +2461,9 @@
         <item>"20:30"</item>
         <item>"20:53"</item>
         <item>"n"</item>
+        <item>"21:58"</item>
+        <item>"22:50"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_pastal">
         <item>"n"</item>
@@ -2455,6 +2504,9 @@
         <item>"n"</item>
         <item>"20:40"</item>
         <item>"n"</item>
+        <item>"n"</item>
+        <item>"n"</item>
+        <item>"23:00"</item>
         <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_borbollon">
@@ -2497,6 +2549,9 @@
         <item>"21:00"</item>
         <item>"21:10"</item>
         <item>"n"</item>
+        <item>"22:15"</item>
+        <item>"23:20"</item>
+        <item>"n"</item>
     </string-array>
     <string-array name="ida_semana_40_mendoza">
         <item>"05:50"</item>
@@ -2537,6 +2592,9 @@
         <item>"21:00"</item>
         <item>"21:30"</item>
         <item>"21:40"</item>
+        <item>"n"</item>
+        <item>"22:45"</item>
+        <item>"23:50"</item>
         <item>"n"</item>
     </string-array>
 
