@@ -1,0 +1,75 @@
+package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.sistemas51.horarioslavalle.R;
+import com.sistemas51.horarioslavalle.callback.GoNextSetp;
+
+import java.util.List;
+
+public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.ViewHolder> {
+    private GoNextSetp goNextSetp;
+    private List<String> selectedStepper;
+    private Context context;
+    int rowIndex = -1;
+    public StepperRvAdapter(Context context, List<String> selectedStepper){
+        this.context = context;
+        this.selectedStepper = selectedStepper;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_step_selected,viewGroup,false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+        viewHolder.description.setText(selectedStepper.get(i));
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rowIndex=i;
+                notifyDataSetChanged();
+            }
+        });
+        if(rowIndex==i){
+            viewHolder.cardView.setBackgroundColor(Color.parseColor("#8bc34a"));
+            viewHolder.description.setTextColor(Color.parseColor("#ffffff"));
+        }
+        else{
+            viewHolder.cardView.setBackgroundColor(Color.parseColor("#ffffff"));
+            viewHolder.description.setTextColor(Color.parseColor("#000000"));
+        }
+        goNextSetp.saveData("routeSelected",selectedStepper.get(i));
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return selectedStepper.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+    CardView cardView;
+    TextView description;
+
+    public ViewHolder(@NonNull View itemView) {
+        super(itemView);
+        cardView = itemView.findViewById(R.id.cardViewStepper);
+        description= itemView.findViewById(R.id.textStepper);
+    }
+}
+
+
+}

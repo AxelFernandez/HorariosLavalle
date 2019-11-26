@@ -3,8 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="140dp">
+    android:layout_height="90dp">
 <android.support.v7.widget.CardView
+    android:id="@+id/cardViewStepper"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:id="@+id/textStepper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -23,6 +25,7 @@
             android:textSize="40dp"
             android:gravity="center_horizontal"
             tools:text= "Horarios especiales"
+
             >
         </TextView>
     </RelativeLayout>

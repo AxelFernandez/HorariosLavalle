@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.sistemas51.horarioslavalle.R;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
