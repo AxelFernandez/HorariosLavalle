@@ -55,7 +55,7 @@ public class ApiRequest {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Snackbar.make(view,"No hay conexion para comprobar Actualizaciones", Snackbar.LENGTH_LONG).show();
-                Log.e("Error request ",error.getMessage());
+                Log.e("Error request ",String.valueOf(error));
             }
         });
         queue.add(stringRequest);

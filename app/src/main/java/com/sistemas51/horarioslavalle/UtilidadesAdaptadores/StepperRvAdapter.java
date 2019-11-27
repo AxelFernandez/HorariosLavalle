@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.callback.SaveData;
+import com.sistemas51.horarioslavalle.callback.Callback;
 
 import java.util.List;
 
@@ -19,12 +19,11 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
     private String selected;
     private List<String> selectedStepper;
     private Context context;
-    int currentStep;
     int rowIndex = -1;
-    public StepperRvAdapter(Context context, List<String> selectedStepper,int currentStep){
+
+    public StepperRvAdapter(Context context, List<String> selectedStepper){
         this.context = context;
         this.selectedStepper = selectedStepper;
-        this.currentStep = currentStep;
     }
 
     @NonNull
@@ -42,7 +41,6 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
                 rowIndex=i;
                 selected = selectedStepper.get(i);
                 notifyDataSetChanged();
-
             }
         });
         if(rowIndex==i){

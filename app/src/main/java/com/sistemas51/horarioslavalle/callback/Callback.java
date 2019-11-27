@@ -1,0 +1,10 @@
+package com.sistemas51.horarioslavalle.callback;
+
+import java.util.List;
+import java.util.Map;
+
+public interface Callback {
+
+    void callBack(String step, int stepNumber);
+    Map<Integer,String> getData();
+}

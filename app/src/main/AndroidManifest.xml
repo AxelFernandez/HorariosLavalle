@@ -25,10 +25,6 @@
             android:screenOrientation="portrait" />
 
 
-        <activity
-            android:name=".v2.Result"
-            android:theme="@style/AppTheme.NoActionBar" />
-
     </application>
 
 </manifest>

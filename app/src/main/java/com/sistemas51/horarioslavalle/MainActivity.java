@@ -3,48 +3,40 @@ package com.sistemas51.horarioslavalle;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperAdapter;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
-import com.sistemas51.horarioslavalle.callback.SaveData;
+import com.sistemas51.horarioslavalle.callback.Callback;
+import com.sistemas51.horarioslavalle.stepper.RouteStepper;
 import com.stepstone.stepper.StepperLayout;
-import com.stepstone.stepper.VerificationError;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import in.galaxyofandroid.awesometablayout.AwesomeTabBar;
 
 
-public class MainActivity extends AppCompatActivity implements SaveData {
+public class MainActivity extends AppCompatActivity implements Callback {
     private StepperLayout mStepperLayout;
     private StepperAdapter mStepperAdapter;
-
-    private String value;
-    private Integer key;
-    private Map<Integer,String> dataOnline;
-    SaveData saveData;
+    Map<Integer, String> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
-        dataOnline = new HashMap<>();
-
+        data = data == null ? data = new HashMap<>(): data;
         ApiRequest apiRequest = new ApiRequest();
         apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
         //Test.Runtest(getApplicationContext());//prueba de que los horarios son todos del mismo largo
 
         mStepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
-        mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this,this);
+        mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this, this);
         mStepperLayout.setAdapter(mStepperAdapter);
+
     }
 
 
@@ -69,16 +61,28 @@ public class MainActivity extends AppCompatActivity implements SaveData {
     }
 
     @Override
-    public void saveData(Integer key, String value) {
-        this.dataOnline.put(key,value);
+    public void callBack(String step, int stepNumber) {
+        data.put(stepNumber,step);
+        int arrayId= 0;
+        if (stepNumber == 1){
+            step =getData().get(0);
+        }
+
+        if (step.equals("Ruta 24")){
+            arrayId = R.array.nombredelugares;
+        }else if (step.equals("Ruta 40")){
+            arrayId = R.array.nombredelugaresr40;
+        }else if (step.equals("California")){
+            arrayId = R.array.nombrelugarescalifornia;
+        }
+        RouteStepper stepper = (RouteStepper) mStepperAdapter.findStep(stepNumber + 1);
+        stepper.setArrayId(arrayId);
     }
 
     @Override
     public Map<Integer, String> getData() {
-        return this.dataOnline;
+        return data;
     }
-
-
 }
 
 
