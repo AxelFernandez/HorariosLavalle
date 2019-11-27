@@ -2,21 +2,22 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
+import android.util.SparseArray;
 
-import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.callback.GoNextSetp;
+import com.sistemas51.horarioslavalle.callback.SaveData;
 import com.sistemas51.horarioslavalle.stepper.RouteStepper;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter;
 
-public class StepperAdapter extends AbstractFragmentStepAdapter implements GoNextSetp {
+public class StepperAdapter extends AbstractFragmentStepAdapter {
     public static String CURRENT_STEP_POSITION_KEY = "currentPosition";
     Bundle b1;
-
-    public StepperAdapter(FragmentManager fm, Context context){
+    SaveData saveData;
+    public StepperAdapter(FragmentManager fm, Context context, SaveData saveData){
         super(fm,context);
+        this.saveData = saveData;
     }
 
 
@@ -43,12 +44,6 @@ public class StepperAdapter extends AbstractFragmentStepAdapter implements GoNex
     public int getCount() {
         return 2;
     }
-
-    @Override
-    public void saveData(String key, String value) {
-        b1.putString(key, value);
-    }
-
 
 
 }

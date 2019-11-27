@@ -2,7 +2,6 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,21 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.callback.GoNextSetp;
+import com.sistemas51.horarioslavalle.callback.SaveData;
 
 import java.util.List;
 
 public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.ViewHolder> {
-    private GoNextSetp goNextSetp;
+    private String selected;
     private List<String> selectedStepper;
     private Context context;
+    int currentStep;
     int rowIndex = -1;
-    public StepperRvAdapter(Context context, List<String> selectedStepper){
+    public StepperRvAdapter(Context context, List<String> selectedStepper,int currentStep){
         this.context = context;
         this.selectedStepper = selectedStepper;
+        this.currentStep = currentStep;
     }
 
     @NonNull
@@ -40,7 +40,9 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
             @Override
             public void onClick(View view) {
                 rowIndex=i;
+                selected = selectedStepper.get(i);
                 notifyDataSetChanged();
+
             }
         });
         if(rowIndex==i){
@@ -51,7 +53,6 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
             viewHolder.cardView.setBackgroundColor(Color.parseColor("#ffffff"));
             viewHolder.description.setTextColor(Color.parseColor("#000000"));
         }
-        goNextSetp.saveData("routeSelected",selectedStepper.get(i));
 
     }
 
@@ -60,6 +61,10 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
         return selectedStepper.size();
     }
 
+    public String getSelected(){
+        notifyDataSetChanged();
+        return selected;
+    }
     public static class ViewHolder extends RecyclerView.ViewHolder{
     CardView cardView;
     TextView description;

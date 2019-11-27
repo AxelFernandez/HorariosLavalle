@@ -12,28 +12,42 @@ import android.view.View;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperAdapter;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
+import com.sistemas51.horarioslavalle.callback.SaveData;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import in.galaxyofandroid.awesometablayout.AwesomeTabBar;
 
 
-public class MainActivity extends AppCompatActivity implements StepperLayout.StepperListener {
+public class MainActivity extends AppCompatActivity implements SaveData {
     private StepperLayout mStepperLayout;
     private StepperAdapter mStepperAdapter;
+
+    private String value;
+    private Integer key;
+    private Map<Integer,String> dataOnline;
+    SaveData saveData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
+        dataOnline = new HashMap<>();
+
         ApiRequest apiRequest = new ApiRequest();
         apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
         //Test.Runtest(getApplicationContext());//prueba de que los horarios son todos del mismo largo
 
         mStepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
-        mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this);
+        mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this,this);
         mStepperLayout.setAdapter(mStepperAdapter);
-        mStepperLayout.setListener(this);
     }
+
+
 
 
     @Override
@@ -55,24 +69,16 @@ public class MainActivity extends AppCompatActivity implements StepperLayout.Ste
     }
 
     @Override
-    public void onCompleted(View completeButton) {
-
+    public void saveData(Integer key, String value) {
+        this.dataOnline.put(key,value);
     }
 
     @Override
-    public void onError(VerificationError verificationError) {
-
+    public Map<Integer, String> getData() {
+        return this.dataOnline;
     }
 
-    @Override
-    public void onStepSelected(int newStepPosition) {
 
-    }
-
-    @Override
-    public void onReturn() {
-        finish();
-    }
 }
 
 
