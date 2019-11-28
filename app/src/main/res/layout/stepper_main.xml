@@ -9,7 +9,11 @@
         android:layout_height="match_parent"
         android:id="@+id/stepperLayout"
         app:ms_backButtonText="Atras"
+        app:ms_nextButtonColor="@color/colorAccent"
+        app:ms_completeButtonColor="@color/colorAccent"
         app:ms_nextButtonText="Seleccionar Destino"
+        app:ms_activeStepColor="@color/colorPrimary"
+        app:ms_completeButtonText="Buscar Horarios"
         app:ms_stepperType="dots">
     </com.stepstone.stepper.StepperLayout>
 </android.support.constraint.ConstraintLayout>

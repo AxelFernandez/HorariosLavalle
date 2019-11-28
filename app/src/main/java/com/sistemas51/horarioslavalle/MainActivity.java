@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperAdapter;
@@ -13,13 +14,14 @@ import com.sistemas51.horarioslavalle.api.ApiRequest;
 import com.sistemas51.horarioslavalle.callback.Callback;
 import com.sistemas51.horarioslavalle.stepper.RouteStepper;
 import com.stepstone.stepper.StepperLayout;
+import com.stepstone.stepper.VerificationError;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
 
-public class MainActivity extends AppCompatActivity implements Callback {
+public class MainActivity extends AppCompatActivity implements Callback, StepperLayout.StepperListener {
     private StepperLayout mStepperLayout;
     private StepperAdapter mStepperAdapter;
     Map<Integer, String> data;
@@ -82,6 +84,26 @@ public class MainActivity extends AppCompatActivity implements Callback {
     @Override
     public Map<Integer, String> getData() {
         return data;
+    }
+
+    @Override
+    public void onCompleted(View completeButton) {
+
+    }
+
+    @Override
+    public void onError(VerificationError verificationError) {
+
+    }
+
+    @Override
+    public void onStepSelected(int newStepPosition) {
+
+    }
+
+    @Override
+    public void onReturn() {
+    finish();
     }
 }
 
