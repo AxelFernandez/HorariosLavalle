@@ -1,13 +1,16 @@
 package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 
-import android.view.View;
+import android.content.Context;
+
+import com.sistemas51.horarioslavalle.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by serguei on 03/10/16.
@@ -15,32 +18,31 @@ import java.util.List;
 
 public class HorarioModel {
 
-    private String location;
-    private String description;
-    private boolean expanded;
+    private String from;
+    private String to;
 
-    public HorarioModel(String location, String description) {
+    public HorarioModel(String from, String to) {
 
-        this.location = location;
-        this.description = description;
+        this.from = from;
+        this.to = to;
 
     }
 
 
 
 
-    public static List<HorarioModel> get40(String[]arraydestino, String[] arrayllegada){
+    public static List<HorarioModel> get40(String[]from, String[] to){
         boolean isfirst= false;
-        List<HorarioModel> fin= new ArrayList<>();
-        for (int i=0;i<arraydestino.length;i++){
-            if (arraydestino[i].equals("n")==false) {
-                if(arrayllegada[i].equals("n")==false) {
+        List<HorarioModel> result= new ArrayList<>();
+        for (int i=0;i<from.length;i++){
+            if (from[i].equals("n")==false) {
+                if(to[i].equals("n")==false) {
 
                     SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
                     Date hourDate= null;
                     Date now= new Date();
                     try {
-                        hourDate = sdf.parse(arraydestino[i]);
+                        hourDate = sdf.parse(from[i]);
                         now = sdf.parse(now.getHours() + ":" + now.getMinutes());
                     } catch (ParseException e) {
                     }
@@ -48,11 +50,11 @@ public class HorarioModel {
                         if (hourDate.after(now)) {
                             isfirst=true;
                             HorarioModel data = new HorarioModel("x","x");
-                            fin.add(data);
+                            result.add(data);
                         }
                     }
-                    HorarioModel data = new HorarioModel("Partida: " + arraydestino[i], "Llegada: " + arrayllegada[i]);
-                    fin.add(data);
+                    HorarioModel data = new HorarioModel("Partida: " + from[i], "Llegada: " + to[i]);
+                    result.add(data);
 
 
 
@@ -60,25 +62,46 @@ public class HorarioModel {
 
             }
         }
-       return fin;
-
-
+       return result;
 
     }
-    public String getLocation() {
-        return location;
+
+    public static List<String> getNamesKey(String from, String to, String route, Context context){
+        List<String> result = new ArrayList<>();
+        Map<String,String> places;
+
+        switch (route){
+            case "Ruta 24":
+                places = ResourceUtils.getHashMapResource(context, R.xml.r24_places);
+
+
+
+            case "Ruta 40":
+                places = ResourceUtils.getHashMapResource(context, R.xml.r24_places);
+
+
+            case "California":
+                places = ResourceUtils.getHashMapResource(context, R.xml.r24_places);
+
+        }
+        return result;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+
+    public String getFrom() {
+        return from;
     }
 
-    public String getDescription() {
-        return description;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
     }
 
 

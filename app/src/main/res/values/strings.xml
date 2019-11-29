@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Horarios Lavalle</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_busqueda_rapida">BusquedaRapida</string>
     <string name="large_text">
         "Bienvenido a Horarios Lavalle. \n\n"
 
@@ -21,7 +17,6 @@
 
     </string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main2">Main2Activity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -35,10 +30,18 @@
     <string name="Ruta24">Ruta24</string>
     <string name="Ruta40">Ruta40</string>
     <string name="California">California</string>
-    <string name="Type">type</string>
     <string name="Ruta">Ruta</string>
     <string name="Semana">Semana</string>
     <string name="Sabado">Sabado</string>
     <string name="Domingo">Domingo</string>
     <string name="youAreHere">Próximo Colectivo</string>
+    <string name="title_activity_result">ResultActivity</string>
+
+    <string name="type">type</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="route">route</string>
+
+
+
 </resources>

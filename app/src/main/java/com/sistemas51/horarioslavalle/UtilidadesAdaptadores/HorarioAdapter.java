@@ -6,15 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.sistemas51.horarioslavalle.R;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -63,12 +59,12 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
         switch (holder.getItemViewType()){
             case NORMAL_VIEW:
                 final HorarioModel horarioModel = horarioModels.get(position);
-                holder.locationView.setText(horarioModel.getLocation());
-                holder.descriptionView.setText(horarioModel.getDescription());
+                holder.locationView.setText(horarioModel.getFrom());
+                holder.descriptionView.setText(horarioModel.getTo());
                 holder.container.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String locationsins = horarioModel.getLocation();
+                        String locationsins = horarioModel.getFrom();
                         String horahorario = locationsins.substring(9, 14);
                         Date horahorariodate = new Date();
                         Date horaactualdate = new Date();
@@ -85,7 +81,7 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
     @Override
     public int getItemViewType(int position) {
         int result = NORMAL_VIEW;
-        if (horarioModels.get(position).getLocation().equals("x")){
+        if (horarioModels.get(position).getFrom().equals("x")){
             result = YOU_ARE_HERE;
         }
         return result;

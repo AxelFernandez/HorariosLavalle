@@ -28,28 +28,25 @@ public class ResultFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
         RecyclerView rv;
         rv = (RecyclerView) v.findViewById(R.id.recicler);
-        final int origennum = getActivity().getIntent().getExtras().getInt("origennum");
-        final int llegadanum = getActivity().getIntent().getExtras().getInt("llegadanum");
-        String day = getArguments().getString("type");
-        boolean isIda = true;
-        final String ruta = getActivity().getIntent().getExtras().getString(getString(R.string.Ruta));
-        Resources res = getResources();
-        if (origennum<llegadanum) {
-            isIda=true;
-        }else if (origennum>llegadanum){
-            isIda=false;
-        }
+        final String from = getArguments().getString(getResources().getString(R.string.from));
+        final String to = getArguments().getString(getResources().getString(R.string.to));
+        final String day = getArguments().getString(getResources().getString(R.string.type));
+        final String route = getArguments().getString(getResources().getString(R.string.route));
 
-        Utils utils = new Utils(res);
-        String[] arrayPartida = utils.getArrayPartida(ruta,origennum,day,isIda);
-        String[] arrayDestino = utils.getArrayPartida(ruta,llegadanum,day,isIda);
+
+
+
+
+
+//        String[] arrayPartida = utils.getArrayPartida(ruta,origennum,day,isIda);
+//        String[] arrayDestino = utils.getArrayPartida(ruta,llegadanum,day,isIda);
 
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         HorarioAdapter forecastadaptersemana40;
 
-        forecastadaptersemana40 = new HorarioAdapter(HorarioModel.get40(arrayPartida,arrayDestino), getContext());
+        //forecastadaptersemana40 = new HorarioAdapter(HorarioModel.get40(arrayPartida,arrayDestino), getContext());
 
-        rv.setAdapter(forecastadaptersemana40);
+      //  rv.setAdapter(forecastadaptersemana40);
 
         return v;
     }

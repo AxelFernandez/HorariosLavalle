@@ -1,6 +1,7 @@
 package com.sistemas51.horarioslavalle.stepper;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,14 +15,18 @@ import android.view.ViewGroup;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperRvAdapter;
 import com.sistemas51.horarioslavalle.callback.Callback;
+import com.sistemas51.horarioslavalle.v2.ResultActivity;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,13 +75,14 @@ public class RouteStepper extends Fragment implements BlockingStep {
 
     @Override
     public void onCompleteClicked(StepperLayout.OnCompleteClickedCallback callback) {
-      //  Intent intent =  new Intent(getContext(), Result.class);
-        //intent.putExtra("or")
-        //startActivity(intent);
 
-        Map<Integer,String> data = new HashMap<>();
-        data = this.callback.getData();
+        Map<Integer,String> data = this.callback.getData();
         String lastOne = stepperRvAdapter.getSelected();
+        Intent intent = new Intent(getContext(), ResultActivity.class);
+        intent.putExtra(getResources().getString(R.string.route),data.get(0));
+        intent.putExtra(getResources().getString(R.string.from),data.get(1));
+        intent.putExtra(getResources().getString(R.string.to),lastOne);
+        startActivity(intent);
         callback.complete();
     }
 
@@ -101,33 +107,6 @@ public class RouteStepper extends Fragment implements BlockingStep {
     public void onError(@NonNull VerificationError error) {
 
     }
-
-    /**
-     * Return the correct spinner in one class
-     * @param type Send 'Ruta24' 'Ruta40' or 'California'
-     * @return Array whit data for spinners
-     */
-    private String[] getParams (int type){
-        String[] result = null;
-        String route =  "Ruta 24";
-
-        if (type == 0){
-            result = getResources().getStringArray(R.array.rutas);
-        }else{
-            if (saveData != null ){
-                route = saveData;
-            }
-            if (type == 1 && route.equals("Ruta 24")){
-                result = getResources().getStringArray(R.array.nombredelugares);
-            }else if (type == 1 && route == "Ruta 40"){
-                result = getResources().getStringArray(R.array.nombredelugaresr40);
-            }else if (type == 1 && route == "California"){
-                result = getResources().getStringArray(R.array.nombrelugarescalifornia);
-            }
-
-        }
-        return result;
-    }
-
+    
 
 }

@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
-    tools:context="com.sistemas51.horarioslavalle.Ruta24.Fragment_semana24">
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
 
