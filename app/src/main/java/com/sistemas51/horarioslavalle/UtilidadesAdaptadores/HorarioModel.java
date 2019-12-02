@@ -5,6 +5,9 @@ import android.content.Context;
 
 import com.sistemas51.horarioslavalle.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,43 +21,62 @@ public class HorarioModel {
 
     private String from;
     private String to;
+    private boolean next;
 
-    public HorarioModel(String from, String to) {
+    public boolean isNext() {
+        return next;
+    }
+
+    public void setNext(boolean next) {
+        this.next = next;
+    }
+
+    public HorarioModel(String from, String to, boolean next) {
 
         this.from = from;
         this.to = to;
-
+        this.next = next;
     }
 
-    public static List<HorarioModel> get40(String[]from, String[] to){
+    public static List<HorarioModel> get40(List<String>from, List<String> to){
         boolean isfirst= false;
         List<HorarioModel> result= new ArrayList<>();
-        for (int i=0;i<from.length;i++){
-            if (from[i].equals("n")==false) {
-                if(to[i].equals("n")==false) {
+        if (from == null || to ==null){
+            HorarioModel data = new HorarioModel("No hay horarios diponibles", "Intenta con otro recorrido",false);
+            result.add(data);
+        }else {
+            for (int i = 0; i < from.size(); i++) {
+                if (!from.get(i).equals("null")) {
+                    if (!to.get(i).equals("null")) {
 
-                    SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
-                    Date hourDate= null;
-                    Date now= new Date();
-                    try {
-                        hourDate = sdf.parse(from[i]);
-                        now = sdf.parse(now.getHours() + ":" + now.getMinutes());
-                    } catch (ParseException e) {
-                    }
-                    if (!isfirst){
-                        if (hourDate.after(now)) {
-                            isfirst=true;
-                            HorarioModel data = new HorarioModel("x","x");
-                            result.add(data);
+                        SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
+                        Date hourDate = null;
+                        Date now = new Date();
+                        try {
+                            hourDate = sdf.parse(from.get(i));
+                            now = sdf.parse(now.getHours() + ":" + now.getMinutes());
+                        } catch (ParseException e) {
                         }
+                        if (!isfirst && hourDate.after(now)) {
+
+                            isfirst = true;
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), true);
+                            result.add(data);
+
+                        } else {
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), false);
+                            result.add(data);
+
+                        }
+
+
                     }
-                    HorarioModel data = new HorarioModel("Partida: " + from[i], "Llegada: " + to[i]);
-                    result.add(data);
-
-
 
                 }
-
+            }
+            if (result.size() == 0){
+                HorarioModel data = new HorarioModel("No hay horarios diponibles", "Intenta con otro recorrido",false);
+                result.add(data);
             }
         }
        return result;
@@ -97,13 +119,36 @@ public class HorarioModel {
         switch (route){
             case "Ruta 24":
                 result = ResourceUtils.getHashMapResource(context,R.xml.r24_table_names).get(table);
+                break;
             case "Ruta 40":
                 result = ResourceUtils.getHashMapResource(context,R.xml.r40_table_names).get(table);
+                break;
             case "California":
                 result = ResourceUtils.getHashMapResource(context,R.xml.california_table_names).get(table);
+                break;
         }
         return result;
     }
+
+
+    public static List getFromJsonArray(JSONArray jsonArray) throws JSONException {
+        ArrayList<String> list = new ArrayList<String>();
+        if (jsonArray==null){
+            list = null;
+        }else{
+            if (jsonArray != null) {
+                int len = jsonArray.length();
+                for (int i=0;i<len;i++){
+                    list.add(jsonArray.get(i).toString());
+                }
+            }
+        }
+
+        return list;
+
+    }
+
+
     public String getFrom() {
         return from;
     }

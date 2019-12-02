@@ -16,8 +16,53 @@
         android:layout_height="30dp"
         android:gravity="center"
         android:textColor="@color/colorWhite"
-        android:background="@color/colororange"
+        android:background="@color/colorAccent"
         android:text="@string/youAreHere"/>
 
 </LinearLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/forecast_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorAccent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/forecast_location"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="30dp"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Partida: 16:40" />
+
+        <TextView
+            android:id="@+id/forecast_description"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_alignLeft="@id/forecast_location"
+            android:layout_below="@+id/forecast_location"
+            android:maxLines="1"
+            tools:text="Llegada: 18:40" />
+
+        <TextView
+            android:id="@+id/forecast_temperature"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="45dp"
+            android:maxLines="1"
+            android:textSize="25sp"
+            tools:text="-2:40" />
+
+    </RelativeLayout>
 </LinearLayout>
+

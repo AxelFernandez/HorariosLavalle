@@ -56,8 +56,7 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
     @Override
     public void onBindViewHolder(final ForecastViewHolder holder, int position) {
 
-        switch (holder.getItemViewType()){
-            case NORMAL_VIEW:
+
                 final HorarioModel horarioModel = horarioModels.get(position);
                 holder.locationView.setText(horarioModel.getFrom());
                 holder.descriptionView.setText(horarioModel.getTo());
@@ -71,17 +70,14 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
                         Date horariofinal = new Date();
                     }
                 });
-                break;
 
-            case YOU_ARE_HERE:
-                break;
-        }
+
     }
 
     @Override
     public int getItemViewType(int position) {
         int result = NORMAL_VIEW;
-        if (horarioModels.get(position).getFrom().equals("x")){
+        if (horarioModels.get(position).isNext()){
             result = YOU_ARE_HERE;
         }
         return result;
