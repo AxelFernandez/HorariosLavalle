@@ -2,11 +2,9 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
-import android.util.SparseArray;
 
 import com.sistemas51.horarioslavalle.callback.Callback;
 import com.sistemas51.horarioslavalle.stepper.RouteStepper;

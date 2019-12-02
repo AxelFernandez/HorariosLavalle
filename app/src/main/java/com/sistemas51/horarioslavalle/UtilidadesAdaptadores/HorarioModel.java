@@ -9,12 +9,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by serguei on 03/10/16.
- */
 
 public class HorarioModel {
 
@@ -27,9 +25,6 @@ public class HorarioModel {
         this.to = to;
 
     }
-
-
-
 
     public static List<HorarioModel> get40(String[]from, String[] to){
         boolean isfirst= false;
@@ -66,28 +61,49 @@ public class HorarioModel {
 
     }
 
-    public static List<String> getNamesKey(String from, String to, String route, Context context){
-        List<String> result = new ArrayList<>();
-        Map<String,String> places;
-
-        switch (route){
+    public static String getNamesKey(String from, String to, String route, String day ,Context context){
+        String result = null;
+        Map<String,String> places = new HashMap<>();
+        String resultFrom =null;
+        String direction;
+        switch (route) {
             case "Ruta 24":
                 places = ResourceUtils.getHashMapResource(context, R.xml.r24_places);
-
-
-
+                resultFrom = "ruta24";
+                break;
             case "Ruta 40":
-                places = ResourceUtils.getHashMapResource(context, R.xml.r24_places);
-
-
+                places = ResourceUtils.getHashMapResource(context, R.xml.r40_places);
+                resultFrom = "ruta40";
+                break;
             case "California":
-                places = ResourceUtils.getHashMapResource(context, R.xml.r24_places);
-
+                places = ResourceUtils.getHashMapResource(context, R.xml.california_places);
+                resultFrom = "california";
+                break;
         }
+        if (Integer.valueOf(places.get(from))<Integer.valueOf(places.get(to))){
+            direction = "ida";
+        }else{
+            direction = "vuelta";
+        }
+
+        result = resultFrom+direction+day;
+
         return result;
     }
 
 
+    public static String getTableName(String table, String route,Context context){
+        String result = null;
+        switch (route){
+            case "Ruta 24":
+                result = ResourceUtils.getHashMapResource(context,R.xml.r24_table_names).get(table);
+            case "Ruta 40":
+                result = ResourceUtils.getHashMapResource(context,R.xml.r40_table_names).get(table);
+            case "California":
+                result = ResourceUtils.getHashMapResource(context,R.xml.california_table_names).get(table);
+        }
+        return result;
+    }
     public String getFrom() {
         return from;
     }

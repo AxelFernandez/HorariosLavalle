@@ -41,6 +41,10 @@
     <string name="from">from</string>
     <string name="to">to</string>
     <string name="route">route</string>
+    <string name="week">week</string>
+    <string name="saturday">saturday</string>
+    <string name="sunday">sunday</string>
+
 
 
 

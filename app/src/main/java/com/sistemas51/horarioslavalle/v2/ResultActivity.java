@@ -1,6 +1,5 @@
 package com.sistemas51.horarioslavalle.v2;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,11 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.sistemas51.horarioslavalle.R;
 
@@ -25,11 +19,11 @@ public class ResultActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
         Bundle bundleWeek = getIntent().getExtras();
-        bundleWeek.putString(getResources().getString(R.string.Type),getResources().getString(R.string.Semana));
+        bundleWeek.putString(getResources().getString(R.string.type),getResources().getString(R.string.week));
         Bundle bundleSaturday = getIntent().getExtras();
-        bundleSaturday.putString(getResources().getString(R.string.Type),getResources().getString(R.string.Sabado));
+        bundleSaturday.putString(getResources().getString(R.string.type),getResources().getString(R.string.saturday));
         Bundle bundleSunday = getIntent().getExtras();
-        bundleSunday.putString(getResources().getString(R.string.Type),getResources().getString(R.string.Domingo));
+        bundleSunday.putString(getResources().getString(R.string.type),getResources().getString(R.string.sunday));
 
 
         final Fragment week = new ResultFragment();

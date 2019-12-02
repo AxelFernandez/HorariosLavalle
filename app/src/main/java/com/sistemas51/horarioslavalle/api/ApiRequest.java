@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -71,7 +70,7 @@ public class ApiRequest {
                     public void onResponse(String response) {
                        SharedPreferences.Editor editor = sharedPreferences.edit();
                        editor.putString("database",response);
-                       editor.apply();
+                       editor.commit();
                        Log.e("REQUESTING", response);
                         Snackbar.make(view,"Nuevos horarios Actualizados!", Snackbar.LENGTH_LONG).show();
 
