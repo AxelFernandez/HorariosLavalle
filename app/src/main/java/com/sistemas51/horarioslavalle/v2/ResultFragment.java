@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +48,14 @@ public class ResultFragment extends Fragment {
         String arrayToSearch = HorarioModel.getNamesKey(from,to,route,day,getContext());
         String fromSearch = HorarioModel.getTableName(from,route, getContext());
         String toSearch = HorarioModel.getTableName(to,route, getContext());
+        int numberDay = -1;
+        if (day == getResources().getString(R.string.saturday)){
+            numberDay = 7;
+        }else if (day == getResources().getString(R.string.sunday)){
+            numberDay = 1;
+        }
+
+
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
         sharedPreferences.getAll();
 
@@ -61,8 +70,12 @@ public class ResultFragment extends Fragment {
         }
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         HorarioAdapter adapter;
-        adapter = new HorarioAdapter(HorarioModel.get40(originArray,destinyArray), getContext());
-        rv.setAdapter(adapter);
+        try {
+            adapter = new HorarioAdapter(HorarioModel.get40(originArray,destinyArray,numberDay), getContext());
+            rv.setAdapter(adapter);
+        } catch (ParseException e) {
+            Log.e("ParseException",e.getMessage());
+        }
         return v;
     }
 

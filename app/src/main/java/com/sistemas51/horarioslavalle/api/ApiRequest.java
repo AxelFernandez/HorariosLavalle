@@ -46,14 +46,14 @@ public class ApiRequest {
                             editor.putInt("version",apiVersion);
                             editor.apply();
                         }else{
-                            Snackbar.make(view,"Los Horarios están actualizados!", Snackbar.LENGTH_LONG).show();
+                            Snackbar.make(view,"Los Horarios están actualizados!", Snackbar.LENGTH_SHORT).show();
 
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Snackbar.make(view,"No hay conexion para comprobar Actualizaciones", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view,"No hay conexion para comprobar Actualizaciones", Snackbar.LENGTH_SHORT).show();
                 Log.e("Error request ",String.valueOf(error));
             }
         });
@@ -79,7 +79,7 @@ public class ApiRequest {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("Error request ",error.getMessage());
-                Snackbar.make(view,"No hay conexion para descargar Actualizaciones", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view,"No hay conexion para descargar Actualizaciones", Snackbar.LENGTH_SHORT).show();
             }
         });
         queue.add(stringRequest);

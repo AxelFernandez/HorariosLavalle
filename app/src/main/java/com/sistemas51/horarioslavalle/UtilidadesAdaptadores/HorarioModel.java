@@ -2,6 +2,7 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import com.sistemas51.horarioslavalle.R;
 
@@ -11,6 +12,7 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +24,9 @@ public class HorarioModel {
     private String from;
     private String to;
     private boolean next;
+    private static final String WEEK = "week";
+    private static final String SATURDAY ="saturday";
+    private static final String SUNDAY = "sunday";
 
     public boolean isNext() {
         return next;
@@ -38,7 +43,7 @@ public class HorarioModel {
         this.next = next;
     }
 
-    public static List<HorarioModel> get40(List<String>from, List<String> to){
+    public static List<HorarioModel> get40(List<String>from, List<String> to, int day) throws ParseException {
         boolean isfirst= false;
         List<HorarioModel> result= new ArrayList<>();
         if (from == null || to ==null){
@@ -48,30 +53,29 @@ public class HorarioModel {
             for (int i = 0; i < from.size(); i++) {
                 if (!from.get(i).equals("null")) {
                     if (!to.get(i).equals("null")) {
-
                         SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
                         Date hourDate = null;
                         Date now = new Date();
-                        try {
-                            hourDate = sdf.parse(from.get(i));
-                            now = sdf.parse(now.getHours() + ":" + now.getMinutes());
-                        } catch (ParseException e) {
-                        }
+                        Calendar calendar = Calendar.getInstance();
+                        hourDate = sdf.parse(from.get(i));
+                        now = sdf.parse(calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE));
+
                         if (!isfirst && hourDate.after(now)) {
-
                             isfirst = true;
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), true);
-                            result.add(data);
+                            boolean isToday = false;
+                            if(calendar.get(Calendar.DAY_OF_WEEK) ==  day) {
+                                isToday = true;
 
+                            }else if(calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SUNDAY && calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SATURDAY &&day== -1){
+                                isToday = true;
+                            }
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), isToday);
+                            result.add(data);
                         } else {
                             HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), false);
                             result.add(data);
-
                         }
-
-
                     }
-
                 }
             }
             if (result.size() == 0){

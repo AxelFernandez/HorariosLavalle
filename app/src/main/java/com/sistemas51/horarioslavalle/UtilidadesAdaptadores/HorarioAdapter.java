@@ -55,23 +55,19 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
     //Metodo que se ejecuta para unir un objeto de la lista de items con el ViewHolder
     @Override
     public void onBindViewHolder(final ForecastViewHolder holder, int position) {
-
-
-                final HorarioModel horarioModel = horarioModels.get(position);
-                holder.locationView.setText(horarioModel.getFrom());
-                holder.descriptionView.setText(horarioModel.getTo());
-                holder.container.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String locationsins = horarioModel.getFrom();
-                        String horahorario = locationsins.substring(9, 14);
-                        Date horahorariodate = new Date();
-                        Date horaactualdate = new Date();
-                        Date horariofinal = new Date();
-                    }
-                });
-
-
+        final HorarioModel horarioModel = horarioModels.get(position);
+        holder.locationView.setText(horarioModel.getFrom());
+        holder.descriptionView.setText(horarioModel.getTo());
+        holder.container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String locationsins = horarioModel.getFrom();
+                String horahorario = locationsins.substring(9, 14);
+                Date horahorariodate = new Date();
+                Date horaactualdate = new Date();
+                Date horariofinal = new Date();
+            }
+        });
     }
 
     @Override

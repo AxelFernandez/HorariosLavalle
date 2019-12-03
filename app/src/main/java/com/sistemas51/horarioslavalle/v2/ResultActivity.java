@@ -18,6 +18,8 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
+        getSupportActionBar().setTitle(getIntent().getExtras().getString(getResources().getString(R.string.from)+" - " +
+                getIntent().getExtras().getString(getResources().getString(R.string.to))));
         Bundle bundleWeek = getIntent().getExtras();
         bundleWeek.putString(getResources().getString(R.string.type),getResources().getString(R.string.week));
         Bundle bundleSaturday = getIntent().getExtras();
