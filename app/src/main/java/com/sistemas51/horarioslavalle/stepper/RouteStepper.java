@@ -20,13 +20,9 @@ import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
-import java.io.Serializable;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,7 +46,8 @@ public class RouteStepper extends Fragment implements BlockingStep {
         rv = (RecyclerView) v.findViewById(R.id.recicler);
         List<String> routes = Arrays.asList(getResources().getStringArray(R.array.rutas));
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        stepperRvAdapter = new StepperRvAdapter(getContext(),routes);
+        int currentStep = getArguments().getInt(CURRENT_STEP_POSITION_KEY);
+        stepperRvAdapter = new StepperRvAdapter(getContext(),routes,callback,currentStep);
         rv.setAdapter(stepperRvAdapter);
         return v;
     }
@@ -61,15 +58,12 @@ public class RouteStepper extends Fragment implements BlockingStep {
 
     public void setArrayId(int arrayId) {
         List<String> routes = Arrays.asList(getResources().getStringArray(arrayId));
-        stepperRvAdapter = new StepperRvAdapter(getContext(),routes);
+        stepperRvAdapter = new StepperRvAdapter(getContext(),routes, callback,getArguments().getInt(CURRENT_STEP_POSITION_KEY));
         rv.setAdapter(stepperRvAdapter);
     }
 
     @Override
     public void onNextClicked(StepperLayout.OnNextClickedCallback callback) {
-        if (this.callback != null) {
-            this.callback.callBack(stepperRvAdapter.getSelected(), getArguments().getInt(CURRENT_STEP_POSITION_KEY));
-        }
         callback.goToNextStep();
     }
 
@@ -107,6 +101,6 @@ public class RouteStepper extends Fragment implements BlockingStep {
     public void onError(@NonNull VerificationError error) {
 
     }
-    
+
 
 }

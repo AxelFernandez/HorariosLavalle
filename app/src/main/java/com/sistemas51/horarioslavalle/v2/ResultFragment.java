@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioAdapter;
@@ -30,6 +32,7 @@ public class ResultFragment extends Fragment {
     private JSONObject placeFound;
     private List originArray;
     private List destinyArray;
+    private RecyclerView rv;
     public ResultFragment() {
         // Required empty public constructor
     }
@@ -38,9 +41,10 @@ public class ResultFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
-        RecyclerView rv;
         rv = (RecyclerView) v.findViewById(R.id.recicler);
+        int resIdAnim = R.anim.layout_anim_fall_down;
         final String from = getArguments().getString(getResources().getString(R.string.from));
         final String to = getArguments().getString(getResources().getString(R.string.to));
         final String day = getArguments().getString(getResources().getString(R.string.type));
@@ -69,14 +73,34 @@ public class ResultFragment extends Fragment {
             e.printStackTrace();
         }
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(),resIdAnim);
+        rv.setLayoutAnimation(animation);
         HorarioAdapter adapter;
         try {
-            adapter = new HorarioAdapter(HorarioModel.get40(originArray,destinyArray,numberDay), getContext());
+            adapter = new HorarioAdapter(HorarioModel.getHour(originArray,destinyArray,numberDay), getContext());
             rv.setAdapter(adapter);
         } catch (ParseException e) {
             Log.e("ParseException",e.getMessage());
         }
         return v;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden){
+            runLayoutAnimation();
+        }
+    }
+
+    public void runLayoutAnimation() {
+        final Context context = rv.getContext();
+        final LayoutAnimationController controller =
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_anim_fall_down);
+
+        rv.setLayoutAnimation(controller);
+        rv.getAdapter().notifyDataSetChanged();
+        rv.scheduleLayoutAnimation();
     }
 
 }

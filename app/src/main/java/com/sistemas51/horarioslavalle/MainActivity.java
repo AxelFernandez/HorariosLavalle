@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -81,10 +82,6 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
             getSupportActionBar().setTitle("Selecciona Destino");
             getSupportActionBar().setSubtitle("Horarios Lavalle");
         }
-
-
-
-
         if (step.equals("Ruta 24")){
             arrayId = R.array.nombredelugares;
         }else if (step.equals("Ruta 40")){
@@ -93,7 +90,16 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
             arrayId = R.array.nombrelugarescalifornia;
         }
         RouteStepper stepper = (RouteStepper) mStepperAdapter.findStep(stepNumber + 1);
-        stepper.setArrayId(arrayId);
+        if (stepNumber != 2){
+            stepper.setArrayId(arrayId);
+        }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mStepperLayout.proceed();
+            }
+        }, 200);
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
@@ -17,9 +18,10 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-
-        getSupportActionBar().setTitle(getIntent().getExtras().getString(getResources().getString(R.string.from)+" - " +
-                getIntent().getExtras().getString(getResources().getString(R.string.to))));
+        String from = getIntent().getExtras().getString(getResources().getString(R.string.from));
+        String to = getIntent().getExtras().getString(getResources().getString(R.string.to));
+        getSupportActionBar().setTitle(from);
+        getSupportActionBar().setSubtitle(to);
         Bundle bundleWeek = getIntent().getExtras();
         bundleWeek.putString(getResources().getString(R.string.type),getResources().getString(R.string.week));
         Bundle bundleSaturday = getIntent().getExtras();
@@ -27,6 +29,7 @@ public class ResultActivity extends AppCompatActivity {
         Bundle bundleSunday = getIntent().getExtras();
         bundleSunday.putString(getResources().getString(R.string.type),getResources().getString(R.string.sunday));
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final Fragment week = new ResultFragment();
         week.setArguments(bundleWeek);
@@ -69,6 +72,18 @@ public class ResultActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                finish();
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

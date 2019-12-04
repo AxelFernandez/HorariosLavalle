@@ -9,4 +9,6 @@
     <color name="colorWhite">#ffffff</color>
     <color name="black">#000000</color>
     <color name="colororange">#FF5722</color>
+    <color name="colorGrey">#616161</color>
+    <color name="colorRed">#D32F2F</color>
 </resources>

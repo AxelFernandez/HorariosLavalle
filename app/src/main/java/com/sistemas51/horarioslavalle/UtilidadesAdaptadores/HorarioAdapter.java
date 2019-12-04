@@ -2,15 +2,20 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.sistemas51.horarioslavalle.R;
 
+import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -61,11 +66,20 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String locationsins = horarioModel.getFrom();
-                String horahorario = locationsins.substring(9, 14);
-                Date horahorariodate = new Date();
-                Date horaactualdate = new Date();
-                Date horariofinal = new Date();
+
+                String fromString= horarioModel.getFrom().substring(9,14);
+                Calendar now = Calendar.getInstance();
+                Calendar then = Calendar.getInstance();
+                then.set(now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH),Integer.valueOf(fromString.substring(0,2)),Integer.valueOf(fromString.substring(3,5)));
+                Long diff;
+                switch (then.compareTo(now)){
+                    case 1:
+                        diff = (then.getTimeInMillis() - now.getTimeInMillis())/ (60*1000);
+                        Snackbar.make(v,"Pasa dentro " + HorarioModel.formattoString(diff.intValue()) ,Snackbar.LENGTH_SHORT).show();
+                        break;
+
+                }
+
             }
         });
     }

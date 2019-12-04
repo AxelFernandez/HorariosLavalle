@@ -3,6 +3,7 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,10 +21,14 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
     private List<String> selectedStepper;
     private Context context;
     int rowIndex = -1;
+    Callback callback;
+    int currentStep;
 
-    public StepperRvAdapter(Context context, List<String> selectedStepper){
+    public StepperRvAdapter(Context context, List<String> selectedStepper,Callback callback, int currentStep){
         this.context = context;
         this.selectedStepper = selectedStepper;
+        this.callback = callback;
+        this.currentStep = currentStep;
     }
 
     @NonNull
@@ -40,9 +45,11 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
             public void onClick(View view) {
                 rowIndex=i;
                 selected = selectedStepper.get(i);
+                callback.callBack(selected,currentStep);
                 notifyDataSetChanged();
             }
         });
+
         if(rowIndex==i){
             viewHolder.cardView.setBackgroundColor(Color.parseColor("#8bc34a"));
             viewHolder.description.setTextColor(Color.parseColor("#ffffff"));

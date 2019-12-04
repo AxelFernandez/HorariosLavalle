@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 
 public class HorarioModel {
@@ -43,7 +44,7 @@ public class HorarioModel {
         this.next = next;
     }
 
-    public static List<HorarioModel> get40(List<String>from, List<String> to, int day) throws ParseException {
+    public static List<HorarioModel> getHour(List<String>from, List<String> to, int day) throws ParseException {
         boolean isfirst= false;
         List<HorarioModel> result= new ArrayList<>();
         if (from == null || to ==null){
@@ -69,10 +70,10 @@ public class HorarioModel {
                             }else if(calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SUNDAY && calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SATURDAY &&day== -1){
                                 isToday = true;
                             }
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), isToday);
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), isToday);
                             result.add(data);
                         } else {
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i), "Llegada: " + to.get(i), false);
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), false);
                             result.add(data);
                         }
                     }
@@ -152,6 +153,12 @@ public class HorarioModel {
 
     }
 
+    public static String formattoString(int minutos) {
+        String formato = "%02d:%02d";
+        long horasReales = TimeUnit.MINUTES.toHours(minutos);
+        long minutosReales = TimeUnit.MINUTES.toMinutes(minutos) - TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(minutos));
+        return String.format(formato, horasReales, minutosReales);
+    }
 
     public String getFrom() {
         return from;
