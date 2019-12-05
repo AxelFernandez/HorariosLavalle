@@ -1,11 +1,19 @@
 package com.sistemas51.horarioslavalle;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperAdapter;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
 import com.sistemas51.horarioslavalle.callback.Callback;
@@ -16,8 +24,9 @@ import com.stepstone.stepper.VerificationError;
 import java.util.HashMap;
 import java.util.Map;
 
+//TODO: Make a error if the user select next step without select an option //Done! I disabled the function
+//TODO: Update to AndroidX //Done! Look closer for error in old phones.
 //TODO: Moto e5 instant crash (API?)
-//TODO: Make a error if the user select next step without select an option
 //TODO: Hide the SnackBar if user click in a no hour holder in RecyclerView
 //TODO: Make more beauty Help Activity
 //TODO: Change the icon, it will be deprecated, it will be a square.
@@ -26,19 +35,28 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
     private StepperLayout mStepperLayout;
     private StepperAdapter mStepperAdapter;
     Map<Integer, String> data;
-
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
-        getSupportActionBar().setTitle("Selecciona Ruta");
-        getSupportActionBar().setSubtitle("Horarios Lavalle");
+
+        toolbar = findViewById(R.id.toolbarStep);
+        toolbar.setTitle("Selecciona Ruta");
+        toolbar.setSubtitle("Horarios Lavalle");
+        setSupportActionBar(toolbar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.setElevation(10);
+        }
+        toolbar.bringToFront();
         data = data == null ? data = new HashMap<>(): data;
         ApiRequest apiRequest = new ApiRequest();
         apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
 
         mStepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
         mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this, this);
+        mStepperLayout.setNextButtonEnabled(false);
+        mStepperLayout.setCompleteButtonEnabled(false);
         mStepperLayout.setAdapter(mStepperAdapter);
 
     }
@@ -50,12 +68,12 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
         int arrayId= 0;
 
         if (stepNumber ==0){
-            getSupportActionBar().setTitle("Selecciona Punto de Partida");
-            getSupportActionBar().setSubtitle("Horarios Lavalle");
+            toolbar.setTitle("Selecciona Punto de Partida");
+            toolbar.setSubtitle("Horarios Lavalle");
         } else if (stepNumber == 1){
             step =getData().get(0);
-            getSupportActionBar().setTitle("Selecciona Destino");
-            getSupportActionBar().setSubtitle("Horarios Lavalle");
+            toolbar.setTitle("Selecciona Destino");
+            toolbar.setSubtitle("Horarios Lavalle");
         }
         if (step.equals("Ruta 24")){
             arrayId = R.array.nombredelugares;
@@ -100,6 +118,33 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
     @Override
     public void onReturn() {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(mStepperLayout.getCurrentStepPosition() != 0){
+            mStepperLayout.setCurrentStepPosition(0);
+
+        }
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main2, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.help:
+                Intent help = new Intent(getApplicationContext(), Help.class);
+                startActivity(help);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

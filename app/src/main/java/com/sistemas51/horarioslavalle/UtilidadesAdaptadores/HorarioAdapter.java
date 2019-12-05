@@ -1,14 +1,16 @@
 package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
 
 import java.util.Calendar;

@@ -1,20 +1,23 @@
 package com.sistemas51.horarioslavalle.v2;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 
 public class ResultActivity extends AppCompatActivity {
     Fragment active;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +25,14 @@ public class ResultActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         String from = getIntent().getExtras().getString(getResources().getString(R.string.from));
         String to = getIntent().getExtras().getString(getResources().getString(R.string.to));
-        getSupportActionBar().setTitle(from);
-        getSupportActionBar().setSubtitle(to);
+        toolbar = findViewById(R.id.toolbarResult);
+        toolbar.setTitle(from);
+        toolbar.setSubtitle(to);
+        setSupportActionBar(toolbar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.setElevation(10);
+        }
+        toolbar.bringToFront();
         Bundle bundleWeek = getIntent().getExtras();
         bundleWeek.putString(getResources().getString(R.string.type),getResources().getString(R.string.week));
         Bundle bundleSaturday = getIntent().getExtras();
