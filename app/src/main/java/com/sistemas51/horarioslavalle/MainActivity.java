@@ -1,19 +1,11 @@
 package com.sistemas51.horarioslavalle;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperAdapter;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
 import com.sistemas51.horarioslavalle.callback.Callback;
@@ -24,7 +16,11 @@ import com.stepstone.stepper.VerificationError;
 import java.util.HashMap;
 import java.util.Map;
 
-
+//TODO: Moto e5 instant crash (API?)
+//TODO: Make a error if the user select next step without select an option
+//TODO: Hide the SnackBar if user click in a no hour holder in RecyclerView
+//TODO: Make more beauty Help Activity
+//TODO: Change the icon, it will be deprecated, it will be a square.
 
 public class MainActivity extends AppCompatActivity implements Callback, StepperLayout.StepperListener {
     private StepperLayout mStepperLayout;
@@ -40,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
         data = data == null ? data = new HashMap<>(): data;
         ApiRequest apiRequest = new ApiRequest();
         apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
-        //Test.Runtest(getApplicationContext());//prueba de que los horarios son todos del mismo largo
 
         mStepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
         mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this, this);
@@ -48,26 +43,6 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
 
     }
 
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main2, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.help:
-                Intent help = new Intent(getApplicationContext(), Help.class);
-                startActivity(help);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     @Override
     public void callBack(String step, int stepNumber) {
@@ -124,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
 
     @Override
     public void onReturn() {
-    finish();
+
     }
 }
 

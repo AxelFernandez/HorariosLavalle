@@ -1,15 +1,17 @@
 package com.sistemas51.horarioslavalle.v2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sistemas51.horarioslavalle.R;
+import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 
 public class ResultActivity extends AppCompatActivity {
     Fragment active;
@@ -75,12 +77,21 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main2, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 finish();
-
+                return true;
+            case R.id.help:
+                Intent help = new Intent(getApplicationContext(), Help.class);
+                startActivity(help);
                 return true;
         }
         return super.onOptionsItemSelected(item);

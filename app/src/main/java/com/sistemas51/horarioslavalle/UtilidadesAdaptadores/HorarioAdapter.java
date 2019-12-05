@@ -1,22 +1,17 @@
 package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
-
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.sistemas51.horarioslavalle.R;
 
-import java.text.SimpleDateFormat;
-import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -66,11 +61,14 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String fromString= horarioModel.getFrom().substring(9,14);
+                String fromString = horarioModel.getFrom().substring(9, 14);
                 Calendar now = Calendar.getInstance();
                 Calendar then = Calendar.getInstance();
-                then.set(now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH),Integer.valueOf(fromString.substring(0,2)),Integer.valueOf(fromString.substring(3,5)));
+                try {
+                    then.set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH), Integer.valueOf(fromString.substring(0, 2)), Integer.valueOf(fromString.substring(3, 5)));
+                }catch (Exception e ){
+                    Log.e("Error in parse", e.getMessage());
+                }
                 Long diff;
                 switch (then.compareTo(now)){
                     case 1:
