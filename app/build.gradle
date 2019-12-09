@@ -26,6 +26,8 @@ dependencies {
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    implementation "androidx.appcompat:appcompat:1.1.0"
+
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'com.github.badoualy:morphy-toolbar:1.0.4'
@@ -35,6 +37,8 @@ dependencies {
     implementation 'com.bogdwellers:pinchtozoom:0.1'
     implementation 'com.stepstone.stepper:material-stepper:4.3.1'
     implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.github.KwabenBerko:OpenWeatherMap-Android-Library:2.0.2'
+    implementation "com.arthurivanets.bottomsheet:bottomsheets-core:1.1.2"
 
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.android.material:material:1.0.0'
