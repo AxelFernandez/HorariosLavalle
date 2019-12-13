@@ -3,12 +3,16 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "com.sistemas51.horarioslavalle"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 27
-        versionName "2.1-beta"
+        versionCode 28
+        versionName "2.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         dataBinding.enabled false
@@ -39,6 +43,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.github.KwabenBerko:OpenWeatherMap-Android-Library:2.0.2'
     implementation "com.arthurivanets.bottomsheet:bottomsheets-core:1.1.2"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.android.material:material:1.0.0'

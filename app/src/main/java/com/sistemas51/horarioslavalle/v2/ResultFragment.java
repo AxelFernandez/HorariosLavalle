@@ -4,10 +4,6 @@ package com.sistemas51.horarioslavalle.v2;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +11,12 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.arthurivanets.bottomsheets.BottomSheet;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioAdapter;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioModel;
@@ -32,6 +34,8 @@ public class ResultFragment extends Fragment {
     private List originArray;
     private List destinyArray;
     private RecyclerView rv;
+    private BottomSheet bottomSheet;
+
     public ResultFragment() {
         // Required empty public constructor
     }
@@ -43,6 +47,7 @@ public class ResultFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
         rv = (RecyclerView) v.findViewById(R.id.recicler);
+        FloatingActionButton fab = v.findViewById(R.id.floating_action_button);
         int resIdAnim = R.anim.layout_anim_fall_down;
         final String from = getArguments().getString(getResources().getString(R.string.from));
         final String to = getArguments().getString(getResources().getString(R.string.to));
@@ -81,6 +86,14 @@ public class ResultFragment extends Fragment {
         } catch (ParseException e) {
             Log.e("ParseException",e.getMessage());
         }
+        fab.setVisibility(View.VISIBLE);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCustomBottomSheet();
+            }
+        });
+
         return v;
     }
 
@@ -102,4 +115,10 @@ public class ResultFragment extends Fragment {
         rv.scheduleLayoutAnimation();
     }
 
+
+    private void showCustomBottomSheet() {
+        //...
+        bottomSheet = new WeaterView(getActivity());
+        bottomSheet.show();
+    }
 }

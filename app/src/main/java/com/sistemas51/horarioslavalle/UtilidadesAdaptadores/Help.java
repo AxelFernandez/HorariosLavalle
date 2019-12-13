@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.sistemas51.horarioslavalle.R;
 
@@ -37,7 +37,7 @@ public class Help extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","axel_fernandez18@hotmail.com", null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Horarios Lavalle Contacto ");
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Horarios Lavalle - Contacto.");
                 startActivity(Intent.createChooser(emailIntent,  "Horarios Lavalle Contacto"));
             }
         });

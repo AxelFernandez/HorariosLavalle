@@ -1,19 +1,18 @@
 <resources>
     <string name="app_name">Horarios Lavalle</string>
     <string name="large_text">
-        "Bienvenido a Horarios Lavalle. \n\n"
+        "Bienvenido/a a Horarios Lavalle. \n\n"
 
-        "\t Gracias por descargar esta aplicacion y espero que te sea de utilidad tanto como a mi. \n \n"
-        "\t Con esta aplicacion podra obtener de manera sencilla los horarios de colectivos en el departamento de Lavalle. \n \n"
-        "\t Por cualquier sugerencia o consulta puedes enviarme un mail con el boton de aqui abajo y te respondere lo mas pronto posible. \n \n"
-        "\t Recuerda que es una version Beta, aun no es del todo estable y varias funcionalidades pueden cambiar en el camino \n \n"
-        "\t Si tienes algun problema con la app, enviame un mail, detallando lo mas que puedas donde seleccionaste para llegar al error y me sera mas sencillo rastrearlo y corregirlo
+        "\t La versión rediseñada de Horarios Lavalle permite obtener de manera ágil, fácil y sencilla los recorridos de colectivo del Departamento. \n \n"
+        "\t Es una app de navegación gratuita sin conexión a internet. \n \n"
+        "\t Actualizamos a menudo nuestra aplicación para corregir errores, mejorar el rendimiento y añadir nuevas funcionalidades por lo tanto seguimos escuchando tus comentarios y sugerencias. \n \n"
+        "\t Puedes enviarnos un email con el botón de aquí abajo y responderemos lo más pronto posible \n \n"
+        "\t ¡Gracias por usar Horarios Lavalle!
         \n \n"
 
         "\t Contacto: \n "
         "\t \t Axel Fernandez. \n "
         "\t \t e-mail: axel_fernandez18@hotmail.com \n "
-        "\t \t Fb: www.facebook.com/A3ron "
 
     </string>
     <string name="action_settings">Settings</string>
