@@ -43,7 +43,10 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.Forecast
     @Override
     public void onBindViewHolder(final ForecastViewHolder holder, int position) {
         final WeatherModel weatherModel = weatherModels.get(position);
-        Picasso.get().load("http://openweathermap.org/img/w/" + weatherModel.getImage() +".png").into(holder.image);
+
+        if (weatherModel.getImage() != null){
+            Picasso.get().load("http://openweathermap.org/img/w/" + weatherModel.getImage() +".png").into(holder.image);
+        }
         holder.maximunView.setText(weatherModel.getMaximun());
         holder.minmunView.setText(weatherModel.getMinimum());
         holder.descriptionView.setText(weatherModel.getDescription());

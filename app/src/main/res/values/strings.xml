@@ -45,6 +45,20 @@
     <string name="sunday">sunday</string>
 
 
+    <string name="locationAsuncion">-32.576023,-68.270242</string>
+    <string name="locationEl15">-32.634430,-68.336780</string>
+    <string name="locationGustavoAndre">-32.679511,-68.317108</string>
+    <string name="locationCostaDeAraujo">-32.759586,-68.393967</string>
+    <string name="locationLavalle">-32.721140,-68.593770</string>
+
+    <string name="locationMendoza">-32.894684,-68.830963</string>
+
+
+    <string name="locationElBorbollon">-32.808701,-68.779887</string>
+    <string name="locationElPastal">-32.770448,-68.704640</string>
+    <string name="locationCruce">-32.716508,-68.679839</string>
+    <string name="locationElVergel">-32.786271,-68.612457</string>
+    <string name="locationElParamillo">-32.775800,-68.572500</string>
 
 
 </resources>

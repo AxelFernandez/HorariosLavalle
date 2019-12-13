@@ -10,12 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arthurivanets.bottomsheets.BottomSheet;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioAdapter;
@@ -25,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -34,7 +39,7 @@ public class ResultFragment extends Fragment {
     private List originArray;
     private List destinyArray;
     private RecyclerView rv;
-    private BottomSheet bottomSheet;
+    private BottomSheetBehavior bottomSheetBehavior;
 
     public ResultFragment() {
         // Required empty public constructor
@@ -46,6 +51,10 @@ public class ResultFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
+        LinearLayout linearLayout = (LinearLayout) v.findViewById(R.id.bottomSheet);
+
+        bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
+
         rv = (RecyclerView) v.findViewById(R.id.recicler);
         FloatingActionButton fab = v.findViewById(R.id.floating_action_button);
         int resIdAnim = R.anim.layout_anim_fall_down;
@@ -69,7 +78,7 @@ public class ResultFragment extends Fragment {
 
         try {
 
-            database = new JSONObject(sharedPreferences.getString("database",null));
+            database = new JSONObject(sharedPreferences.getString("database","{}"));
             placeFound = database.getJSONObject(arrayToSearch);
             originArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(fromSearch));
             destinyArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(toSearch));
@@ -86,11 +95,17 @@ public class ResultFragment extends Fragment {
         } catch (ParseException e) {
             Log.e("ParseException",e.getMessage());
         }
-        fab.setVisibility(View.VISIBLE);
+        fab.show();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showCustomBottomSheet();
+                List<String> arguments = new ArrayList<>();
+                arguments.add(getArguments().getString("from"));
+                arguments.add(getArguments().getString("to"));
+                BottomSheetDialogFragment bsdFragment = new BottomSheetDialogFragment();
+                bsdFragment.show(getFragmentManager(), "BSDialog");
+
+
             }
         });
 
@@ -116,9 +131,4 @@ public class ResultFragment extends Fragment {
     }
 
 
-    private void showCustomBottomSheet() {
-        //...
-        bottomSheet = new WeaterView(getActivity());
-        bottomSheet.show();
-    }
 }

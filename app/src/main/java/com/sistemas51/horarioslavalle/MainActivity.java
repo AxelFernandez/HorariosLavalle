@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
+        ApiRequest apiRequest = new ApiRequest();
+        apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
 
         toolbar = findViewById(R.id.toolbarStep);
         toolbar.setTitle("Selecciona Ruta");
@@ -50,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
         }
         toolbar.bringToFront();
         data = data == null ? data = new HashMap<>(): data;
-        ApiRequest apiRequest = new ApiRequest();
-        apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
 
         mStepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
         mStepperAdapter = new StepperAdapter(getSupportFragmentManager(), this, this);
