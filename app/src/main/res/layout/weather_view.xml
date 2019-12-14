@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/imageTemperature"
                 android:layout_width="60dp"
@@ -49,6 +50,8 @@
                 tools:text="Soleado"/>
 
             <TextView
+                android:id="@+id/text_current"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/description"
@@ -69,50 +72,7 @@
                 android:layout_marginTop="20dp"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/description"
-                android:layout_toRightOf="@id/currentTemperature"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
-                android:textColor="@color/colorRed"
-                android:text="Maxima"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/maxTemperature"
-                android:layout_below="@id/description"
-                android:layout_toRightOf="@id/currentTemperature"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:textSize="38dp"
-                android:textColor="@color/colorRed"
-                tools:text="38°C"/>
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/description"
-                android:layout_toRightOf="@id/maxTemperature"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/ms_material_blue_500"
-                tools:text="Minima"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/minTemperature"
-                android:layout_below="@id/description"
-                android:layout_toRightOf="@id/maxTemperature"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="38dp"
-                android:textColor="@color/ms_material_blue_500"
-                tools:text="18°C"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

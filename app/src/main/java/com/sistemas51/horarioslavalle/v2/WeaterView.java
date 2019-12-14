@@ -1,7 +1,5 @@
 package com.sistemas51.horarioslavalle.v2;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,15 +8,11 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arthurivanets.bottomsheets.BaseBottomSheet;
-import com.arthurivanets.bottomsheets.config.BaseConfig;
-import com.arthurivanets.bottomsheets.config.Config;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.snackbar.Snackbar;
 import com.kwabenaberko.openweathermaplib.implementation.OpenWeatherMapHelper;
 import com.kwabenaberko.openweathermaplib.implementation.callbacks.CurrentWeatherCallback;
 import com.kwabenaberko.openweathermaplib.models.currentweather.CurrentWeather;
@@ -31,7 +25,6 @@ import com.sistemas51.horarioslavalle.models.WeatherModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.zip.Inflater;
 
 public class WeaterView extends BottomSheetDialogFragment {
 
@@ -40,8 +33,7 @@ public class WeaterView extends BottomSheetDialogFragment {
     List<String> arguments;
     WeatherModel fromModel;
     WeatherModel toModel;
-
-
+    WeatherAdapter adapter;
     static WeaterView newInstance() {
         return new WeaterView();
     }
@@ -57,8 +49,8 @@ public class WeaterView extends BottomSheetDialogFragment {
         rv.setLayoutAnimation(animation);
 
         OpenWeatherMapHelper openWeather = WeatherSingleton.getInstance();
-        String from = "Lavalle";
-        String to = "Mendoza";
+        String from = getArguments().getString("from");
+        String to = getArguments().getString("to");
         Map<String,String> locations = ResourceUtils.getHashMapResource(getContext(),R.xml.locations);
         String[] arrayFrom = locations.get("location"+from.replace(" ","")).split(",");
         String[] arrayto= locations.get("location"+to.replace(" ","")).split(",");
@@ -70,11 +62,10 @@ public class WeaterView extends BottomSheetDialogFragment {
             public void onSuccess(CurrentWeather currentWeather) {
                 fromModel.setPlace(from);
                 fromModel.setCurrent(String.valueOf(currentWeather.getMain().getTemp()));
-                fromModel.setDescription(currentWeather.getWeather().get(0).getDescription());
+                fromModel.setDescription(ResourceUtils.changeStringCase(currentWeather.getWeather().get(0).getDescription()));
                 fromModel.setImage(currentWeather.getWeather().get(0).getIcon());
-                fromModel.setMaximun(String.valueOf(currentWeather.getMain().getTempMax()));
-                fromModel.setMinimum(String.valueOf(currentWeather.getMain().getTempMin()));
-                
+                adapter.notifyDataSetChanged();
+
             }
             @Override
             public void onFailure(Throwable throwable) {
@@ -83,8 +74,7 @@ public class WeaterView extends BottomSheetDialogFragment {
                 fromModel.setCurrent("");
                 fromModel.setDescription("Necesitas Conexion a Internet");
                 fromModel.setImage(null);
-                fromModel.setMaximun("");
-                fromModel.setMinimum("");
+                adapter.notifyDataSetChanged();
 
             }
         });
@@ -95,10 +85,9 @@ public class WeaterView extends BottomSheetDialogFragment {
             public void onSuccess(CurrentWeather currentWeather) {
                 toModel.setPlace(to);
                 toModel.setCurrent(String.valueOf(currentWeather.getMain().getTemp()));
-                toModel.setDescription(currentWeather.getWeather().get(0).getDescription());
+                toModel.setDescription(ResourceUtils.changeStringCase(currentWeather.getWeather().get(0).getDescription()));
                 toModel.setImage(currentWeather.getWeather().get(0).getIcon());
-                toModel.setMaximun(String.valueOf(currentWeather.getMain().getTempMax()));
-                toModel.setMinimum(String.valueOf(currentWeather.getMain().getTempMin()));
+                adapter.notifyDataSetChanged();
 
             }
             @Override
@@ -108,8 +97,7 @@ public class WeaterView extends BottomSheetDialogFragment {
                 toModel.setCurrent("");
                 toModel.setDescription("Necesitas Conexion a Internet");
                 toModel.setImage(null);
-                toModel.setMaximun("");
-                toModel.setMinimum("");
+                adapter.notifyDataSetChanged();
 
             }
         });
@@ -117,8 +105,9 @@ public class WeaterView extends BottomSheetDialogFragment {
         List<WeatherModel> weatherModels = new ArrayList<>();
         weatherModels.add(fromModel);
         weatherModels.add(toModel);
-        WeatherAdapter adapter = new WeatherAdapter(weatherModels,getContext());
+        adapter = new WeatherAdapter(weatherModels,getContext());
         rv.setAdapter(adapter);
+        Snackbar.make(v,"Buscando Pronostico...",Snackbar.LENGTH_SHORT).show();
 
 
 

@@ -56,4 +56,21 @@ public class ResourceUtils {
 
         return map;
     }
+
+
+    public static String changeStringCase(String s) {
+
+        final String DELIMITERS = " '-/";
+
+        StringBuilder sb = new StringBuilder();
+        boolean capNext = true;
+
+        for (char c : s.toCharArray()) {
+            c = (capNext)
+                    ? Character.toUpperCase(c)
+                    : Character.toLowerCase(c);
+            sb.append(c);
+            capNext = (DELIMITERS.indexOf((int) c) >= 0);
+        }
+        return sb.toString(); }
 }

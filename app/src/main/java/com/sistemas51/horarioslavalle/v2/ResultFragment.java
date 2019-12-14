@@ -12,15 +12,13 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arthurivanets.bottomsheets.BottomSheet;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioAdapter;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioModel;
@@ -102,9 +100,9 @@ public class ResultFragment extends Fragment {
                 List<String> arguments = new ArrayList<>();
                 arguments.add(getArguments().getString("from"));
                 arguments.add(getArguments().getString("to"));
-                BottomSheetDialogFragment bsdFragment = new BottomSheetDialogFragment();
+                WeaterView bsdFragment = new WeaterView();
+                bsdFragment.setArguments(getArguments());
                 bsdFragment.show(getFragmentManager(), "BSDialog");
-
 
             }
         });

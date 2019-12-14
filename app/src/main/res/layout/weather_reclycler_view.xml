@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:id="@+id/bottomSheet"
     android:layout_height="wrap_content"
-
     app:layout_behavior="@string/bottom_sheet_behavior">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/weatherRecycler"

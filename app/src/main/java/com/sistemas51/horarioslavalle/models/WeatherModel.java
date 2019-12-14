@@ -5,8 +5,7 @@ public class WeatherModel {
     String place;
     String description;
     String current;
-    String minimum;
-    String maximun;
+
     String image;
 
     public String getPlace() {
@@ -31,22 +30,6 @@ public class WeatherModel {
 
     public void setCurrent(String current) {
         this.current = current;
-    }
-
-    public String getMinimum() {
-        return minimum;
-    }
-
-    public void setMinimum(String minimum) {
-        this.minimum = minimum;
-    }
-
-    public String getMaximun() {
-        return maximun;
-    }
-
-    public void setMaximun(String maximun) {
-        this.maximun = maximun;
     }
 
     public String getImage() {
