@@ -30,8 +30,7 @@ public class WeaterView extends BottomSheetDialogFragment {
 
 
 
-    List<String> arguments;
-    WeatherModel fromModel;
+    //WeatherModel fromModel;
     WeatherModel toModel;
     WeatherAdapter adapter;
     static WeaterView newInstance() {
@@ -54,10 +53,12 @@ public class WeaterView extends BottomSheetDialogFragment {
         Map<String,String> locations = ResourceUtils.getHashMapResource(getContext(),R.xml.locations);
         String[] arrayFrom = locations.get("location"+from.replace(" ","")).split(",");
         String[] arrayto= locations.get("location"+to.replace(" ","")).split(",");
-        fromModel =new WeatherModel();
+       // fromModel =new WeatherModel();
         toModel =new WeatherModel();
 
-        openWeather.getCurrentWeatherByGeoCoordinates(Double.valueOf(arrayFrom[0]), Double.valueOf(arrayFrom[1]), new CurrentWeatherCallback() {
+       /**
+        * This is when we have a better forecast
+         openWeather.getCurrentWeatherByGeoCoordinates(Double.valueOf(arrayFrom[0]), Double.valueOf(arrayFrom[1]), new CurrentWeatherCallback() {
             @Override
             public void onSuccess(CurrentWeather currentWeather) {
                 fromModel.setPlace(from);
@@ -79,7 +80,7 @@ public class WeaterView extends BottomSheetDialogFragment {
             }
         });
 
-
+*/
         openWeather.getCurrentWeatherByGeoCoordinates(Double.valueOf(arrayto[0]), Double.valueOf(arrayto[1]), new CurrentWeatherCallback() {
             @Override
             public void onSuccess(CurrentWeather currentWeather) {
@@ -103,11 +104,11 @@ public class WeaterView extends BottomSheetDialogFragment {
         });
 
         List<WeatherModel> weatherModels = new ArrayList<>();
-        weatherModels.add(fromModel);
+       // weatherModels.add(fromModel);
         weatherModels.add(toModel);
         adapter = new WeatherAdapter(weatherModels,getContext());
         rv.setAdapter(adapter);
-        Snackbar.make(v,"Buscando Pronostico...",Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(v,"Buscando Pronóstico...",Snackbar.LENGTH_SHORT).show();
 
 
 
