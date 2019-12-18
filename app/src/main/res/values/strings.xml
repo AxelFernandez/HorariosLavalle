@@ -59,6 +59,7 @@
     <string name="locationCruce">-32.716508,-68.679839</string>
     <string name="locationElVergel">-32.786271,-68.612457</string>
     <string name="locationElParamillo">-32.775800,-68.572500</string>
+    <string name="url">https://horarioslavalle.com.ar/api/special</string>
 
 
 </resources>

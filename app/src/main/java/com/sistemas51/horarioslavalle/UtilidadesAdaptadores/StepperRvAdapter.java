@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -51,14 +52,15 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
                 if (currentStep == 0 && i == 3) {
                     if (callback.getSpecial()) {
                         context.startActivity(new Intent(context, SpecialHours.class));
-                    } else {
-                        Snackbar.make(view, "No hay horarios especiales ahora, intenta nuevamente mas tarde", Snackbar.LENGTH_SHORT);
+                    }else{
+                        Snackbar.make(view, "No hay horarios especiales ahora, intenta nuevamente mas tarde", Snackbar.LENGTH_LONG).show();
                     }
+                }else {
+                    rowIndex = i;
+                    selected = selectedStepper.get(i);
+                    callback.callBack(selected, currentStep);
+                    notifyDataSetChanged();
                 }
-                rowIndex = i;
-                selected = selectedStepper.get(i);
-                callback.callBack(selected, currentStep);
-                notifyDataSetChanged();
             }
         });
 

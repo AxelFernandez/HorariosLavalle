@@ -6,4 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".v2.SpecialHours">
 
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

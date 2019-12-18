@@ -29,5 +29,4 @@
             android:name=".UtilidadesAdaptadores.Help"
             android:screenOrientation="portrait" />
     </application>
-
 </manifest>

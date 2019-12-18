@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
 
     @Override
     public boolean getSpecial() {
-        return special;
+       return getSharedPreferences("preferences", Context.MODE_PRIVATE).getBoolean("special",false);
     }
 
     @Override

@@ -37,6 +37,9 @@ public class ApiRequest {
                             JSONObject json = new JSONObject(response);
                             apiVersion = json.getInt("version");
                             special = json.getBoolean("special");
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean("special",special);
+                            editor.apply();
                             Log.e("REQUESTING", response);
                         } catch (JSONException e) {
                             Log.d("Error trying cast Json", e.toString());
@@ -46,7 +49,6 @@ public class ApiRequest {
                             download(sharedPreferences,context,view);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putInt("version",apiVersion);
-                            editor.putBoolean("special",special);
                             editor.apply();
                         }else{
                             Snackbar.make(view,"Los Horarios están actualizados!", Snackbar.LENGTH_SHORT).show();
