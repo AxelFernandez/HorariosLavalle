@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".v2.SpecialHours"></activity>
         <activity
             android:name=".v2.ResultActivity"
-            android:label="@string/title_activity_result"></activity>
+            android:label="@string/title_activity_result" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

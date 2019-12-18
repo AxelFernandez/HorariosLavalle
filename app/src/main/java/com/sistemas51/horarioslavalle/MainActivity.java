@@ -2,16 +2,16 @@ package com.sistemas51.horarioslavalle;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperAdapter;
@@ -28,21 +28,23 @@ import java.util.Map;
 //TODO: Update to AndroidX //Done! Look closer for error in old phones.
 //TODO: Moto e5 instant crash (API?)
 //TODO: Hide the SnackBar if user click in a no hour holder in RecyclerView
-//TODO: Make more beauty Help Activity
+//TODO: Make more beauty Help Activity //Done!
 //TODO: Change the icon, it will be deprecated, it will be a square.
 
 public class MainActivity extends AppCompatActivity implements Callback, StepperLayout.StepperListener {
     private StepperLayout mStepperLayout;
     private StepperAdapter mStepperAdapter;
+    boolean special;
     Map<Integer, String> data;
     Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
+        SharedPreferences sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         ApiRequest apiRequest = new ApiRequest();
-        apiRequest.init(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
-
+        apiRequest.init(sharedPreferences,getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
+        special = sharedPreferences.getBoolean("special",false);
         toolbar = findViewById(R.id.toolbarStep);
         toolbar.setTitle("Selecciona Ruta");
         toolbar.setSubtitle("Horarios Lavalle");
@@ -98,6 +100,11 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
     @Override
     public Map<Integer, String> getData() {
         return data;
+    }
+
+    @Override
+    public boolean getSpecial() {
+        return special;
     }
 
     @Override

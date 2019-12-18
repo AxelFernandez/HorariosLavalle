@@ -1,18 +1,21 @@
 package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.callback.Callback;
+import com.sistemas51.horarioslavalle.v2.SpecialHours;
 
 import java.util.List;
 
@@ -40,12 +43,21 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         viewHolder.description.setText(selectedStepper.get(i));
+
+
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rowIndex=i;
+                if (currentStep == 0 && i == 3) {
+                    if (callback.getSpecial()) {
+                        context.startActivity(new Intent(context, SpecialHours.class));
+                    } else {
+                        Snackbar.make(view, "No hay horarios especiales ahora, intenta nuevamente mas tarde", Snackbar.LENGTH_SHORT);
+                    }
+                }
+                rowIndex = i;
                 selected = selectedStepper.get(i);
-                callback.callBack(selected,currentStep);
+                callback.callBack(selected, currentStep);
                 notifyDataSetChanged();
             }
         });
