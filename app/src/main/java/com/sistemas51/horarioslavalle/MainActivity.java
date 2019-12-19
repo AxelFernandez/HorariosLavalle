@@ -108,6 +108,11 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
     }
 
     @Override
+    public void moveToStep(int step) {
+        mStepperLayout.setCurrentStepPosition(step);
+    }
+
+    @Override
     public void onCompleted(View completeButton) {
 
     }

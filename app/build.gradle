@@ -11,8 +11,8 @@ android {
         applicationId "com.sistemas51.horarioslavalle"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 29
-        versionName "2.3"
+        versionCode 30
+        versionName "2.4.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         dataBinding.enabled false

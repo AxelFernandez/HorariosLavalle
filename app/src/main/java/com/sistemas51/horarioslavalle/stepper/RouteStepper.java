@@ -3,6 +3,7 @@ package com.sistemas51.horarioslavalle.stepper;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperRvAdapter;
 import com.sistemas51.horarioslavalle.callback.Callback;
@@ -70,14 +72,24 @@ public class RouteStepper extends Fragment implements BlockingStep {
 
     @Override
     public void onCompleteClicked(StepperLayout.OnCompleteClickedCallback callback) {
+        try {
+            Map<Integer,String> data = this.callback.getData();
+            String lastOne = stepperRvAdapter.getSelected();
+            Intent intent = new Intent(getContext(), ResultActivity.class);
+            if(data.get(0)!= null && data.get(1) != null && lastOne != null){
+                intent.putExtra(getResources().getString(R.string.route),data.get(0));
+                intent.putExtra(getResources().getString(R.string.from),data.get(1));
+                intent.putExtra(getResources().getString(R.string.to),lastOne);
+                startActivity(intent);
+            }else{
+                this.callback.moveToStep(0);
+                Snackbar.make(getView(),"Hubo un problema, vuelve a consultar",Snackbar.LENGTH_LONG).show();
+            }
+        }catch (Exception e){
+            Log.e("Error in RouteStepper",e.getMessage());
+            this.callback.moveToStep(0);
+        }
 
-        Map<Integer,String> data = this.callback.getData();
-        String lastOne = stepperRvAdapter.getSelected();
-        Intent intent = new Intent(getContext(), ResultActivity.class);
-        intent.putExtra(getResources().getString(R.string.route),data.get(0));
-        intent.putExtra(getResources().getString(R.string.from),data.get(1));
-        intent.putExtra(getResources().getString(R.string.to),lastOne);
-        startActivity(intent);
         callback.complete();
     }
 
