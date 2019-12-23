@@ -58,8 +58,10 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
                 }else {
                     rowIndex = i;
                     selected = selectedStepper.get(i);
-                    callback.callBack(selected, currentStep);
-                    notifyDataSetChanged();
+                    if (callback != null){
+                        callback.callBack(selected, currentStep);
+                        notifyDataSetChanged();
+                    }
                 }
             }
         });

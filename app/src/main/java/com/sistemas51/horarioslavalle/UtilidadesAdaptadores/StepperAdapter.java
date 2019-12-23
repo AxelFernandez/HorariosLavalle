@@ -28,21 +28,21 @@ public class StepperAdapter extends AbstractFragmentStepAdapter {
         switch (position){
             case 0:
                 final RouteStepper step1 = new RouteStepper();
+                step1.setCallback(callback);
                 b1.putInt(RouteStepper.CURRENT_STEP_POSITION_KEY, position);
                 step1.setArguments(b1);
-                step1.setCallback(callback);
                 return step1;
             case 1:
                 final RouteStepper step2 = new RouteStepper();
+                step2.setCallback(callback);
                 b1.putInt(RouteStepper.CURRENT_STEP_POSITION_KEY, position);
                 step2.setArguments(b1);
-                step2.setCallback(callback);
                 return step2;
             case 2:
                 final RouteStepper step3 = new RouteStepper();
+                step3.setCallback(callback);
                 b1.putInt(RouteStepper.CURRENT_STEP_POSITION_KEY, position);
                 step3.setArguments(b1);
-                step3.setCallback(callback);
                 return step3;
         }
         return null;
