@@ -21,6 +21,8 @@
         <item>"Ruta 24"</item>
         <item>"Ruta 40"</item>
         <item>"California"</item>
+        <item>"Internos Costa de Araujo"</item>
+        <item>"Internos Villa Tulumaya"</item>
         <item>"Horarios Especiales"</item>
     </string-array>
 
@@ -52,6 +54,14 @@
         <item>"Tres Porteña"</item>
         <item>"Central"</item>
         <item>"California"</item>
+        <item>"Costa de Araujo"</item>
+    </string-array>
+
+    <string-array name="placesInternosCosta">
+        <item>"La Pega"</item>
+        <item>"Las Violetas"</item>
+        <item>"El Vergel"</item>
+        <item>"Paramillo"</item>
         <item>"Costa de Araujo"</item>
     </string-array>
 

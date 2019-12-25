@@ -26,7 +26,7 @@ public class ApiRequest {
         String result;
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://www.horarioslavalle.com.ar/api/",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.0.113/index.php/api",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -69,7 +69,7 @@ public class ApiRequest {
         RequestQueue queue = Volley.newRequestQueue(context);
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://www.horarioslavalle.com.ar/api/download",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.0.113/index.php/api/download",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

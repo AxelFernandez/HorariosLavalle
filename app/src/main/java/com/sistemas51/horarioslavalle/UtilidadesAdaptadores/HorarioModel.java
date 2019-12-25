@@ -2,7 +2,6 @@ package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 
 import android.content.Context;
-import android.util.Log;
 
 import com.sistemas51.horarioslavalle.R;
 
@@ -24,6 +23,7 @@ public class HorarioModel {
 
     private String from;
     private String to;
+    private String description;
     private boolean next;
     private static final String WEEK = "week";
     private static final String SATURDAY ="saturday";
@@ -37,18 +37,19 @@ public class HorarioModel {
         this.next = next;
     }
 
-    public HorarioModel(String from, String to, boolean next) {
+    public HorarioModel(String from, String to, boolean next,String additional) {
 
         this.from = from;
         this.to = to;
         this.next = next;
+        this.description = additional;
     }
 
-    public static List<HorarioModel> getHour(List<String>from, List<String> to, int day) throws ParseException {
+    public static List<HorarioModel> getHour(List<String>from, List<String> to, int day,List<String>additional) throws ParseException {
         boolean isfirst= false;
         List<HorarioModel> result= new ArrayList<>();
         if (from == null || to ==null){
-            HorarioModel data = new HorarioModel("No hay horarios diponibles", "Intenta con otro recorrido",false);
+            HorarioModel data = new HorarioModel("No hay horarios diponibles", "Intenta con otro recorrido",false,null);
             result.add(data);
         }else {
             for (int i = 0; i < from.size(); i++) {
@@ -70,17 +71,17 @@ public class HorarioModel {
                             }else if(calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SUNDAY && calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SATURDAY &&day== -1){
                                 isToday = true;
                             }
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), isToday);
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), isToday,additional.get(i));
                             result.add(data);
                         } else {
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), false);
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), false,additional.get(i));
                             result.add(data);
                         }
                     }
                 }
             }
             if (result.size() == 0){
-                HorarioModel data = new HorarioModel("No hay horarios diponibles", "Intenta con otro recorrido",false);
+                HorarioModel data = new HorarioModel("No hay horarios diponibles", "Intenta con otro recorrido",false,null);
                 result.add(data);
             }
         }
@@ -176,5 +177,11 @@ public class HorarioModel {
         this.to = to;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

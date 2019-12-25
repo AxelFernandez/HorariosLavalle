@@ -24,11 +24,7 @@ import com.stepstone.stepper.VerificationError;
 import java.util.HashMap;
 import java.util.Map;
 
-//TODO: Make a error if the user select next step without select an option //Done! I disabled the function
-//TODO: Update to AndroidX //Done! Look closer for error in old phones.
 //TODO: Moto e5 instant crash (API?)
-//TODO: Hide the SnackBar if user click in a no hour holder in RecyclerView
-//TODO: Make more beauty Help Activity //Done!
 //TODO: Change the icon, it will be deprecated, it will be a square.
 
 public class MainActivity extends AppCompatActivity implements Callback, StepperLayout.StepperListener {

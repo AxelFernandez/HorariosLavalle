@@ -1,14 +1,13 @@
 package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
-
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
@@ -60,6 +59,9 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
         final HorarioModel horarioModel = horarioModels.get(position);
         holder.locationView.setText(horarioModel.getFrom());
         holder.descriptionView.setText(horarioModel.getTo());
+        if (!horarioModel.getDescription().equals("null")){
+            holder.additional.setText(horarioModel.getDescription());
+        }
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +101,7 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
         View container;
         TextView locationView;
         TextView descriptionView;
-        TextView temperatureView;
+        TextView additional;
 
         public ForecastViewHolder(View itemView) {
             super(itemView);
@@ -108,7 +110,7 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
             container = itemView.findViewById(R.id.forecast_container);
             locationView = (TextView) itemView.findViewById(R.id.forecast_location);
             descriptionView = (TextView) itemView.findViewById(R.id.forecast_description);
-            temperatureView = (TextView) itemView.findViewById(R.id.forecast_temperature);
+            additional = (TextView) itemView.findViewById(R.id.additional);
         }
     }
 }

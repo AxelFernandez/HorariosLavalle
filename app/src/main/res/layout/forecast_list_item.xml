@@ -28,14 +28,13 @@
         tools:text="Llegada: 18:40" />
 
     <TextView
-        android:id="@+id/forecast_temperature"
-        android:layout_width="80dp"
+        android:id="@+id/additional"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="45dp"
-        android:maxLines="1"
-        android:textSize="25sp"
-        tools:text="-2:40" />
+        android:layout_below="@id/forecast_description"
+        android:layout_marginLeft="30dp"
+        android:textStyle="italic"
+        tools:text="Por Palmera"
+        />
 
 </RelativeLayout>

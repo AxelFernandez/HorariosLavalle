@@ -35,6 +35,7 @@ public class ResultFragment extends Fragment {
     private JSONObject placeFound;
     private List originArray;
     private List destinyArray;
+    private List additional;
     private RecyclerView rv;
     private BottomSheetBehavior bottomSheetBehavior;
 
@@ -79,6 +80,7 @@ public class ResultFragment extends Fragment {
             placeFound = database.getJSONObject(arrayToSearch);
             originArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(fromSearch));
             destinyArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(toSearch));
+            additional = HorarioModel.getFromJsonArray(placeFound.getJSONArray("additional"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -87,7 +89,7 @@ public class ResultFragment extends Fragment {
         rv.setLayoutAnimation(animation);
         HorarioAdapter adapter;
         try {
-            adapter = new HorarioAdapter(HorarioModel.getHour(originArray,destinyArray,numberDay), getContext());
+            adapter = new HorarioAdapter(HorarioModel.getHour(originArray,destinyArray,numberDay,additional), getContext());
             rv.setAdapter(adapter);
         } catch (ParseException e) {
             Log.e("ParseException",e.getMessage());
