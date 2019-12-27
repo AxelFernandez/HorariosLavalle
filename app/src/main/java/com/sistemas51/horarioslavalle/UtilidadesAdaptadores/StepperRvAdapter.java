@@ -48,7 +48,7 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentStep == 0 && i == 3) {
+                if (currentStep == 0 && i == 5) {
                     if (callback.getSpecial()) {
                         context.startActivity(new Intent(context, SpecialHours.class));
                     }else{

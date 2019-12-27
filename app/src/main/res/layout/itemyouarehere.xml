@@ -58,8 +58,10 @@
             android:textColor="@color/colorWhite"
             android:layout_below="@id/forecast_description"
             android:layout_marginLeft="30dp"
+            android:textStyle="italic"
             tools:text="Por Palmera"
             />
+
 
     </RelativeLayout>
 </LinearLayout>

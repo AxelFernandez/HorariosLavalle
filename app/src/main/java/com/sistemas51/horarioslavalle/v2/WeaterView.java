@@ -51,7 +51,7 @@ public class WeaterView extends BottomSheetDialogFragment {
         String from = getArguments().getString("from");
         String to = getArguments().getString("to");
         Map<String,String> locations = ResourceUtils.getHashMapResource(getContext(),R.xml.locations);
-        String[] arrayFrom = locations.get("location"+from.replace(" ","")).split(",");
+        //String[] arrayFrom = locations.get("location"+from.replace(" ","")).split(",");
         String[] arrayto= locations.get("location"+to.replace(" ","")).split(",");
        // fromModel =new WeatherModel();
         toModel =new WeatherModel();

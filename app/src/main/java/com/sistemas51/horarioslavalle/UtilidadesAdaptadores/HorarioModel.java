@@ -107,14 +107,25 @@ public class HorarioModel {
                 places = ResourceUtils.getHashMapResource(context, R.xml.california_places);
                 resultFrom = "california";
                 break;
+            case "Internos Costa de Araujo":
+                places = ResourceUtils.getHashMapResource(context,R.xml.interno_costa_places);
+                resultFrom = "internocosta";
+                break;
+            case "Internos Villa Tulumaya":
+                places = ResourceUtils.getHashMapResource(context,R.xml.interno_villa_places);
+                resultFrom = "internolavalle";
+                break;
         }
-        if (Integer.valueOf(places.get(from))<Integer.valueOf(places.get(to))){
-            direction = "ida";
-        }else{
-            direction = "vuelta";
+        if (places != null){
+            if (Integer.valueOf(places.get(from))<Integer.valueOf(places.get(to))){
+                direction = "ida";
+            }else{
+                direction = "vuelta";
+            }
+
+            result = resultFrom+direction+day;
         }
 
-        result = resultFrom+direction+day;
 
         return result;
     }
@@ -131,6 +142,12 @@ public class HorarioModel {
                 break;
             case "California":
                 result = ResourceUtils.getHashMapResource(context,R.xml.california_table_names).get(table);
+                break;
+            case "Internos Costa de Araujo":
+                result = ResourceUtils.getHashMapResource(context,R.xml.interno_costa_table_names).get(table);
+                break;
+            case "Internos Villa Tulumaya":
+                result = ResourceUtils.getHashMapResource(context,R.xml.interno_villa_table_names).get(table);
                 break;
         }
         return result;

@@ -62,7 +62,21 @@
         <item>"Las Violetas"</item>
         <item>"El Vergel"</item>
         <item>"Paramillo"</item>
+        <item>"California"</item>
+        <item>"La Bajada"</item>
+        <item>"Mendoza"</item>
+        <item>"Lavalle"</item>
         <item>"Costa de Araujo"</item>
+    </string-array>
+
+    <string-array name="placesInternosVilla">
+        <item>"Paramillo"</item>
+        <item>"La Pega"</item>
+        <item>"Las Violetas"</item>
+        <item>"El Vergel"</item>
+        <item>"B Tupac"</item>
+        <item>"B La Colmena"</item>
+        <item>"Lavalle"</item>
     </string-array>
 
 </resources>

@@ -79,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements Callback, Stepper
             arrayId = R.array.nombredelugaresr40;
         }else if (step.equals("California")){
             arrayId = R.array.nombrelugarescalifornia;
+        }else if (step.equals("Internos Costa de Araujo")){
+            arrayId = R.array.placesInternosCosta;
+        }else if(step.equals("Internos Villa Tulumaya")){
+            arrayId = R.array.placesInternosVilla;
         }
         RouteStepper stepper = (RouteStepper) mStepperAdapter.findStep(stepNumber + 1);
         if (stepNumber != 2){
