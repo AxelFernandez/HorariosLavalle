@@ -61,7 +61,7 @@ public class HorarioModel {
                         Calendar calendar = Calendar.getInstance();
                         hourDate = sdf.parse(from.get(i));
                         now = sdf.parse(calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE));
-
+                        String additionals = additional.get(i).equals("null") ? " ": additional.get(i);
                         if (!isfirst && hourDate.after(now)) {
                             isfirst = true;
                             boolean isToday = false;
@@ -71,10 +71,10 @@ public class HorarioModel {
                             }else if(calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SUNDAY && calendar.get(Calendar.DAY_OF_WEEK) !=  Calendar.SATURDAY &&day== -1){
                                 isToday = true;
                             }
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), isToday,additional.get(i));
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), isToday,additionals);
                             result.add(data);
                         } else {
-                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), false,additional.get(i));
+                            HorarioModel data = new HorarioModel("Partida: " + from.get(i).substring(0,5), "Llegada: " + to.get(i).substring(0,5), false,additionals);
                             result.add(data);
                         }
                     }

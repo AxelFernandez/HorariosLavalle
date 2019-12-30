@@ -12,6 +12,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.sistemas51.horarioslavalle.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +27,7 @@ public class ApiRequest {
         String result;
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://172.16.102.4:8001/index.php/api",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, context.getResources().getString(R.string.urlApi),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -69,7 +70,7 @@ public class ApiRequest {
         RequestQueue queue = Volley.newRequestQueue(context);
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://172.16.102.4:8001/index.php/api/download",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, context.getResources().getString(R.string.urlApiDownload),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

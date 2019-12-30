@@ -59,9 +59,7 @@ public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Forecast
         final HorarioModel horarioModel = horarioModels.get(position);
         holder.locationView.setText(horarioModel.getFrom());
         holder.descriptionView.setText(horarioModel.getTo());
-        if (horarioModel.getDescription() != null && !horarioModel.getDescription().equals("null")){
-            holder.additional.setText(horarioModel.getDescription());
-        }
+        holder.additional.setText(horarioModel.getDescription());
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

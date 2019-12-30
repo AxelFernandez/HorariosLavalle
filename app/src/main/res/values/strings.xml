@@ -60,6 +60,8 @@
     <string name="locationElVergel">-32.786271,-68.612457</string>
     <string name="locationElParamillo">-32.775800,-68.572500</string>
     <string name="url">https://horarioslavalle.com.ar/api/special</string>
+    <string name="urlApi">https://horarioslavalle.com.ar/api</string>
+    <string name="urlApiDownload">https://horarioslavalle.com.ar/api/download</string>
 
 
 </resources>
