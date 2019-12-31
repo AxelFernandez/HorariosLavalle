@@ -1,27 +1,21 @@
 <resources>
     <string name="app_name">Horarios Lavalle</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_busqueda_rapida">BusquedaRapida</string>
     <string name="large_text">
-        "Bienvenido a Horarios Lavalle. \n\n"
+        "Bienvenido/a a Horarios Lavalle. \n\n"
 
-        "\t Gracias por descargar esta aplicacion y espero que te sea de utilidad tanto como a mi. \n \n"
-        "\t Con esta aplicacion podra obtener de manera sencilla los horarios de colectivos en el departamento de Lavalle. \n \n"
-        "\t Su utilizacion es muy sencilla, solo basta con indicar su punto de partida y llegada, y la aplicacion se encargara de proporcionarle los horarios correspondientes que usted ha solicitado \n \n"
+        "\t La versión rediseñada de Horarios Lavalle permite obtener de manera ágil, fácil y sencilla los recorridos de colectivo del Departamento. \n \n"
+        "\t Es una app de navegación gratuita sin conexión a internet. \n \n"
+        "\t Actualizamos a menudo nuestra aplicación para corregir errores, mejorar el rendimiento y añadir nuevas funcionalidades por lo tanto seguimos escuchando tus comentarios y sugerencias. \n \n"
+        "\t Puedes enviarnos un email con el botón de aquí abajo y responderemos lo más pronto posible \n \n"
+        "\t ¡Gracias por usar Horarios Lavalle!
+        \n \n"
 
-        "\t Tambien puede Elegir entre la pestaña de dia de semana, sabado o domingo. \n \n"
-
-        "\t Por cualquier error o duda se pueden contactar conmigo \n "
         "\t Contacto: \n "
         "\t \t Axel Fernandez. \n "
         "\t \t e-mail: axel_fernandez18@hotmail.com \n "
-        "\t \t Fb: www.facebook.com/A3ron "
 
     </string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main2">Main2Activity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -30,4 +24,44 @@
     <string name="add_widget">Add widget</string>
     <string name="configure">Configure</string>
     <string name="title_activity_busqueda40">Busqueda40</string>
+
+
+    <string name="Ruta24">Ruta24</string>
+    <string name="Ruta40">Ruta40</string>
+    <string name="California">California</string>
+    <string name="Ruta">Ruta</string>
+    <string name="Semana">Semana</string>
+    <string name="Sabado">Sabado</string>
+    <string name="Domingo">Domingo</string>
+    <string name="youAreHere">Próximo Colectivo</string>
+    <string name="title_activity_result">ResultActivity</string>
+
+    <string name="type">type</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="route">route</string>
+    <string name="week">week</string>
+    <string name="saturday">saturday</string>
+    <string name="sunday">sunday</string>
+
+
+    <string name="locationAsuncion">-32.576023,-68.270242</string>
+    <string name="locationEl15">-32.634430,-68.336780</string>
+    <string name="locationGustavoAndre">-32.679511,-68.317108</string>
+    <string name="locationCostaDeAraujo">-32.759586,-68.393967</string>
+    <string name="locationLavalle">-32.721140,-68.593770</string>
+
+    <string name="locationMendoza">-32.894684,-68.830963</string>
+
+
+    <string name="locationElBorbollon">-32.808701,-68.779887</string>
+    <string name="locationElPastal">-32.770448,-68.704640</string>
+    <string name="locationCruce">-32.716508,-68.679839</string>
+    <string name="locationElVergel">-32.786271,-68.612457</string>
+    <string name="locationElParamillo">-32.775800,-68.572500</string>
+    <string name="url">https://horarioslavalle.com.ar/api/special</string>
+    <string name="urlApi">https://horarioslavalle.com.ar/api</string>
+    <string name="urlApiDownload">https://horarioslavalle.com.ar/api/download</string>
+
+
 </resources>
