@@ -22,7 +22,7 @@ public class Help extends AppCompatActivity {
         TextView texto = (TextView)findViewById(R.id.textView4);
         Toolbar toolbar = findViewById(R.id.toolbarHelp);
         toolbar.setTitle("Ayuda");
-        toolbar.setSubtitle("Version Beta");
+        toolbar.setSubtitle("Version 2.4.2");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
