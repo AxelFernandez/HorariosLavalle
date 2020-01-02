@@ -1,5 +1,5 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="@integer/ms_default_error_tab_animation_duration">
+    android:duration="@integer/config_navAnimTime">
 
     <translate
         android:fromYDelta="-20%"

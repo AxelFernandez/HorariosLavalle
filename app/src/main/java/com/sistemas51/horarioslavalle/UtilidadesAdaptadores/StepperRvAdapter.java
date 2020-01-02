@@ -1,7 +1,6 @@
 package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,30 +9,39 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.callback.Callback;
-import com.sistemas51.horarioslavalle.v2.SpecialHours;
+import com.sistemas51.horarioslavalle.router.OriginSelectedDirections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.ViewHolder> {
     private String selected;
     private List<String> selectedStepper;
+    private List<String> args;
     private Context context;
     int rowIndex = -1;
-    Callback callback;
     int currentStep;
+    boolean special;
 
-    public StepperRvAdapter(Context context, List<String> selectedStepper,Callback callback, int currentStep){
+    public StepperRvAdapter(Context context, List<String> selectedStepper, int currentStep,List<String>args){
         this.context = context;
         this.selectedStepper = selectedStepper;
-        this.callback = callback;
         this.currentStep = currentStep;
+        this.args = args;
     }
 
+    public StepperRvAdapter(Context context, List<String> selectedStepper, int currentStep,boolean special,List<String>args){
+        this.context = context;
+        this.selectedStepper = selectedStepper;
+        this.currentStep = currentStep;
+        this.special = special;
+        this.args=args;
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -49,18 +57,17 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
             @Override
             public void onClick(View view) {
                 if (currentStep == 0 && i == 5) {
-                    if (callback.getSpecial()) {
-                        context.startActivity(new Intent(context, SpecialHours.class));
+                    if (special) {
+                        Navigation.findNavController(view).navigate(R.id.to_specialHours_action);
                     }else{
                         Snackbar.make(view, "No hay horarios especiales ahora, intenta nuevamente mas tarde", Snackbar.LENGTH_LONG).show();
                     }
                 }else {
                     rowIndex = i;
                     selected = selectedStepper.get(i);
-                    if (callback != null){
-                        callback.callBack(selected, currentStep);
-                        notifyDataSetChanged();
-                    }
+                    args.add(selectedStepper.get(i));
+                    OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((ArrayList) args);
+                    Navigation.findNavController(view).navigate(action);
                 }
             }
         });
