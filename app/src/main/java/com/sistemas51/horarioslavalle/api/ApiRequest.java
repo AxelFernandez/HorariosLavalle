@@ -20,10 +20,15 @@ import org.json.JSONObject;
 public class ApiRequest {
 
     public void init(SharedPreferences sharedPreferences, Context context, View view){
-        validateVersion(sharedPreferences,context,view);
+        validateVersion(sharedPreferences,context,view,false);
 
     }
-    private void validateVersion(final SharedPreferences sharedPreferences, final Context context, final View view){
+
+    public void forceDownload(SharedPreferences sharedPreferences, Context context, View view){
+        validateVersion(sharedPreferences,context,view,true);
+
+    }
+    private void validateVersion(final SharedPreferences sharedPreferences, final Context context, final View view,boolean force){
         String result;
         RequestQueue queue = Volley.newRequestQueue(context);
 
@@ -42,18 +47,18 @@ public class ApiRequest {
                             editor.putBoolean("special",special);
                             editor.apply();
                             Log.e("REQUESTING", response);
+                            if (force || version<apiVersion){
+                                Snackbar.make(view,"Descargando Actualizaciones...", Snackbar.LENGTH_LONG).show();
+                                download(sharedPreferences,context,view);
+                                editor.putInt("version",apiVersion);
+                                editor.apply();
+                            }else{
+                                Snackbar.make(view,"Los Horarios están actualizados!", Snackbar.LENGTH_SHORT).show();
+
+                            }
+
                         } catch (JSONException e) {
                             Log.d("Error trying cast Json", e.toString());
-                        }
-                        if (version<apiVersion){
-                            Snackbar.make(view,"Descargando Actualizaciones...", Snackbar.LENGTH_LONG).show();
-                            download(sharedPreferences,context,view);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putInt("version",apiVersion);
-                            editor.apply();
-                        }else{
-                            Snackbar.make(view,"Los Horarios están actualizados!", Snackbar.LENGTH_SHORT).show();
-
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -78,7 +83,7 @@ public class ApiRequest {
                        editor.putString("database",response);
                        editor.commit();
                        Log.e("REQUESTING", response);
-                        Snackbar.make(view,"Nuevos horarios Actualizados!", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(view,"Nuevos horarios Actualizados, reinicia la App para verlos!", Snackbar.LENGTH_LONG).show();
 
                     }
                 }, new Response.ErrorListener() {

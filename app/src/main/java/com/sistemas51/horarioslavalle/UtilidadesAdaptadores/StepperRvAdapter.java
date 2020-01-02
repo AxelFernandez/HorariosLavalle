@@ -16,31 +16,32 @@ import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.router.OriginSelectedDirections;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.ViewHolder> {
     private String selected;
     private List<String> selectedStepper;
-    private List<String> args;
+    Map<String, String> hourSelected;
     private Context context;
     int rowIndex = -1;
     int currentStep;
     boolean special;
 
-    public StepperRvAdapter(Context context, List<String> selectedStepper, int currentStep,List<String>args){
+    public StepperRvAdapter(Context context, List<String> selectedStepper, int currentStep,  Map<String, String> hourSelected){
         this.context = context;
         this.selectedStepper = selectedStepper;
         this.currentStep = currentStep;
-        this.args = args;
+        this.hourSelected = hourSelected;
     }
 
-    public StepperRvAdapter(Context context, List<String> selectedStepper, int currentStep,boolean special,List<String>args){
+    public StepperRvAdapter(Context context, List<String> selectedStepper, int currentStep,boolean special, Map<String, String> hourSelected){
         this.context = context;
         this.selectedStepper = selectedStepper;
         this.currentStep = currentStep;
         this.special = special;
-        this.args=args;
+        this.hourSelected = hourSelected;
     }
     @NonNull
     @Override
@@ -51,7 +52,10 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         viewHolder.description.setText(selectedStepper.get(i));
-
+        if (currentStep == 2 && selectedStepper.get(i).equals(hourSelected.get(context.getResources().getString(R.string.from)))){
+            viewHolder.cardView.setBackgroundColor(Color.parseColor("#fb8c00"));
+            viewHolder.description.setTextColor(Color.parseColor("#ffffff"));
+        }
 
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,24 +66,23 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
                     }else{
                         Snackbar.make(view, "No hay horarios especiales ahora, intenta nuevamente mas tarde", Snackbar.LENGTH_LONG).show();
                     }
-                }else {
-                    rowIndex = i;
-                    selected = selectedStepper.get(i);
-                    args.add(selectedStepper.get(i));
-                    OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((ArrayList) args);
+                }else if(currentStep == 0 && i !=5) {
+                    hourSelected.put(context.getResources().getString(R.string.route), selectedStepper.get(i));
+                    OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((HashMap) hourSelected);
+                    Navigation.findNavController(view).navigate(action);
+                }else if(currentStep == 1){
+                    hourSelected.put(context.getResources().getString(R.string.from), selectedStepper.get(i));
+                    OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((HashMap) hourSelected);
+                    Navigation.findNavController(view).navigate(action);
+                }else if(currentStep == 2){
+                    hourSelected.put(context.getResources().getString(R.string.to), selectedStepper.get(i));
+                    OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((HashMap) hourSelected);
                     Navigation.findNavController(view).navigate(action);
                 }
+
             }
         });
 
-        if(rowIndex==i){
-            viewHolder.cardView.setBackgroundColor(Color.parseColor("#8bc34a"));
-            viewHolder.description.setTextColor(Color.parseColor("#ffffff"));
-        }
-        else{
-            viewHolder.cardView.setBackgroundColor(Color.parseColor("#ffffff"));
-            viewHolder.description.setTextColor(Color.parseColor("#000000"));
-        }
 
     }
 

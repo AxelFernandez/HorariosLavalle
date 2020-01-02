@@ -28,7 +28,7 @@
             android:textSize="20dp"
             android:gravity="center_horizontal"
             tools:text= "Horarios especiales"
-
+            android:textColor="@color/black"
             >
         </TextView>
     </RelativeLayout>

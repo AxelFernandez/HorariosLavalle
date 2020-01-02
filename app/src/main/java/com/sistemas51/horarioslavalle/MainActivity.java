@@ -20,17 +20,17 @@ import com.sistemas51.horarioslavalle.api.ApiRequest;
 public class MainActivity extends AppCompatActivity {
     boolean special;
     Toolbar toolbar;
+    private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
-        SharedPreferences sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         ApiRequest apiRequest = new ApiRequest();
         apiRequest.init(sharedPreferences,getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
         special = sharedPreferences.getBoolean("special",false);
         toolbar = findViewById(R.id.toolbarStep);
-        toolbar.setTitle("Selecciona Ruta");
-        toolbar.setSubtitle("Horarios Lavalle");
+
         setSupportActionBar(toolbar);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             toolbar.setElevation(10);
@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent help = new Intent(getApplicationContext(), Help.class);
                 startActivity(help);
                 return true;
+            case R.id.download:
+                new ApiRequest().forceDownload(sharedPreferences,getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

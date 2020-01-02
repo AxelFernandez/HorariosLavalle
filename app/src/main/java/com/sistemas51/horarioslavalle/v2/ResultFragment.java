@@ -28,6 +28,7 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class ResultFragment extends Fragment {
@@ -56,10 +57,11 @@ public class ResultFragment extends Fragment {
         rv = (RecyclerView) v.findViewById(R.id.recicler);
         FloatingActionButton fab = v.findViewById(R.id.floating_action_button);
         int resIdAnim = R.anim.layout_anim_fall_down;
-        final String from = getArguments().getString(getResources().getString(R.string.from));
-        final String to = getArguments().getString(getResources().getString(R.string.to));
+        Map<String, String> hourSelected = (Map<String, String>) getArguments().getSerializable("arg");
+        final String from = hourSelected.get(getResources().getString(R.string.from));
+        final String to = hourSelected.get(getResources().getString(R.string.to));
         final String day = getArguments().getString(getResources().getString(R.string.type));
-        final String route = getArguments().getString(getResources().getString(R.string.route));
+        final String route = hourSelected.get(getResources().getString(R.string.route));
         String arrayToSearch = HorarioModel.getNamesKey(from,to,route,day,getContext());
         String fromSearch = HorarioModel.getTableName(from,route, getContext());
         String toSearch = HorarioModel.getTableName(to,route, getContext());
@@ -98,9 +100,6 @@ public class ResultFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                List<String> arguments = new ArrayList<>();
-                arguments.add(getArguments().getString("from"));
-                arguments.add(getArguments().getString("to"));
                 WeaterView bsdFragment = new WeaterView();
                 bsdFragment.setArguments(getArguments());
                 bsdFragment.show(getFragmentManager(), "BSDialog");

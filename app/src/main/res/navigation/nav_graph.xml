@@ -10,7 +10,11 @@
         android:label="RouteSelected" >
         <action
             android:id="@+id/next_action"
-            app:destination="@id/originSelected" />
+            app:destination="@id/originSelected"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/to_specialHours_action"
             app:destination="@id/specialHours" />
@@ -21,10 +25,14 @@
         android:label="OriginSelected" >
         <action
             android:id="@+id/next_action"
-            app:destination="@id/destinySelected" />
+            app:destination="@id/destinySelected"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <argument
             android:name="args"
-            app:argType="java.util.ArrayList" />
+            app:argType="java.util.HashMap" />
     </fragment>
     <fragment
         android:id="@+id/destinySelected"
@@ -32,10 +40,12 @@
         android:label="DestinySelected" >
         <action
             android:id="@+id/next_action"
-            app:destination="@id/resultActivity" />
+            app:destination="@id/resultActivity"
+            app:popUpTo="@+id/routeSelected"
+            app:popUpToInclusive="false" />
         <argument
             android:name="args"
-            app:argType="java.util.ArrayList" />
+            app:argType="java.util.HashMap" />
     </fragment>
     <activity
         android:id="@+id/resultActivity"
@@ -44,7 +54,7 @@
         tools:layout="@layout/activity_result" >
         <argument
             android:name="args"
-            app:argType="java.util.ArrayList" />
+            app:argType="java.util.HashMap" />
     </activity>
     <activity
         android:id="@+id/specialHours"

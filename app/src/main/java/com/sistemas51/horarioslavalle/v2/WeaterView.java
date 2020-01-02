@@ -46,10 +46,11 @@ public class WeaterView extends BottomSheetDialogFragment {
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(),resIdAnim);
         rv.setLayoutAnimation(animation);
+        Map<String, String> hourSelected = (Map<String, String>) getArguments().getSerializable("arg");
 
         OpenWeatherMapHelper openWeather = WeatherSingleton.getInstance();
-        String from = getArguments().getString("from");
-        String to = getArguments().getString("to");
+        String from = hourSelected.get(getResources().getString(R.string.from));
+        String to = hourSelected.get(getResources().getString(R.string.to));
         Map<String,String> locations = ResourceUtils.getHashMapResource(getContext(),R.xml.locations);
         //String[] arrayFrom = locations.get("location"+from.replace(" ","")).split(",");
         String[] arrayto= locations.get("location"+to.replace(" ","")).split(",");
