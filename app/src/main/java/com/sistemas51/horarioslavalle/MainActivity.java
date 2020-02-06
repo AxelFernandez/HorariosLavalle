@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepper_main);
+
         sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         ApiRequest apiRequest = new ApiRequest();
         apiRequest.init(sharedPreferences,getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
