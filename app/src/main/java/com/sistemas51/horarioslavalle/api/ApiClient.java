@@ -1,6 +1,7 @@
 package com.sistemas51.horarioslavalle.api;
 
 import android.content.Context;
+import android.os.Build;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -13,9 +14,16 @@ public class ApiClient {
 
     public ApiClient(Context context) {
         this.context = context;
-
+        String url = null;
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            // versiones con android 5.0 o superior
+            url = "https://horarioslavalle.com.ar/";
+        } else{
+            // para versiones anteriores a android 5.0
+            url = "http://horarioslavalle.com.ar/";
+        }
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://horarioslavalle.com.ar/")
+                .baseUrl(url)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
     }

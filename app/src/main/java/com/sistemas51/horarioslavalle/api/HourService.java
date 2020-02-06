@@ -15,12 +15,4 @@ public interface HourService {
     Call<String> download();
 
 
-    @GET("index.php/api/getversion/")
-    Call<String> versionOld();
-
-
-    @GET("index.php/api/gethour")
-    Call<String> downloadOld();
-
-
 }

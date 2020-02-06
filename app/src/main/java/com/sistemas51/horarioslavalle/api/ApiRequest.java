@@ -18,32 +18,16 @@ import retrofit2.Callback;
 public class ApiRequest {
 
     public void init(SharedPreferences sharedPreferences, Context context, View view){
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            // versiones con android 5.0 o superior
-            validateVersion(sharedPreferences,context,view,false);
-        } else{
-            // para versiones anteriores a android 5.0
-            validateVersion(sharedPreferences,context,view,false);
-        }
-
-
+        validateVersion(sharedPreferences,context,view,false);
     }
 
     public void forceDownload(SharedPreferences sharedPreferences, Context context, View view){
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            // versiones con android 5.0 o superior
-
-            validateVersion(sharedPreferences,context,view,true);
-        } else{
-            // para versiones anteriores a android 6.0
-            validateVersionOld(sharedPreferences,context,view,true);
-        }
+       validateVersion(sharedPreferences,context,view,true);
 
     }
     private void validateVersion(final SharedPreferences sharedPreferences, final Context context, final View view, boolean force){
         String result;
-
-        ApiClientOld apiClient = ApiClientOld.getInstance(context);
+        ApiClient apiClient = ApiClient.getInstance(context);
         final Call<String> version = apiClient.version();
         version.enqueue(new Callback<String>() {
             @Override
@@ -106,68 +90,5 @@ public class ApiRequest {
         });
     }
 
-    private void validateVersionOld(final SharedPreferences sharedPreferences, final Context context, final View view, boolean force){
-        String result;
-
-        ApiClientOld apiClient = ApiClientOld.getInstance(context);
-        final Call<String> version = apiClient.version();
-        version.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, retrofit2.Response<String> response) {
-                Integer version = sharedPreferences.getInt("version",0);
-                Integer apiVersion = null;
-                boolean special= false;
-                try {
-                    JSONObject json = new JSONObject(response.body());
-                    apiVersion = json.getInt("version");
-                    special = json.getBoolean("special");
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("special",special);
-                    editor.apply();
-                    Log.e("REQUESTING", response.body());
-                    if (force || version<apiVersion){
-                        Snackbar.make(view,"Descargando Actualizaciones...", Snackbar.LENGTH_LONG).show();
-                        downloadOld(sharedPreferences,context,view);
-                        editor.putInt("version",apiVersion);
-                        editor.apply();
-                    }else{
-                        Snackbar.make(view,"Los Horarios están actualizados!", Snackbar.LENGTH_SHORT).show();
-
-                    }
-
-                } catch (JSONException e) {
-                    Log.d("Error trying cast Json", e.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Snackbar.make(view,"No hay conexion para comprobar Actualizaciones", Snackbar.LENGTH_SHORT).show();
-                Log.e("Error request ",String.valueOf(t.getMessage()));
-            }
-
-        });
-    }
-
-    private void downloadOld(final SharedPreferences sharedPreferences, Context context,final View view){
-        ApiClientOld apiClient = ApiClientOld.getInstance(context);
-        apiClient.download().enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, retrofit2.Response<String> response) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("database",response.body());
-                editor.commit();
-                Log.e("REQUESTING", response.body());
-                Snackbar.make(view,"Nuevos horarios Actualizados, reinicia la App para verlos!", Snackbar.LENGTH_LONG).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e("Error request ",t.getMessage());
-                Snackbar.make(view,"No hay conexion para descargar Actualizaciones", Snackbar.LENGTH_SHORT).show();
-            }
-        });
-    }
 
 }
