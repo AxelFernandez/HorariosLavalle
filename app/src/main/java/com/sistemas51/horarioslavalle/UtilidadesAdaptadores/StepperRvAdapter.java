@@ -75,9 +75,14 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
                     OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((HashMap) hourSelected);
                     Navigation.findNavController(view).navigate(action);
                 }else if(currentStep == 2){
-                    hourSelected.put(context.getResources().getString(R.string.to), selectedStepper.get(i));
-                    OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((HashMap) hourSelected);
-                    Navigation.findNavController(view).navigate(action);
+                    if (selectedStepper.get(i).equals(hourSelected.get("from"))){
+                        Snackbar.make(view, "No es posible Seleccionar el mismo origen y destino, selecciona otro", Snackbar.LENGTH_LONG).show();
+                    }else{
+                        hourSelected.put(context.getResources().getString(R.string.to), selectedStepper.get(i));
+                        OriginSelectedDirections.NextAction action = OriginSelectedDirections.nextAction((HashMap) hourSelected);
+                        Navigation.findNavController(view).navigate(action);
+
+                    }
                 }
 
             }
