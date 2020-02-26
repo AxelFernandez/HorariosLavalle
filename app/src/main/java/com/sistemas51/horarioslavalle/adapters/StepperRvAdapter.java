@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.router.OriginSelectedDirections;
+import com.sistemas51.horarioslavalle.fragments.OriginSelectedDirections;
 
 import java.util.HashMap;
 import java.util.List;

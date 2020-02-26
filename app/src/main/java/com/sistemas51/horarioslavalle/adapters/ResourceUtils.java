@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.adapters;
 
 import android.content.Context;
 import android.content.res.XmlResourceParser;

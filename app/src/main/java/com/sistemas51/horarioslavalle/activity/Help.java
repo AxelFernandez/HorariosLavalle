@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -22,7 +22,7 @@ public class Help extends AppCompatActivity {
         TextView texto = (TextView)findViewById(R.id.textView4);
         Toolbar toolbar = findViewById(R.id.toolbarHelp);
         toolbar.setTitle("Ayuda");
-        toolbar.setSubtitle("Version 2.5.3");
+        toolbar.setSubtitle("Version 2.6.3");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

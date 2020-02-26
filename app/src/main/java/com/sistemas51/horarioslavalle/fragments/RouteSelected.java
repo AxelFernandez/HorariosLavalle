@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.router;
+package com.sistemas51.horarioslavalle.fragments;
 
 
 import android.content.Context;
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.StepperRvAdapter;
+import com.sistemas51.horarioslavalle.adapters.StepperRvAdapter;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.v2;
+package com.sistemas51.horarioslavalle.fragments;
 
 
 import android.content.Context;
@@ -10,23 +10,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
-import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioAdapter;
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.HorarioModel;
+import com.sistemas51.horarioslavalle.adapters.HorarioAdapter;
+import com.sistemas51.horarioslavalle.models.HorarioModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -38,7 +34,6 @@ public class ResultFragment extends Fragment {
     private List destinyArray;
     private List additional;
     private RecyclerView rv;
-    private BottomSheetBehavior bottomSheetBehavior;
 
     public ResultFragment() {
         // Required empty public constructor
@@ -50,12 +45,8 @@ public class ResultFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
-        LinearLayout linearLayout = (LinearLayout) v.findViewById(R.id.bottomSheet);
-
-        bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
 
         rv = (RecyclerView) v.findViewById(R.id.recicler);
-        FloatingActionButton fab = v.findViewById(R.id.floating_action_button);
         int resIdAnim = R.anim.layout_anim_fall_down;
         Map<String, String> hourSelected = (Map<String, String>) getArguments().getSerializable("arg");
         final String from = hourSelected.get(getResources().getString(R.string.from));
@@ -96,16 +87,6 @@ public class ResultFragment extends Fragment {
         } catch (ParseException e) {
             Log.e("ParseException",e.getMessage());
         }
-        fab.show();
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WeaterView bsdFragment = new WeaterView();
-                bsdFragment.setArguments(getArguments());
-                bsdFragment.show(getFragmentManager(), "BSDialog");
-
-            }
-        });
 
         return v;
     }

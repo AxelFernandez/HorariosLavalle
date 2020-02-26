@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.v2;
+package com.sistemas51.horarioslavalle.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,14 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
-import com.sistemas51.horarioslavalle.router.DestinySelectedArgs;
+import com.sistemas51.horarioslavalle.fragments.DestinySelectedArgs;
+import com.sistemas51.horarioslavalle.fragments.ResultFragment;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 
 public class ResultActivity extends AppCompatActivity {
@@ -30,9 +33,11 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        Map<String, String> hourSelected= DestinySelectedArgs.fromBundle(getIntent().getExtras()).getArgs();
+        FloatingActionButton fab = findViewById(R.id.floating_action_button);
+        Map<String, String> hourSelected= DestinySelectedArgs.fromBundle(getIntent().getExtras()).getArgs() ;
         String from = hourSelected.get(getResources().getString(R.string.from));
         String to = hourSelected.get(getResources().getString(R.string.to));
+        String route = hourSelected.get(getResources().getString(R.string.route));
         toolbar = findViewById(R.id.toolbarResult);
         toolbar.setTitle(from);
         toolbar.setSubtitle(to);
@@ -95,6 +100,20 @@ public class ResultActivity extends AppCompatActivity {
 
         });
 
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Map<String, String> args = new HashMap<>();
+                args.put(getResources().getString(R.string.from),to);
+                args.put(getResources().getString(R.string.to),from);
+                args.put(getResources().getString(R.string.route),route);
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                intent.putExtra("args", (Serializable) args);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 

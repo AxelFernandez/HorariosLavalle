@@ -6,7 +6,7 @@
     app:startDestination="@id/routeSelected">
     <fragment
         android:id="@+id/routeSelected"
-        android:name="com.sistemas51.horarioslavalle.router.RouteSelected"
+        android:name="com.sistemas51.horarioslavalle.fragments.RouteSelected"
         android:label="RouteSelected" >
         <action
             android:id="@+id/next_action"
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/originSelected"
-        android:name="com.sistemas51.horarioslavalle.router.OriginSelected"
+        android:name="com.sistemas51.horarioslavalle.fragments.OriginSelected"
         android:label="OriginSelected" >
         <action
             android:id="@+id/next_action"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/destinySelected"
-        android:name="com.sistemas51.horarioslavalle.router.DestinySelected"
+        android:name="com.sistemas51.horarioslavalle.fragments.DestinySelected"
         android:label="DestinySelected" >
         <action
             android:id="@+id/next_action"
@@ -49,7 +49,7 @@
     </fragment>
     <activity
         android:id="@+id/resultActivity"
-        android:name="com.sistemas51.horarioslavalle.v2.ResultActivity"
+        android:name="com.sistemas51.horarioslavalle.activity.ResultActivity"
         android:label="activity_result"
         tools:layout="@layout/activity_result" >
         <argument
@@ -58,7 +58,7 @@
     </activity>
     <activity
         android:id="@+id/specialHours"
-        android:name="com.sistemas51.horarioslavalle.v2.SpecialHours"
+        android:name="com.sistemas51.horarioslavalle.activity.SpecialHours"
         android:label="activity_special_hours"
         tools:layout="@layout/activity_special_hours" />
 </navigation>

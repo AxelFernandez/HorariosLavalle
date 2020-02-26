@@ -1,9 +1,10 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.models;
 
 
 import android.content.Context;
 
 import com.sistemas51.horarioslavalle.R;
+import com.sistemas51.horarioslavalle.adapters.ResourceUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

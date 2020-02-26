@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".v2.SpecialHours"></activity>
+        <activity android:name=".activity.SpecialHours"></activity>
         <activity
-            android:name=".v2.ResultActivity"
+            android:name=".activity.ResultActivity"
             android:label="@string/title_activity_result" />
         <activity
             android:name=".MainActivity"
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UtilidadesAdaptadores.Help"
+            android:name=".activity.Help"
             android:screenOrientation="portrait" />
     </application>
 </manifest>
