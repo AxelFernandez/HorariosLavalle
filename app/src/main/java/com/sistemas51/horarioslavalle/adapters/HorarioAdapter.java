@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.adapters;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sistemas51.horarioslavalle.R;
+import com.sistemas51.horarioslavalle.models.HorarioModel;
 
 import java.util.Calendar;
 import java.util.List;

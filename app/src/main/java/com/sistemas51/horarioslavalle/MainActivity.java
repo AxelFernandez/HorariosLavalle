@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
+import com.sistemas51.horarioslavalle.activity.Help;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
 
 //TODO: Moto e5 instant crash (API?)

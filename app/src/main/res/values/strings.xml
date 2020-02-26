@@ -64,5 +64,6 @@
     <string name="urlApiDownload">https://horarioslavalle.com.ar/api/download</string>
 
     <string name="special">special</string>
+    <string name="arg">arg</string>
 
 </resources>
