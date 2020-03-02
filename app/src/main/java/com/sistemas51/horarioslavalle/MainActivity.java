@@ -13,9 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.sistemas51.horarioslavalle.activity.Help;
 import com.sistemas51.horarioslavalle.api.ApiRequest;
+import com.sistemas51.horarioslavalle.api.PushNotification;
 
-//TODO: Moto e5 instant crash (API?)
-//TODO: Change the icon, it will be deprecated, it will be a square.
 
 public class MainActivity extends AppCompatActivity {
     boolean special;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             toolbar.setElevation(10);
         }
         toolbar.bringToFront();
-
+        PushNotification.getToken(getApplicationContext());
     }
 
 
