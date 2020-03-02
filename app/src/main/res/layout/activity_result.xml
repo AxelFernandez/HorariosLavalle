@@ -10,7 +10,7 @@
         android:background="@color/colorPrimary"
         android:id="@+id/toolbarResult"/>
 
-    <fragment
+    <FrameLayout
         android:id="@+id/container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_marginTop="?attr/actionBarSize"
