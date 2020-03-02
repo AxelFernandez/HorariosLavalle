@@ -110,8 +110,8 @@ public class ResultActivity extends AppCompatActivity {
                 args.put(getResources().getString(R.string.route),route);
                 Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                 intent.putExtra("args", (Serializable) args);
-                startActivity(intent);
                 finish();
+                startActivity(intent);
             }
         });
 
