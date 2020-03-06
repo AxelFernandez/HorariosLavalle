@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -22,7 +22,7 @@ public class Help extends AppCompatActivity {
         TextView texto = (TextView)findViewById(R.id.textView4);
         Toolbar toolbar = findViewById(R.id.toolbarHelp);
         toolbar.setTitle("Ayuda");
-        toolbar.setSubtitle("Version 2.4.2");
+        toolbar.setSubtitle("Version 2.6.4");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -36,7 +36,7 @@ public class Help extends AppCompatActivity {
         contactMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","axel_fernandez18@hotmail.com", null));
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","axel.fernandez0145@gmail.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Horarios Lavalle - Contacto.");
                 startActivity(Intent.createChooser(emailIntent,  "Horarios Lavalle Contacto"));
             }

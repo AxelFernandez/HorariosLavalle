@@ -63,5 +63,11 @@
     <string name="urlApi">https://horarioslavalle.com.ar/api</string>
     <string name="urlApiDownload">https://horarioslavalle.com.ar/api/download</string>
 
+    <string name="special">special</string>
+    <string name="arg">arg</string>
+    <string name="default_notification_channel_id">chanel_id</string>
+    <string name="fcm_token">FCM Token: %s</string>
+    <string name="msg_subscribed">Fucking suscribed: %s</string>
+    <string name="msg_subscribe_failed">ERROR: %s</string>
 
 </resources>

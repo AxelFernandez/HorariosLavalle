@@ -1,4 +1,4 @@
-package com.sistemas51.horarioslavalle.v2;
+package com.sistemas51.horarioslavalle.activity;
 
 import android.os.Bundle;
 import android.webkit.WebView;

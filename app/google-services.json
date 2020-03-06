@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "72740332747",
+    "firebase_url": "https://horarios-lavalle.firebaseio.com",
+    "project_id": "horarios-lavalle",
+    "storage_bucket": "horarios-lavalle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72740332747:android:6259b326ea8a1139b5674e",
+        "android_client_info": {
+          "package_name": "com.sistemas51.horarioslavalle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72740332747-tsmdk9egb2b731dl5lqs44bkvd0s9gmg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwXn4Iq2_IuYkbtgrmdvs4vvvd9FZENr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72740332747-tsmdk9egb2b731dl5lqs44bkvd0s9gmg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

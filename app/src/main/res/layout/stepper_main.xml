@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -9,20 +10,17 @@
         android:background="@color/colorPrimary"
         android:id="@+id/toolbarStep"/>
 
-    <com.stepstone.stepper.StepperLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/stepperLayout"
-        android:layout_marginTop="?attr/actionBarSize"
-        app:ms_backButtonText="Atras"
-        app:ms_nextButtonColor="@color/colorWhite"
-        app:ms_completeButtonColor="@color/colorWhite"
-        app:ms_nextButtonText=""
-        app:ms_activeStepColor="@color/colorPrimary"
-        app:ms_backButtonColor="@color/colorRed"
-        app:ms_completeButtonText=""
-        app:ms_stepperType="dots">
-    </com.stepstone.stepper.StepperLayout>
+    <fragment
+        android:layout_marginTop="55dp"
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
-package com.sistemas51.horarioslavalle.v2;
+package com.sistemas51.horarioslavalle.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,12 +9,21 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.UtilidadesAdaptadores.Help;
+import com.sistemas51.horarioslavalle.api.ApiRequest;
+import com.sistemas51.horarioslavalle.fragments.DestinySelectedArgs;
+import com.sistemas51.horarioslavalle.fragments.ResultFragment;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ResultActivity extends AppCompatActivity {
     Fragment active;
@@ -23,8 +33,11 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        String from = getIntent().getExtras().getString(getResources().getString(R.string.from));
-        String to = getIntent().getExtras().getString(getResources().getString(R.string.to));
+        FloatingActionButton fab = findViewById(R.id.floating_action_button);
+        Map<String, String> hourSelected= DestinySelectedArgs.fromBundle(getIntent().getExtras()).getArgs() ;
+        String from = hourSelected.get(getResources().getString(R.string.from));
+        String to = hourSelected.get(getResources().getString(R.string.to));
+        String route = hourSelected.get(getResources().getString(R.string.route));
         toolbar = findViewById(R.id.toolbarResult);
         toolbar.setTitle(from);
         toolbar.setSubtitle(to);
@@ -34,10 +47,15 @@ public class ResultActivity extends AppCompatActivity {
         }
         toolbar.bringToFront();
         Bundle bundleWeek = getIntent().getExtras();
+        bundleWeek.putSerializable("arg", (Serializable) hourSelected);
         bundleWeek.putString(getResources().getString(R.string.type),getResources().getString(R.string.week));
+
         Bundle bundleSaturday = getIntent().getExtras();
+        bundleSaturday.putSerializable("arg", (Serializable) hourSelected);
         bundleSaturday.putString(getResources().getString(R.string.type),getResources().getString(R.string.saturday));
+
         Bundle bundleSunday = getIntent().getExtras();
+        bundleSunday.putSerializable("arg", (Serializable) hourSelected);
         bundleSunday.putString(getResources().getString(R.string.type),getResources().getString(R.string.sunday));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -83,6 +101,20 @@ public class ResultActivity extends AppCompatActivity {
         });
 
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Map<String, String> args = new HashMap<>();
+                args.put(getResources().getString(R.string.from),to);
+                args.put(getResources().getString(R.string.to),from);
+                args.put(getResources().getString(R.string.route),route);
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                intent.putExtra("args", (Serializable) args);
+                finish();
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -102,6 +134,10 @@ public class ResultActivity extends AppCompatActivity {
                 Intent help = new Intent(getApplicationContext(), Help.class);
                 startActivity(help);
                 return true;
+            case R.id.download:
+                new ApiRequest().forceDownload(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

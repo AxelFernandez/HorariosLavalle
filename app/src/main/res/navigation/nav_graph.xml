@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/routeSelected">
+    <fragment
+        android:id="@+id/routeSelected"
+        android:name="com.sistemas51.horarioslavalle.fragments.RouteSelected"
+        android:label="RouteSelected" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/originSelected"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/to_specialHours_action"
+            app:destination="@id/specialHours" />
+    </fragment>
+    <fragment
+        android:id="@+id/originSelected"
+        android:name="com.sistemas51.horarioslavalle.fragments.OriginSelected"
+        android:label="OriginSelected" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destinySelected"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="args"
+            app:argType="java.util.HashMap" />
+    </fragment>
+    <fragment
+        android:id="@+id/destinySelected"
+        android:name="com.sistemas51.horarioslavalle.fragments.DestinySelected"
+        android:label="DestinySelected" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/resultActivity"
+            app:popUpTo="@+id/routeSelected"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="args"
+            app:argType="java.util.HashMap" />
+    </fragment>
+    <activity
+        android:id="@+id/resultActivity"
+        android:name="com.sistemas51.horarioslavalle.activity.ResultActivity"
+        android:label="activity_result"
+        tools:layout="@layout/activity_result" >
+        <argument
+            android:name="args"
+            app:argType="java.util.HashMap" />
+    </activity>
+    <activity
+        android:id="@+id/specialHours"
+        android:name="com.sistemas51.horarioslavalle.activity.SpecialHours"
+        android:label="activity_special_hours"
+        tools:layout="@layout/activity_special_hours" />
+</navigation>

@@ -1,9 +1,10 @@
-package com.sistemas51.horarioslavalle.UtilidadesAdaptadores;
+package com.sistemas51.horarioslavalle.models;
 
 
 import android.content.Context;
 
 import com.sistemas51.horarioslavalle.R;
+import com.sistemas51.horarioslavalle.adapters.ResourceUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -177,7 +178,27 @@ public class HorarioModel {
         long minutosReales = TimeUnit.MINUTES.toMinutes(minutos) - TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(minutos));
         return String.format(formato, horasReales, minutosReales);
     }
+    public static List<String> getPlacesFromRoute(String routeSelected,Context context){
+        int arrayId = 0;
+        if (routeSelected.equals("Ruta 24")){
+            arrayId = R.array.nombredelugares;
+        }else if (routeSelected.equals("Ruta 40")){
+            arrayId = R.array.nombredelugaresr40;
+        }else if (routeSelected.equals("California")){
+            arrayId = R.array.nombrelugarescalifornia;
+        }else if (routeSelected.equals("Internos Costa de Araujo")){
+            arrayId = R.array.placesInternosCosta;
+        }else if(routeSelected.equals("Internos Villa Tulumaya")){
+            arrayId = R.array.placesInternosVilla;
+        }
+        String[] placesArray = context.getResources().getStringArray(arrayId);
+        List<String> places = new ArrayList<>();
+        for (String place : placesArray){
+            places.add(place);
+        }
+        return places;
 
+    }
     public String getFrom() {
         return from;
     }
