@@ -50,7 +50,7 @@ public class ResourceUtils {
                 eventType = parser.next();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Resource Utils",e.getMessage());
             return null;
         }
 
