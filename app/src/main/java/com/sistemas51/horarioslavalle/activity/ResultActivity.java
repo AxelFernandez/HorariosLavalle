@@ -2,6 +2,8 @@ package com.sistemas51.horarioslavalle.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -10,34 +12,42 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.github.ivbaranov.mfb.MaterialFavoriteButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sistemas51.horarioslavalle.R;
-import com.sistemas51.horarioslavalle.api.ApiRequest;
 import com.sistemas51.horarioslavalle.fragments.DestinySelectedArgs;
 import com.sistemas51.horarioslavalle.fragments.ResultFragment;
+import com.sistemas51.horarioslavalle.models.SavedTrips;
+
+import org.json.JSONException;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ResultActivity extends AppCompatActivity {
-    Fragment active;
-    Toolbar toolbar;
+    private Fragment active;
+    private Toolbar toolbar;
+    private String from;
+    private String to;
+    private String route;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         FloatingActionButton fab = findViewById(R.id.floating_action_button);
-        Map<String, String> hourSelected= DestinySelectedArgs.fromBundle(getIntent().getExtras()).getArgs() ;
-        String from = hourSelected.get(getResources().getString(R.string.from));
-        String to = hourSelected.get(getResources().getString(R.string.to));
-        String route = hourSelected.get(getResources().getString(R.string.route));
+        MaterialFavoriteButton favorite = findViewById(R.id.favorite);
+        Map<String, String> hourSelected = DestinySelectedArgs.fromBundle(getIntent().getExtras()).getArgs();
+        from = hourSelected.get(getResources().getString(R.string.from));
+        to = hourSelected.get(getResources().getString(R.string.to));
+        route = hourSelected.get(getResources().getString(R.string.route));
         toolbar = findViewById(R.id.toolbarResult);
         toolbar.setTitle(from);
         toolbar.setSubtitle(to);
@@ -69,14 +79,19 @@ public class ResultActivity extends AppCompatActivity {
         final FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.container, sunday, "3").hide(sunday).commit();
         fm.beginTransaction().add(R.id.container, saturday, "2").hide(saturday).commit();
-        fm.beginTransaction().add(R.id.container,week, "1").commit();
+        fm.beginTransaction().add(R.id.container, week, "1").commit();
 
         active = week;
+        try {
+            favorite.setFavorite(SavedTrips.isFavorited(getSharedPreferences("preferences", Context.MODE_PRIVATE),from + " - " + to));
+        } catch (JSONException e) {
+            Log.e(getClass().getSimpleName(),e.getMessage());
+        }
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
 
                     case R.id.navigation_week:
                         fm.beginTransaction().hide(active).show(week).commit();
@@ -96,7 +111,7 @@ public class ResultActivity extends AppCompatActivity {
                 return false;
 
 
-                }
+            }
 
         });
 
@@ -115,33 +130,39 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main2, menu);
-        return true;
+        favorite.setOnFavoriteChangeListener(new MaterialFavoriteButton.OnFavoriteChangeListener() {
+            @Override
+            public void onFavoriteChanged(MaterialFavoriteButton buttonView, boolean favorite) {
+                SharedPreferences sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+                String name = from + " - " + to;
+                SavedTrips savedTrips = new SavedTrips(name,route,from,to);
+                if(favorite){
+                    try {
+                        SavedTrips.saveTrip(sharedPreferences,savedTrips);
+
+                    } catch (JSONException e) {
+                        Log.e(getClass().getSimpleName(),e.getMessage());
+                    }
+                }else{
+                    try {
+                        SavedTrips.unsaveTrip(sharedPreferences,savedTrips);
+                    } catch (JSONException e) {
+                        Log.e(getClass().getSimpleName(),e.getMessage());
+                    }
+
+                }
+            }
+        });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                finish();
+                onBackPressed();
                 return true;
-            case R.id.help:
-                Intent help = new Intent(getApplicationContext(), Help.class);
-                startActivity(help);
-                return true;
-            case R.id.download:
-                new ApiRequest().forceDownload(getSharedPreferences("preferences", Context.MODE_PRIVATE),getApplicationContext(),getWindow().getDecorView().findViewById(android.R.id.content));
-                return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }

@@ -75,7 +75,7 @@ public class ResultFragment extends Fragment {
             destinyArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(toSearch));
             additional = HorarioModel.getFromJsonArray(placeFound.getJSONArray("additional"));
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e(getClass().getSimpleName(),e.getMessage());
         }
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(),resIdAnim);
