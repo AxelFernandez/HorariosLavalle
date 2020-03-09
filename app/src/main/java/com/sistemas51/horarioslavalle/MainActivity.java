@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(dashboardAdapter);
 
 
-        PushNotification.getToken(getApplicationContext());
+        //PushNotification.getToken(getApplicationContext());
     }
 
 
