@@ -15,13 +15,15 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarStep"
             android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:visibility="visible" />
 
         <fragment
             android:id="@+id/nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+            class="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="55dp"

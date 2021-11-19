@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sistemas51.horarioslavalle.R;
 import com.sistemas51.horarioslavalle.adapters.HorarioAdapter;
 import com.sistemas51.horarioslavalle.models.HorarioModel;
+import com.sistemas51.horarioslavalle.repository.CommonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,8 +29,6 @@ import java.util.Map;
 
 
 public class ResultFragment extends Fragment {
-    private JSONObject database;
-    private JSONObject placeFound;
     private List originArray;
     private List destinyArray;
     private List additional;
@@ -46,6 +45,9 @@ public class ResultFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_listview, container, false);
 
+        JSONObject database;
+        JSONObject placeFound;
+
         rv = (RecyclerView) v.findViewById(R.id.recicler);
         int resIdAnim = R.anim.layout_anim_fall_down;
         Map<String, String> hourSelected = (Map<String, String>) getArguments().getSerializable("arg");
@@ -53,13 +55,13 @@ public class ResultFragment extends Fragment {
         final String to = hourSelected.get(getResources().getString(R.string.to));
         final String day = getArguments().getString(getResources().getString(R.string.type));
         final String route = hourSelected.get(getResources().getString(R.string.route));
-        String arrayToSearch = HorarioModel.getNamesKey(from,to,route,day,getContext());
-        String fromSearch = HorarioModel.getTableName(from,route, getContext());
-        String toSearch = HorarioModel.getTableName(to,route, getContext());
+        String arrayToSearch = HorarioModel.getNamesKey(from, to, route, day, getContext());
+        String fromSearch = HorarioModel.getTableName(from, route, getContext());
+        String toSearch = HorarioModel.getTableName(to, route, getContext());
         int numberDay = -1;
-        if (day == getResources().getString(R.string.saturday)){
+        if (day == getResources().getString(R.string.saturday)) {
             numberDay = 7;
-        }else if (day == getResources().getString(R.string.sunday)){
+        } else if (day == getResources().getString(R.string.sunday)) {
             numberDay = 1;
         }
 
@@ -69,23 +71,23 @@ public class ResultFragment extends Fragment {
 
         try {
 
-            database = new JSONObject(sharedPreferences.getString("database","{}"));
+            database = CommonObject.INSTANCE.getDatabase() == null ? new JSONObject(sharedPreferences.getString("database", "{}")) : new JSONObject(CommonObject.INSTANCE.getDatabase());
             placeFound = database.getJSONObject(arrayToSearch);
             originArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(fromSearch));
             destinyArray = HorarioModel.getFromJsonArray(placeFound.getJSONArray(toSearch));
             additional = HorarioModel.getFromJsonArray(placeFound.getJSONArray("additional"));
         } catch (JSONException e) {
-            Log.e(getClass().getSimpleName(),e.getMessage());
+            Log.e(getClass().getSimpleName(), e.getMessage());
         }
         rv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(),resIdAnim);
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(), resIdAnim);
         rv.setLayoutAnimation(animation);
         HorarioAdapter adapter;
         try {
-            adapter = new HorarioAdapter(HorarioModel.getHour(originArray,destinyArray,numberDay,additional), getContext());
+            adapter = new HorarioAdapter(HorarioModel.getHour(originArray, destinyArray, numberDay, additional), getContext());
             rv.setAdapter(adapter);
         } catch (ParseException e) {
-            Log.e("ParseException",e.getMessage());
+            Log.e("ParseException", e.getMessage());
         }
 
         return v;
@@ -94,7 +96,7 @@ public class ResultFragment extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (!hidden){
+        if (!hidden) {
             runLayoutAnimation();
         }
     }

@@ -11,9 +11,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.crashlytics.internal.Logger;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.sistemas51.horarioslavalle.R;
@@ -43,15 +41,14 @@ public class PushNotification extends FirebaseMessagingService {
         notificationManager.notify(0, notificationBuilder.build());
     }
     public static void getToken(Context context){
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
                     @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                    public void onComplete(@NonNull Task<String> task) {
                         // Get the Instance ID token//
-                        String token = task.getResult().getToken();
+                        String token = task.getResult();
                         String msg = context.getResources().getString(R.string.fcm_token, token);
-                        Log.e(Logger.TAG, msg);
-
+                        Log.e("TOKEN", msg);
                     }
                 });
     }

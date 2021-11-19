@@ -9,27 +9,25 @@
 
     <TextView
         android:id="@+id/forecast_location"
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
-        android:maxLines="1"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Partida: 16:40" />
 
     <TextView
         android:id="@+id/forecast_description"
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/forecast_location"
         android:layout_below="@+id/forecast_location"
-        android:maxLines="1"
         tools:text="Llegada: 18:40" />
 
     <TextView
         android:id="@+id/additional"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/forecast_description"
         android:layout_marginLeft="30dp"

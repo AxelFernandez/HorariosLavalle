@@ -15,10 +15,10 @@ public class ApiClient {
     public ApiClient(Context context) {
         this.context = context;
         String url = null;
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // versiones con android 5.0 o superior
-            url = "https://horarioslavalle.com.ar/";
-        } else{
+            url = "http://horarioslavalle.com.ar/";
+        } else {
             // para versiones anteriores a android 5.0
             url = "http://horarioslavalle.com.ar/";
         }
@@ -36,7 +36,7 @@ public class ApiClient {
     }
 
 
-        public Call<String> version() {
+    public Call<String> version() {
         HourService service = retrofit.create(HourService.class);
         return service.version();
     }

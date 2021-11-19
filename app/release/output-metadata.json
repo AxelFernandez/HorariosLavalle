@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.sistemas51.horarioslavalle",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 38,
+      "versionName": "2.7.0",
+      "outputFile": "app-release.apk"
+    }
+  ]
+}
