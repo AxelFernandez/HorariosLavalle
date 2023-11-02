@@ -71,25 +71,35 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setAdapter(dashboardAdapter)
 
 
-        viewModel.liveData.observe(this, {
+        viewModel.liveData.observe(this) {
 
             when (it.status) {
                 Status.LOADING -> {
-                    Snackbar.make(binding.root,"Descargando Horarios",Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, "Descargando Horarios", Snackbar.LENGTH_SHORT)
+                        .show()
                 }
+
                 Status.ERROR -> {
-                    Snackbar.make(binding.root,"Hubo un error al Descargar Horarios, causa:".plus(it.messageError),Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(
+                        binding.root,
+                        "Hubo un error al Descargar Horarios, causa:".plus(it.messageError),
+                        Snackbar.LENGTH_SHORT
+                    ).show()
                 }
+
                 Status.SUCCESS -> {
                     CommonObject.database = it.data
                     val editor = sharedPreferences.edit()
                     editor.putString("database", it.data)
                     editor.apply()
-                    Snackbar.make(binding.root,"Horarios Actualizados",Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, "Horarios Actualizados", Snackbar.LENGTH_SHORT)
+                        .show()
 
                 }
+
+                else -> {}
             }
-        })
+        }
         }catch (e:Exception ){
             Log.e("TAG", "onCreateView", e);
             throw e
