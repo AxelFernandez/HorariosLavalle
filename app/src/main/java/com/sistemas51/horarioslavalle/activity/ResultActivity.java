@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,16 +42,21 @@ public class ResultActivity extends AppCompatActivity {
     private String route;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        
         BottomNavigationView navView = findViewById(R.id.nav_view);
         FloatingActionButton fab = findViewById(R.id.floating_action_button);
         MaterialFavoriteButton favorite = findViewById(R.id.favorite);
+        // Edge-to-edge habilitado, los insets se manejan en el XML con fitsSystemWindows
+        
         Map<String, String> hourSelected = DestinySelectedArgs.fromBundle(getIntent().getExtras()).getArgs();
         from = hourSelected.get(getResources().getString(R.string.from));
         to = hourSelected.get(getResources().getString(R.string.to));
         route = hourSelected.get(getResources().getString(R.string.route));
         toolbar = findViewById(R.id.toolbarResult);
+        
         toolbar.setTitle(from);
         toolbar.setSubtitle(to);
         setSupportActionBar(toolbar);

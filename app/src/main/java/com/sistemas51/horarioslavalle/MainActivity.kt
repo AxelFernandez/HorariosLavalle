@@ -5,9 +5,12 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
@@ -33,14 +36,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
-
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         val binding = StepperMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        // Edge-to-edge habilitado, los insets se manejan en el XML con fitsSystemWindows
+        
         viewModel.requestHours()
         sharedPreferences = getSharedPreferences("preferences", MODE_PRIVATE)
-        val view = window.decorView.findViewById<View>(android.R.id.content)
-
         special = sharedPreferences.getBoolean("special", false)
 
         val toolbar = binding.toolbarStep

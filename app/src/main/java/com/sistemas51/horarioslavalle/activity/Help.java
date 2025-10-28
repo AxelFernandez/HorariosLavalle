@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.sistemas51.horarioslavalle.R;
 
@@ -17,10 +20,14 @@ public class Help extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ayuda);
+        
         TextView texto = (TextView)findViewById(R.id.textView4);
         Toolbar toolbar = findViewById(R.id.toolbarHelp);
+        // Edge-to-edge habilitado, los insets se manejan en el XML con fitsSystemWindows
+        
         toolbar.setTitle("Ayuda");
         toolbar.setSubtitle("Version 2.6.4");
         setSupportActionBar(toolbar);
@@ -31,18 +38,6 @@ public class Help extends AppCompatActivity {
         }
         toolbar.bringToFront();
         texto.setText(R.string.large_text);
-
-        Button contactMe = findViewById(R.id.contactMe);
-        contactMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","axel.fernandez0145@gmail.com", null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Horarios Lavalle - Contacto.");
-                startActivity(Intent.createChooser(emailIntent,  "Horarios Lavalle Contacto"));
-            }
-        });
-
-
     }
     @Override
     public boolean onSupportNavigateUp() {

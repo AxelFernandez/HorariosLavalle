@@ -20,7 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.ViewHolder> {
+public class StepperRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private static final int VIEW_TYPE_ITEM = 0;
+    private static final int VIEW_TYPE_BANNER = 1;
+    
     private String selected;
     private List<String> selectedStepper;
     Map<String, String> hourSelected;
@@ -44,14 +47,32 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
         this.hourSelected = hourSelected;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        if (currentStep == 0 && position == selectedStepper.size()) {
+            return VIEW_TYPE_BANNER;
+        }
+        return VIEW_TYPE_ITEM;
+    }
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_step_selected, viewGroup, false));
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        if (viewType == VIEW_TYPE_BANNER) {
+            return new BannerViewHolder(LayoutInflater.from(context).inflate(R.layout.item_banner, viewGroup, false));
+        } else {
+            return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_step_selected, viewGroup, false));
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int i) {
+        if (getItemViewType(i) == VIEW_TYPE_BANNER) {
+            // El banner solo muestra textos estáticos definidos en el layout
+            return;
+        }
+        
+        final ViewHolder viewHolder = (ViewHolder) holder;
         viewHolder.description.setText(selectedStepper.get(i));
         if (currentStep == 2 && selectedStepper.get(i).equals(hourSelected.get(context.getResources().getString(R.string.from)))) {
             viewHolder.cardView.setBackgroundColor(Color.parseColor("#fb8c00"));
@@ -90,7 +111,8 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
 
     @Override
     public int getItemCount() {
-        return selectedStepper.size();
+        // Si estamos en el paso 0 (selección de ruta), añadimos +1 para el banner
+        return currentStep == 0 ? selectedStepper.size() + 1 : selectedStepper.size();
     }
 
     public String getSelected() {
@@ -106,6 +128,12 @@ public class StepperRvAdapter extends RecyclerView.Adapter<StepperRvAdapter.View
             super(itemView);
             cardView = itemView.findViewById(R.id.cardViewStepper);
             description = itemView.findViewById(R.id.textStepper);
+        }
+    }
+
+    public static class BannerViewHolder extends RecyclerView.ViewHolder {
+        public BannerViewHolder(@NonNull View itemView) {
+            super(itemView);
         }
     }
 

@@ -1,20 +1,15 @@
 <resources>
     <string name="app_name">Horarios Lavalle</string>
-    <string name="large_text">
-        "Bienvenido/a a Horarios Lavalle. \n\n"
+   <string name="large_text">
+    "Gracias por usar Horarios Lavalle durante todos estos años. 💛 \n\n"
 
-        "\t La versión rediseñada de Horarios Lavalle permite obtener de manera ágil, fácil y sencilla los recorridos de colectivo del Departamento. \n \n"
-        "\t Es una app de navegación gratuita sin conexión a internet. \n \n"
-        "\t Actualizamos a menudo nuestra aplicación para corregir errores, mejorar el rendimiento y añadir nuevas funcionalidades por lo tanto seguimos escuchando tus comentarios y sugerencias. \n \n"
-        "\t Puedes enviarnos un email con el botón de aquí abajo y responderé lo más pronto posible \n \n"
-        "\t ¡Gracias por usar Horarios Lavalle!
-        \n \n"
+    "\t Este proyecto llega a su final después de más de 8 años acompañando a la comunidad de Lavalle. \n\n"
+    "\t A partir de ahora, puedes consultar los horarios y recorridos del transporte público directamente en la aplicación oficial de Mendotran, que cuenta con paradas en mapa y horarios en tiempo real. \n\n"
+    "\t Horarios Lavalle dejará de mostrar horarios a partir del 25 de noviembre de 2025. \n\n"
+    "\t Gracias por ser parte de este viaje. ❤️ \n\n"
 
-        "\t Contacto: \n "
-        "\t \t Axel Fernandez. \n "
-        "\t \t e-mail: axel.fernandez0145@gmail.com \n "
-
-    </string>
+    "\t — Axel Fernandez \n"
+</string>
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -76,4 +71,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="trip_saved">Viajes Guardados</string>
     <string name="DownloadHours">Descargar Horarios</string>
+    
+    <!-- Banner de despedida -->
+    <string name="banner_title">Gracias por estos 8 años 💛</string>
+    <string name="banner_message">Horarios Lavalle finaliza su recorrido el 25 de noviembre del 2025. Fue un viaje increíble, ¡y nada de esto hubiera sido posible sin vos!</string>
 </resources>
